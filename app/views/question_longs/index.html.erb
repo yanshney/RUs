@@ -1,0 +1,47 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Question Longs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Partone</th>
+      <th>Answrongone</th>
+      <th>Answrongtwo</th>
+      <th>Answrongthree</th>
+      <th>Ansright</th>
+      <th>Parttwo</th>
+      <th>Answrongone2</th>
+      <th>Answrongtwo2</th>
+      <th>Answrongthree2</th>
+      <th>Ansright2</th>
+      <th>Partthree</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @question_longs.each do |question_long| %>
+      <tr>
+        <td><%= question_long.partOne %></td>
+        <td><%= question_long.ansWrongOne %></td>
+        <td><%= question_long.ansWrongTwo %></td>
+        <td><%= question_long.ansWrongThree %></td>
+        <td><%= question_long.ansRight %></td>
+        <td><%= question_long.partTwo %></td>
+        <td><%= question_long.ansWrongOne2 %></td>
+        <td><%= question_long.ansWrongTwo2 %></td>
+        <td><%= question_long.ansWrongThree2 %></td>
+        <td><%= question_long.ansRight2 %></td>
+        <td><%= question_long.partThree %></td>
+        <td><%= link_to 'Show', question_long %></td>
+        <td><%= link_to 'Edit', edit_question_long_path(question_long) %></td>
+        <td><%= link_to 'Destroy', question_long, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Question Long', new_question_long_path %>

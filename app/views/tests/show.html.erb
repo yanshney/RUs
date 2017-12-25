@@ -1,0 +1,41 @@
+<ul id="mytabs" class="nav nav-tabs">
+    <li class="active"><a data-toggle="tab" href="#home">Home</a></li>
+    <li id ="menu_one"><a data-toggle="tab" href="#menu1">Question 1</a></li>
+    <li><a data-toggle="tab" href="#menu2">Question 2</a></li>
+    <li><a data-toggle="tab" href="#menu3">Question 3</a></li>
+  </ul>
+  <div class="container">
+  <div class="tab-content">
+    <div id="home" class="tab-pane fade in active">
+      <%= form_tag(@test, :method => "get", id: "checker", remote:true) do %>
+      <p>
+      <%= @question.partOne %>
+      <%=text_field_tag :textbox1, params[:search1], :id =>"textfield1"%>
+      <%= @question.partTwo %>
+      <%= text_field_tag :textbox2, params[:search2],  :id => "textfield2" %>
+      <%= @question.partThree %>
+      </p>
+
+      <div id="check"><%= submit_tag 'Check' %></div>
+
+      <% end %>
+      <div id="res"> </div>
+      <div id="res2"> </div>
+      <br>
+    </div>
+    <div id="menu1" class="tab-pane fade">
+
+    </div>
+    <div id="menu2" class="tab-pane fade">
+
+    </div>
+    <div id="menu3" class="tab-pane fade">
+
+    </div>
+  </div>
+</div>
+
+<button type="button" id="changetabbutton" class="btn btn-success">Change </button>
+
+<%= link_to 'Edit', edit_test_path(@test) %> |
+<%= link_to 'Back', tests_path %>

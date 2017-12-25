@@ -1,0 +1,2 @@
+module QuestionLongsHelper
+end

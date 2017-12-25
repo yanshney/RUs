@@ -1,0 +1,23 @@
+
+$ans1 = '<%=@question.ansRight%>';
+$ans2 = '<%=@question.ansRight2%>';
+console.log($ans2);
+$arr1 = <%=raw @arr%>;
+if ($ans1 == $("#textfield1").val()){
+  $("#res").html('<%= escape_javascript(image_tag("happy_dog.jpg", :alt => "rss feed")) %>');
+}
+else if($arr1.includes($("#textfield1").val())){
+  $("#res").html("wrong case");
+}
+else{
+    $("#res").html("hi");
+}
+
+if ($ans2 == $("#textfield2").val()){
+  console.log("utik");
+  $("#res2").html('<%= escape_javascript(image_tag("happy_dog.jpg", :alt => "rss feed")) %>');
+}
+
+else{
+    $("#res2").html("hi");
+}

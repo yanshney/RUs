@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  PartOne: MyString
+  AnsWrongOne: MyString
+  AnsWrongTwo: MyString
+  AnsWrongThree: MyString
+  AnsRight: MyString
+  PartTwo: MyString
+  AnsWrongOne2: MyString
+  AnsWrongTwo2: MyString
+  AnsWrongThree2: MyString
+  AnsRight2: MyString
+  PartThree: MyString
+
+two:
+  PartOne: MyString
+  AnsWrongOne: MyString
+  AnsWrongTwo: MyString
+  AnsWrongThree: MyString
+  AnsRight: MyString
+  PartTwo: MyString
+  AnsWrongOne2: MyString
+  AnsWrongTwo2: MyString
+  AnsWrongThree2: MyString
+  AnsRight2: MyString
+  PartThree: MyString
