@@ -9,22 +9,65 @@
     <div id="home" class="tab-pane fade in active">
       <%= form_tag(@test, :method => "get", id: "checker", remote:true) do %>
       <p>
-      <%= @question.partOne %>
-      <%=text_field_tag :textbox1, params[:search1], :id =>"textfield1"%>
-      <%= @question.partTwo %>
-      <%= text_field_tag :textbox2, params[:search2],  :id => "textfield2" %>
-      <%= @question.partThree %>
+      <%= @questions[0].partOne %>
+      <%=text_field_tag :textbox1, params[:search1], :id =>"textfield1", :class => "textfield"%>
+      <%= @questions[0].partTwo %>
+      <%= text_field_tag :textbox2, params[:search2],  :id => "textfield2", :class => "textfield" %>
+      <%= @questions[0].partThree %>
+    </p>
+    <br>
+    <br>
+    <br>
+    <br>
+      <p>
+      <%= @questions[1].partOne %>
+      <%=text_field_tag :textbox3, params[:search1], :id =>"textfield3", :class => "textfield"%>
+      <%= @questions[1].partTwo %>
+      <%= text_field_tag :textbox4, params[:search2],  :id => "textfield4", :class => "textfield" %>
+      <%= @questions[1].partThree %>
+    </p>
+    <br>
+    <br>
+    <br>
+    <br>
+    <p>
+      <%= @questions[2].partOne %>
+      <%=text_field_tag :textbox5, params[:search1], :id =>"textfield5", :class => "textfield"%>
+      <%= @questions[2].partTwo %>
+      <%= text_field_tag :textbox6, params[:search2],  :id => "textfield6", :class => "textfield" %>
+      <%= @questions[2].partThree %>
+
       </p>
-
+      <br>
+      <br>
+      <br>
+      <br>
       <div id="check"><%= submit_tag 'Check' %></div>
-
+      <button type="button" id="changetabbutton" class="btn btn-success">Next</button>
       <% end %>
-      <div id="res"> </div>
-      <div id="res2"> </div>
+      <div id="res" class="ans"> </div>
+      <div id="res2" class="ans"> </div>
+      <div id="res3" class="ans"> </div>
+      <div id="res4" class="ans"> </div>
+      <div id="res5" class="ans"> </div>
+      <div id="res6" class="ans"> </div>
       <br>
     </div>
     <div id="menu1" class="tab-pane fade">
+         <div class="drag <%=@moves[0].gender%>"> <%=@moves[0].word%> </div>
+         <br>
+         <br>
+         <div class="drag <%=@moves[1].gender%>"> <%=@moves[1].word%> </div>
+         <br>
+         <br>
+         <br>
+         <br>
+         <div id="masculine_drop"> Masculine </div>
+         <div id="feminine_drop"> Feminine </div>
+         <div id="neuter_drop"> Neuter </div>
+         <div id="plural_drop"> Plural </div>
 
+        <button type="button" id="changetabmove" class="btn btn-success">Next</button>
     </div>
     <div id="menu2" class="tab-pane fade">
 
@@ -34,8 +77,6 @@
     </div>
   </div>
 </div>
-
-<button type="button" id="changetabbutton" class="btn btn-success">Change </button>
 
 <%= link_to 'Edit', edit_test_path(@test) %> |
 <%= link_to 'Back', tests_path %>

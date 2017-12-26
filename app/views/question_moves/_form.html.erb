@@ -1,0 +1,27 @@
+<%= form_with(model: question_move, local: true) do |form| %>
+  <% if question_move.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(question_move.errors.count, "error") %> prohibited this question_move from being saved:</h2>
+
+      <ul>
+      <% question_move.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :word %>
+    <%= form.text_field :word, id: :question_move_word %>
+  </div>
+
+  <div class="field">
+    <%= form.label :gender %>
+    <%= form.text_field :gender, id: :question_move_gender %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

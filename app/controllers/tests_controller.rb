@@ -1,6 +1,6 @@
 class TestsController < ApplicationController
   before_action :set_test, only: [:show, :edit, :update, :destroy]
-  before_action :set_question, only:[:show]
+  before_action :set_questions, only:[:show]
   # GET /tests
   # GET /tests.json
   def index
@@ -68,9 +68,13 @@ class TestsController < ApplicationController
     def set_test
       @test = Test.find(params[:id])
     end
-    def set_question
+    def set_questions
       @question=QuestionLong.all[(params[:id].to_i*7)%QuestionLong.count]
-      @arr = @question.ansWrongOne.split(/,/)
+      @questions=QuestionLong.all
+      @arr1=@questions[0].ansWrongOne.split(/,/)
+      @arr2=@questions[1].ansWrongOne.split(/,/)
+      @arr3=@questions[2].ansWrongOne.split(/,/)
+      @moves=QuestionMove.all
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

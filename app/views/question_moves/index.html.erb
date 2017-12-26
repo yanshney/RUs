@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Question Moves</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Word</th>
+      <th>Gender</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @question_moves.each do |question_move| %>
+      <tr>
+        <td><%= question_move.word %></td>
+        <td><%= question_move.gender %></td>
+        <td><%= link_to 'Show', question_move %></td>
+        <td><%= link_to 'Edit', edit_question_move_path(question_move) %></td>
+        <td><%= link_to 'Destroy', question_move, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Question Move', new_question_move_path %>

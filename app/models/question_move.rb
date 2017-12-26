@@ -1,0 +1,2 @@
+class QuestionMove < ApplicationRecord
+end

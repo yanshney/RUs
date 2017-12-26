@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Word:</strong>
+  <%= @question_move.word %>
+</p>
+
+<p>
+  <strong>Gender:</strong>
+  <%= @question_move.gender %>
+</p>
+
+<%= link_to 'Edit', edit_question_move_path(@question_move) %> |
+<%= link_to 'Back', question_moves_path %>

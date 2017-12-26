@@ -16,22 +16,15 @@
 img{
   height:60px;
 }
-#res{
+.ans{
   position:absolute;
 }
-#textfield1{
+.textfield{
   position:relative;
   width: 100px;
 margin-left: -7px;
 }
-#textfield2{
-  position:relative;
-  width: 100px;
-margin-left: -7px;
-}
-#res2{
-  position:absolute;
-}
+
 .nav-tabs{
   margin-top: 200px;
 }
@@ -40,12 +33,60 @@ p{
 text-align: center;
 }
 #check{
-  margin-left:500px;
+  margin-left:1000px;
   margin-top:100px;
 }
 .btn-success{
-  margin-left:500px;
+  margin-left: 1100px;
+  margin-top: -50px;
 }
 .container{
   margin-top: 50px;
+}
+
+#masculine_drop {
+    width: 250px;
+    height:250px;
+    border:solid;
+    text-align: center;
+    margin-left:-50px;
+}
+#feminine_drop {
+    width: 250px;
+    height:250px;
+    border:solid;
+    margin-top: -250px;
+    margin-left: 275px;
+    text-align: center;
+}
+#neuter_drop {
+    width: 250px;
+    height:250px;
+    border:solid;
+    margin-top: -250px;
+    margin-left: 625px;
+    text-align: center;
+}
+#plural_drop {
+    width: 250px;
+    height:250px;
+    border:solid;
+    margin-top: -250px;
+    margin-left: 975px;
+    text-align: center;
+}
+.ui-state-highlight{
+  background-color: green !important;
+  color:white;
+}
+.drag{
+  width:100px;
+  height:30px;
+  border:solid;
+  text-align:center;
+  background-color: yellow;
+}
+#changetabmove{
+  margin-left: 1200px;
+  margin-top: 100px;
 }

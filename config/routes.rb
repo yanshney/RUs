@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :question_moves
   resources :pages
   resources :tests
   resources :question_longs

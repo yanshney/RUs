@@ -1,8 +1,14 @@
 
-$ans1 = '<%=@question.ansRight%>';
-$ans2 = '<%=@question.ansRight2%>';
+$ans1 = '<%=@questions[0].ansRight%>';
+$ans2 = '<%=@questions[0].ansRight2%>';
+$ans3 = '<%=@questions[1].ansRight%>';
+$ans4 = '<%=@questions[1].ansRight2%>';
+$ans5 = '<%=@questions[2].ansRight%>';
+$ans6 = '<%=@questions[2].ansRight2%>';
 console.log($ans2);
-$arr1 = <%=raw @arr%>;
+$arr1 = <%=raw @arr1%>;
+$arr2 = <%=raw @arr2%>;
+$arr3 = <%=raw @arr3%>;
 if ($ans1 == $("#textfield1").val()){
   $("#res").html('<%= escape_javascript(image_tag("happy_dog.jpg", :alt => "rss feed")) %>');
 }
@@ -20,4 +26,42 @@ if ($ans2 == $("#textfield2").val()){
 
 else{
     $("#res2").html("hi");
+}
+
+if ($ans3 == $("#textfield3").val()){
+  $("#res3").html('<%= escape_javascript(image_tag("happy_dog.jpg", :alt => "rss feed")) %>');
+}
+else if($arr2.includes($("#textfield3").val())){
+  $("#res3").html("wrong case");
+}
+else{
+    $("#res3").html("hi");
+}
+
+if ($ans4 == $("#textfield4").val()){
+  console.log("utik");
+  $("#res4").html('<%= escape_javascript(image_tag("happy_dog.jpg", :alt => "rss feed")) %>');
+}
+
+else{
+    $("#res4").html("hi");
+}
+
+if ($ans5 == $("#textfield5").val()){
+  $("#res5").html('<%= escape_javascript(image_tag("happy_dog.jpg", :alt => "rss feed")) %>');
+}
+else if($arr3.includes($("#textfield5").val())){
+  $("#res5").html("wrong case");
+}
+else{
+    $("#res5").html("hi");
+}
+
+if ($ans6 == $("#textfield6").val()){
+  console.log("utik");
+  $("#res6").html('<%= escape_javascript(image_tag("happy_dog.jpg", :alt => "rss feed")) %>');
+}
+
+else{
+    $("#res6").html("hi");
 }
