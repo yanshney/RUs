@@ -17,47 +17,39 @@
 //= require_tree .
 
 $( document ).on('turbolinks:load', function() {
+
   $("#res").position({
   at: "left+30 top+45",
   of: "#textfield1"
 });
+
+$("#res2").position({
+at: "left+30 top+45",
+of: "#textfield2"
 });
 
-$( document ).on('turbolinks:load', function() {
-  $("#res2").position({
-  at: "left+30 top+45",
-  of: "#textfield2"
-});
+$("#res3").position({
+at: "left+30 top+45",
+of: "#textfield3"
 });
 
-$( document ).on('turbolinks:load', function() {
-  $("#res3").position({
-  at: "left+30 top+45",
-  of: "#textfield3"
-});
+$("#res4").position({
+at: "left+30 top+45",
+of: "#textfield4"
 });
 
-$( document ).on('turbolinks:load', function() {
-  $("#res4").position({
-  at: "left+30 top+45",
-  of: "#textfield4"
-});
+$("#res5").position({
+at: "left+30"+" top+45-"+$(window).height(),
+of: "#textfield5"
 });
 
-
-$( document ).on('turbolinks:load', function() {
-  $("#res5").position({
-  at: "left+30 top+45",
-  of: "#textfield5"
+$("#res6").position({
+at: "left+30"+" top+45-"+$(window).height(),
+of: "#textfield6"
 });
 });
 
-$( document ).on('turbolinks:load', function() {
-  $("#res6").position({
-  at: "left+30 top+45",
-  of: "#textfield6"
-});
-});
+
 $(document).on('click','#changetabbutton', function(e){
     e.preventDefault();
     $("#menu_one").addClass('disabled');

@@ -11916,3 +11916,1490 @@ Processing by TestsController#show as HTML
 Completed 200 OK in 253ms (Views: 244.2ms | ActiveRecord: 1.6ms)
 
 
+DEPRECATION WARNING: You didn't set `secret_key_base`. Read the upgrade documentation to learn more about this new config option. (called from env_config at /Users/yan/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/railties-5.1.4/lib/rails/application.rb:247)
+DEPRECATION WARNING: You didn't set `secret_key_base`. Read the upgrade documentation to learn more about this new config option. (called from env_config at /Users/yan/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/railties-5.1.4/lib/rails/application.rb:247)
+DEPRECATION WARNING: You didn't set `secret_key_base`. Read the upgrade documentation to learn more about this new config option. (called from env_config at /Users/yan/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/railties-5.1.4/lib/rails/application.rb:247)
+DEPRECATION WARNING: You didn't set `secret_key_base`. Read the upgrade documentation to learn more about this new config option. (called from env_config at /Users/yan/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/railties-5.1.4/lib/rails/application.rb:247)
+Started GET "/" for 127.0.0.1 at 2017-12-25 22:10:47 -0500
+Started GET "/" for 127.0.0.1 at 2017-12-25 22:10:48 -0500
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (2.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by QuestionLongsController#new as HTML
+Processing by QuestionLongsController#new as HTML
+  Rendering question_longs/new.html.erb within layouts/application
+  Rendering question_longs/new.html.erb within layouts/application
+  Rendered question_longs/_form.html.erb (38.3ms)
+  Rendered question_longs/_form.html.erb (48.7ms)
+  Rendered question_longs/new.html.erb within layouts/application (57.8ms)
+  Rendered question_longs/new.html.erb within layouts/application (57.5ms)
+Completed 200 OK in 3922ms (Views: 3862.2ms | ActiveRecord: 0.0ms)
+
+
+Completed 200 OK in 3969ms (Views: 3896.4ms | ActiveRecord: 28.1ms)
+
+
+Started GET "/tests" for 127.0.0.1 at 2017-12-25 22:11:06 -0500
+Processing by TestsController#index as HTML
+  Rendering tests/index.html.erb within layouts/application
+  [1m[36mTest Load (14.6ms)[0m  [1m[34mSELECT "tests".* FROM "tests"[0m
+  Rendered tests/index.html.erb within layouts/application (75.2ms)
+Completed 200 OK in 982ms (Views: 919.6ms | ActiveRecord: 25.6ms)
+
+
+Started GET "/tests/new" for 127.0.0.1 at 2017-12-25 22:11:10 -0500
+Processing by TestsController#new as HTML
+  Rendering tests/new.html.erb within layouts/application
+  Rendered tests/_form.html.erb (4.4ms)
+  Rendered tests/new.html.erb within layouts/application (9.9ms)
+Completed 200 OK in 311ms (Views: 305.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/tests" for 127.0.0.1 at 2017-12-25 22:11:15 -0500
+Processing by TestsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"pB3VRaLRzkzNFbQaje4GkrDRfjZmCWAnE2gPqzIBkWU13kVhoA8YUej0ifjwje3hCfcc90qWvfC11lo8J31AxQ==", "test"=>{"name"=>"Checlk"}, "commit"=>"Start a test"}
+  [1m[35m (17.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (55.0ms)[0m  [1m[32mINSERT INTO "tests" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Checlk"], ["created_at", "2017-12-26 03:11:15.582536"], ["updated_at", "2017-12-26 03:11:15.582536"]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/tests/5
+Completed 302 Found in 88ms (ActiveRecord: 73.9ms)
+
+
+Started GET "/tests/5" for 127.0.0.1 at 2017-12-25 22:11:15 -0500
+Processing by TestsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mTest Load (12.1ms)[0m  [1m[34mSELECT  "tests".* FROM "tests" WHERE "tests"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35m (5.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "question_longs"[0m
+  [1m[36mQuestionLong Load (0.7ms)[0m  [1m[34mSELECT "question_longs".* FROM "question_longs"[0m
+  [1m[36mCACHE QuestionLong Load (0.0ms)[0m  [1m[34mSELECT "question_longs".* FROM "question_longs"[0m
+  Rendering tests/show.html.erb within layouts/application
+  [1m[36mQuestionMove Load (12.9ms)[0m  [1m[34mSELECT "question_moves".* FROM "question_moves"[0m
+  Rendered tests/show.html.erb within layouts/application (37.8ms)
+Completed 200 OK in 444ms (Views: 374.0ms | ActiveRecord: 40.1ms)
+
+
+Started GET "/tests/5?utf8=%E2%9C%93&textbox1=&textbox2=&textbox3=&textbox4=&textbox5=&textbox6=&commit=Check" for 127.0.0.1 at 2017-12-25 22:11:22 -0500
+Processing by TestsController#show as JS
+  Parameters: {"utf8"=>"✓", "textbox1"=>"", "textbox2"=>"", "textbox3"=>"", "textbox4"=>"", "textbox5"=>"", "textbox6"=>"", "commit"=>"Check", "id"=>"5"}
+  [1m[36mTest Load (2.1ms)[0m  [1m[34mSELECT  "tests".* FROM "tests" WHERE "tests"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35m (5.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "question_longs"[0m
+  [1m[36mQuestionLong Load (0.7ms)[0m  [1m[34mSELECT "question_longs".* FROM "question_longs"[0m
+  [1m[36mCACHE QuestionLong Load (0.0ms)[0m  [1m[34mSELECT "question_longs".* FROM "question_longs"[0m
+  Rendering tests/show.js.erb
+  Rendered tests/show.js.erb (6.7ms)
+Completed 200 OK in 65ms (Views: 31.2ms | ActiveRecord: 10.6ms)
+
+
+Started GET "/tests/5" for 127.0.0.1 at 2017-12-25 22:12:27 -0500
+Processing by TestsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mTest Load (8.6ms)[0m  [1m[34mSELECT  "tests".* FROM "tests" WHERE "tests"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35m (18.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "question_longs"[0m
+  [1m[36mQuestionLong Load (1.2ms)[0m  [1m[34mSELECT "question_longs".* FROM "question_longs"[0m
+  [1m[36mCACHE QuestionLong Load (0.0ms)[0m  [1m[34mSELECT "question_longs".* FROM "question_longs"[0m
+  Rendering tests/show.html.erb within layouts/application
+  [1m[36mQuestionMove Load (0.5ms)[0m  [1m[34mSELECT "question_moves".* FROM "question_moves"[0m
+  Rendered tests/show.html.erb within layouts/application (20.5ms)
+Completed 200 OK in 752ms (Views: 680.6ms | ActiveRecord: 28.3ms)
+
+
+Started GET "/tests/5?utf8=%E2%9C%93&textbox1=&textbox2=&textbox3=&textbox4=&textbox5=&textbox6=&commit=Check" for 127.0.0.1 at 2017-12-25 22:12:37 -0500
+Processing by TestsController#show as JS
+  Parameters: {"utf8"=>"✓", "textbox1"=>"", "textbox2"=>"", "textbox3"=>"", "textbox4"=>"", "textbox5"=>"", "textbox6"=>"", "commit"=>"Check", "id"=>"5"}
+  [1m[36mTest Load (1.9ms)[0m  [1m[34mSELECT  "tests".* FROM "tests" WHERE "tests"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "question_longs"[0m
+  [1m[36mQuestionLong Load (0.5ms)[0m  [1m[34mSELECT "question_longs".* FROM "question_longs"[0m
+  [1m[36mCACHE QuestionLong Load (0.0ms)[0m  [1m[34mSELECT "question_longs".* FROM "question_longs"[0m
+  Rendering tests/show.js.erb
+  Rendered tests/show.js.erb (108.0ms)
+Completed 200 OK in 500ms (Views: 218.6ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/tests/5?utf8=%E2%9C%93&textbox1=&textbox2=&textbox3=&textbox4=&textbox5=&textbox6=&commit=Check" for 127.0.0.1 at 2017-12-25 22:12:38 -0500
+Processing by TestsController#show as JS
+  Parameters: {"utf8"=>"✓", "textbox1"=>"", "textbox2"=>"", "textbox3"=>"", "textbox4"=>"", "textbox5"=>"", "textbox6"=>"", "commit"=>"Check", "id"=>"5"}
+  [1m[36mTest Load (1.8ms)[0m  [1m[34mSELECT  "tests".* FROM "tests" WHERE "tests"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "question_longs"[0m
+  [1m[36mQuestionLong Load (0.9ms)[0m  [1m[34mSELECT "question_longs".* FROM "question_longs"[0m
+  [1m[36mCACHE QuestionLong Load (0.0ms)[0m  [1m[34mSELECT "question_longs".* FROM "question_longs"[0m
+  Rendering tests/show.js.erb
+  Rendered tests/show.js.erb (12.1ms)
+Completed 200 OK in 75ms (Views: 39.1ms | ActiveRecord: 3.7ms)
+
+
+Started GET "/tests/5" for 127.0.0.1 at 2017-12-25 22:12:54 -0500
+Processing by TestsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mTest Load (6.0ms)[0m  [1m[34mSELECT  "tests".* FROM "tests" WHERE "tests"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "question_longs"[0m
+  [1m[36mQuestionLong Load (0.3ms)[0m  [1m[34mSELECT "question_longs".* FROM "question_longs"[0m
+  [1m[36mCACHE QuestionLong Load (0.0ms)[0m  [1m[34mSELECT "question_longs".* FROM "question_longs"[0m
+  Rendering tests/show.html.erb within layouts/application
+  [1m[36mQuestionMove Load (1.2ms)[0m  [1m[34mSELECT "question_moves".* FROM "question_moves"[0m
+  Rendered tests/show.html.erb within layouts/application (20.0ms)
+Completed 200 OK in 1671ms (Views: 1562.6ms | ActiveRecord: 8.3ms)
+
+
+Started GET "/tests/5?utf8=%E2%9C%93&textbox1=&textbox2=&textbox3=&textbox4=&textbox5=&textbox6=&commit=Check" for 127.0.0.1 at 2017-12-25 22:12:59 -0500
+Processing by TestsController#show as JS
+  Parameters: {"utf8"=>"✓", "textbox1"=>"", "textbox2"=>"", "textbox3"=>"", "textbox4"=>"", "textbox5"=>"", "textbox6"=>"", "commit"=>"Check", "id"=>"5"}
+  [1m[36mTest Load (0.9ms)[0m  [1m[34mSELECT  "tests".* FROM "tests" WHERE "tests"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "question_longs"[0m
+  [1m[36mQuestionLong Load (0.3ms)[0m  [1m[34mSELECT "question_longs".* FROM "question_longs"[0m
+  [1m[36mCACHE QuestionLong Load (0.0ms)[0m  [1m[34mSELECT "question_longs".* FROM "question_longs"[0m
+  Rendering tests/show.js.erb
+  Rendered tests/show.js.erb (6.4ms)
+Completed 200 OK in 75ms (Views: 48.0ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/tests/5" for 127.0.0.1 at 2017-12-25 22:13:06 -0500
+Processing by TestsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mTest Load (0.3ms)[0m  [1m[34mSELECT  "tests".* FROM "tests" WHERE "tests"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "question_longs"[0m
+  [1m[36mQuestionLong Load (0.7ms)[0m  [1m[34mSELECT "question_longs".* FROM "question_longs"[0m
+  [1m[36mCACHE QuestionLong Load (0.0ms)[0m  [1m[34mSELECT "question_longs".* FROM "question_longs"[0m
+  Rendering tests/show.html.erb within layouts/application
+  [1m[36mQuestionMove Load (0.5ms)[0m  [1m[34mSELECT "question_moves".* FROM "question_moves"[0m
+  Rendered tests/show.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 690ms (Views: 682.6ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/tests/5?utf8=%E2%9C%93&textbox1=&textbox2=&textbox3=&textbox4=&textbox5=&textbox6=&commit=Check" for 127.0.0.1 at 2017-12-25 22:13:09 -0500
+Processing by TestsController#show as JS
+  Parameters: {"utf8"=>"✓", "textbox1"=>"", "textbox2"=>"", "textbox3"=>"", "textbox4"=>"", "textbox5"=>"", "textbox6"=>"", "commit"=>"Check", "id"=>"5"}
+  [1m[36mTest Load (0.5ms)[0m  [1m[34mSELECT  "tests".* FROM "tests" WHERE "tests"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "question_longs"[0m
+  [1m[36mQuestionLong Load (0.6ms)[0m  [1m[34mSELECT "question_longs".* FROM "question_longs"[0m
+  [1m[36mCACHE QuestionLong Load (0.0ms)[0m  [1m[34mSELECT "question_longs".* FROM "question_longs"[0m
+  Rendering tests/show.js.erb
+  Rendered tests/show.js.erb (3.4ms)
+Completed 200 OK in 46ms (Views: 22.4ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/tests/5" for 127.0.0.1 at 2017-12-25 22:13:25 -0500
+Processing by TestsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mTest Load (0.5ms)[0m  [1m[34mSELECT  "tests".* FROM "tests" WHERE "tests"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "question_longs"[0m
+  [1m[36mQuestionLong Load (0.3ms)[0m  [1m[34mSELECT "question_longs".* FROM "question_longs"[0m
+  [1m[36mCACHE QuestionLong Load (0.0ms)[0m  [1m[34mSELECT "question_longs".* FROM "question_longs"[0m
+  Rendering tests/show.html.erb within layouts/application
+  [1m[36mQuestionMove Load (0.5ms)[0m  [1m[34mSELECT "question_moves".* FROM "question_moves"[0m
+  Rendered tests/show.html.erb within layouts/application (6.2ms)
+Completed 200 OK in 784ms (Views: 777.6ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/tests/5?utf8=%E2%9C%93&textbox1=&textbox2=&textbox3=&textbox4=&textbox5=&textbox6=&commit=Check" for 127.0.0.1 at 2017-12-25 22:13:29 -0500
+Processing by TestsController#show as JS
+  Parameters: {"utf8"=>"✓", "textbox1"=>"", "textbox2"=>"", "textbox3"=>"", "textbox4"=>"", "textbox5"=>"", "textbox6"=>"", "commit"=>"Check", "id"=>"5"}
+  [1m[36mTest Load (6.8ms)[0m  [1m[34mSELECT  "tests".* FROM "tests" WHERE "tests"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "question_longs"[0m
+  [1m[36mQuestionLong Load (0.4ms)[0m  [1m[34mSELECT "question_longs".* FROM "question_longs"[0m
+  [1m[36mCACHE QuestionLong Load (0.0ms)[0m  [1m[34mSELECT "question_longs".* FROM "question_longs"[0m
+  Rendering tests/show.js.erb
+  Rendered tests/show.js.erb (5.1ms)
+Completed 200 OK in 62ms (Views: 28.2ms | ActiveRecord: 7.8ms)
+
+
+Started GET "/tests/5" for 127.0.0.1 at 2017-12-25 22:13:45 -0500
+Processing by TestsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mTest Load (2.2ms)[0m  [1m[34mSELECT  "tests".* FROM "tests" WHERE "tests"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "question_longs"[0m
+  [1m[36mQuestionLong Load (0.4ms)[0m  [1m[34mSELECT "question_longs".* FROM "question_longs"[0m
+  [1m[36mCACHE QuestionLong Load (0.1ms)[0m  [1m[34mSELECT "question_longs".* FROM "question_longs"[0m
+  Rendering tests/show.html.erb within layouts/application
+  [1m[36mQuestionMove Load (0.6ms)[0m  [1m[34mSELECT "question_moves".* FROM "question_moves"[0m
+  Rendered tests/show.html.erb within layouts/application (28.9ms)
+Completed 200 OK in 893ms (Views: 833.6ms | ActiveRecord: 4.1ms)
+
+
+Started GET "/tests/5?utf8=%E2%9C%93&textbox1=&textbox2=&textbox3=&textbox4=&textbox5=&textbox6=&commit=Check" for 127.0.0.1 at 2017-12-25 22:13:52 -0500
+Processing by TestsController#show as JS
+  Parameters: {"utf8"=>"✓", "textbox1"=>"", "textbox2"=>"", "textbox3"=>"", "textbox4"=>"", "textbox5"=>"", "textbox6"=>"", "commit"=>"Check", "id"=>"5"}
+  [1m[36mTest Load (0.7ms)[0m  [1m[34mSELECT  "tests".* FROM "tests" WHERE "tests"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "question_longs"[0m
+  [1m[36mQuestionLong Load (0.4ms)[0m  [1m[34mSELECT "question_longs".* FROM "question_longs"[0m
+  [1m[36mCACHE QuestionLong Load (0.0ms)[0m  [1m[34mSELECT "question_longs".* FROM "question_longs"[0m
+  Rendering tests/show.js.erb
+  Rendered tests/show.js.erb (6.5ms)
+Completed 200 OK in 46ms (Views: 23.0ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/tests/5" for 127.0.0.1 at 2017-12-25 22:14:09 -0500
+Processing by TestsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mTest Load (1.2ms)[0m  [1m[34mSELECT  "tests".* FROM "tests" WHERE "tests"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "question_longs"[0m
+  [1m[36mQuestionLong Load (0.7ms)[0m  [1m[34mSELECT "question_longs".* FROM "question_longs"[0m
+  [1m[36mCACHE QuestionLong Load (0.1ms)[0m  [1m[34mSELECT "question_longs".* FROM "question_longs"[0m
+  Rendering tests/show.html.erb within layouts/application
+  [1m[36mQuestionMove Load (0.6ms)[0m  [1m[34mSELECT "question_moves".* FROM "question_moves"[0m
+  Rendered tests/show.html.erb within layouts/application (16.3ms)
+Completed 200 OK in 1071ms (Views: 998.4ms | ActiveRecord: 3.6ms)
+
+
+Started GET "/tests/5?utf8=%E2%9C%93&textbox1=&textbox2=&textbox3=&textbox4=&textbox5=&textbox6=&commit=Check" for 127.0.0.1 at 2017-12-25 22:14:13 -0500
+Processing by TestsController#show as JS
+  Parameters: {"utf8"=>"✓", "textbox1"=>"", "textbox2"=>"", "textbox3"=>"", "textbox4"=>"", "textbox5"=>"", "textbox6"=>"", "commit"=>"Check", "id"=>"5"}
+  [1m[36mTest Load (0.7ms)[0m  [1m[34mSELECT  "tests".* FROM "tests" WHERE "tests"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "question_longs"[0m
+  [1m[36mQuestionLong Load (0.3ms)[0m  [1m[34mSELECT "question_longs".* FROM "question_longs"[0m
+  [1m[36mCACHE QuestionLong Load (0.0ms)[0m  [1m[34mSELECT "question_longs".* FROM "question_longs"[0m
+  Rendering tests/show.js.erb
+  Rendered tests/show.js.erb (6.2ms)
+Completed 200 OK in 50ms (Views: 26.2ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/tests/5" for 127.0.0.1 at 2017-12-25 22:14:56 -0500
+Processing by TestsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mTest Load (1.4ms)[0m  [1m[34mSELECT  "tests".* FROM "tests" WHERE "tests"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "question_longs"[0m
+  [1m[36mQuestionLong Load (0.7ms)[0m  [1m[34mSELECT "question_longs".* FROM "question_longs"[0m
+  [1m[36mCACHE QuestionLong Load (0.1ms)[0m  [1m[34mSELECT "question_longs".* FROM "question_longs"[0m
+  Rendering tests/show.html.erb within layouts/application
+  [1m[36mQuestionMove Load (0.5ms)[0m  [1m[34mSELECT "question_moves".* FROM "question_moves"[0m
+  Rendered tests/show.html.erb within layouts/application (24.7ms)
+Completed 200 OK in 934ms (Views: 874.8ms | ActiveRecord: 4.3ms)
+
+
+Started GET "/tests/5?utf8=%E2%9C%93&textbox1=&textbox2=&textbox3=&textbox4=&textbox5=&textbox6=&commit=Check" for 127.0.0.1 at 2017-12-25 22:14:59 -0500
+Processing by TestsController#show as JS
+  Parameters: {"utf8"=>"✓", "textbox1"=>"", "textbox2"=>"", "textbox3"=>"", "textbox4"=>"", "textbox5"=>"", "textbox6"=>"", "commit"=>"Check", "id"=>"5"}
+  [1m[36mTest Load (0.5ms)[0m  [1m[34mSELECT  "tests".* FROM "tests" WHERE "tests"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "question_longs"[0m
+  [1m[36mQuestionLong Load (0.4ms)[0m  [1m[34mSELECT "question_longs".* FROM "question_longs"[0m
+  [1m[36mCACHE QuestionLong Load (0.0ms)[0m  [1m[34mSELECT "question_longs".* FROM "question_longs"[0m
+  Rendering tests/show.js.erb
+  Rendered tests/show.js.erb (5.1ms)
+Completed 200 OK in 44ms (Views: 21.9ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/tests/5?utf8=%E2%9C%93&textbox1=&textbox2=&textbox3=&textbox4=&textbox5=&textbox6=&commit=Check" for 127.0.0.1 at 2017-12-25 22:15:14 -0500
+Processing by TestsController#show as JS
+  Parameters: {"utf8"=>"✓", "textbox1"=>"", "textbox2"=>"", "textbox3"=>"", "textbox4"=>"", "textbox5"=>"", "textbox6"=>"", "commit"=>"Check", "id"=>"5"}
+  [1m[36mTest Load (2.5ms)[0m  [1m[34mSELECT  "tests".* FROM "tests" WHERE "tests"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "question_longs"[0m
+  [1m[36mQuestionLong Load (0.5ms)[0m  [1m[34mSELECT "question_longs".* FROM "question_longs"[0m
+  [1m[36mCACHE QuestionLong Load (0.0ms)[0m  [1m[34mSELECT "question_longs".* FROM "question_longs"[0m
+  Rendering tests/show.js.erb
+  Rendered tests/show.js.erb (36.9ms)
+Completed 200 OK in 172ms (Views: 96.5ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/tests/5?utf8=%E2%9C%93&textbox1=&textbox2=&textbox3=&textbox4=&textbox5=&textbox6=&commit=Check" for 127.0.0.1 at 2017-12-25 22:15:16 -0500
+Processing by TestsController#show as JS
+  Parameters: {"utf8"=>"✓", "textbox1"=>"", "textbox2"=>"", "textbox3"=>"", "textbox4"=>"", "textbox5"=>"", "textbox6"=>"", "commit"=>"Check", "id"=>"5"}
+  [1m[36mTest Load (1.0ms)[0m  [1m[34mSELECT  "tests".* FROM "tests" WHERE "tests"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "question_longs"[0m
+  [1m[36mQuestionLong Load (0.7ms)[0m  [1m[34mSELECT "question_longs".* FROM "question_longs"[0m
+  [1m[36mCACHE QuestionLong Load (0.0ms)[0m  [1m[34mSELECT "question_longs".* FROM "question_longs"[0m
+  Rendering tests/show.js.erb
+  Rendered tests/show.js.erb (8.1ms)
+Completed 200 OK in 55ms (Views: 30.4ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/tests/new" for 127.0.0.1 at 2017-12-25 22:15:41 -0500
+Processing by TestsController#new as HTML
+  Rendering tests/new.html.erb within layouts/application
+  Rendered tests/_form.html.erb (48.1ms)
+  Rendered tests/new.html.erb within layouts/application (76.7ms)
+Completed 200 OK in 749ms (Views: 725.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/tests" for 127.0.0.1 at 2017-12-25 22:15:44 -0500
+Processing by TestsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5yxv1l09p9r/ij29oSi+f9icN0lKUqDk8+jiXXGO10ATw3KhHzV9Gej/Zo/AaTW2f3uhuI/AoH1JLFCkULBb1g==", "test"=>{"name"=>""}, "commit"=>"Start a test"}
+  [1m[35m (17.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (50.7ms)[0m  [1m[32mINSERT INTO "tests" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", ""], ["created_at", "2017-12-26 03:15:44.965448"], ["updated_at", "2017-12-26 03:15:44.965448"]]
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/tests/6
+Completed 302 Found in 91ms (ActiveRecord: 69.4ms)
+
+
+Started GET "/tests/6" for 127.0.0.1 at 2017-12-25 22:15:45 -0500
+Processing by TestsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mTest Load (0.9ms)[0m  [1m[34mSELECT  "tests".* FROM "tests" WHERE "tests"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "question_longs"[0m
+  [1m[36mQuestionLong Load (0.6ms)[0m  [1m[34mSELECT "question_longs".* FROM "question_longs"[0m
+  [1m[36mCACHE QuestionLong Load (0.0ms)[0m  [1m[34mSELECT "question_longs".* FROM "question_longs"[0m
+  Rendering tests/show.html.erb within layouts/application
+  [1m[36mQuestionMove Load (1.0ms)[0m  [1m[34mSELECT "question_moves".* FROM "question_moves"[0m
+  Rendered tests/show.html.erb within layouts/application (9.4ms)
+Completed 200 OK in 316ms (Views: 305.3ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/tests/6?utf8=%E2%9C%93&textbox1=&textbox2=&textbox3=&textbox4=&textbox5=&textbox6=&commit=Check" for 127.0.0.1 at 2017-12-25 22:15:48 -0500
+Processing by TestsController#show as JS
+  Parameters: {"utf8"=>"✓", "textbox1"=>"", "textbox2"=>"", "textbox3"=>"", "textbox4"=>"", "textbox5"=>"", "textbox6"=>"", "commit"=>"Check", "id"=>"6"}
+  [1m[36mTest Load (0.3ms)[0m  [1m[34mSELECT  "tests".* FROM "tests" WHERE "tests"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "question_longs"[0m
+  [1m[36mQuestionLong Load (0.3ms)[0m  [1m[34mSELECT "question_longs".* FROM "question_longs"[0m
+  [1m[36mCACHE QuestionLong Load (0.0ms)[0m  [1m[34mSELECT "question_longs".* FROM "question_longs"[0m
+  Rendering tests/show.js.erb
+  Rendered tests/show.js.erb (4.1ms)
+Completed 200 OK in 41ms (Views: 20.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/tests/new" for 127.0.0.1 at 2017-12-25 22:16:11 -0500
+Processing by TestsController#new as HTML
+  Rendering tests/new.html.erb within layouts/application
+  Rendered tests/_form.html.erb (21.4ms)
+  Rendered tests/new.html.erb within layouts/application (38.2ms)
+Completed 200 OK in 916ms (Views: 882.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/tests" for 127.0.0.1 at 2017-12-25 22:16:15 -0500
+Processing by TestsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"8s07HbVL8nRSiIfwmfp9emcDDrWbBJ4WtV7uRyiJG6oGIiZq90Mot0X93ML4u/azwOSYRF6Wno8Pmly+CbeXPA==", "test"=>{"name"=>""}, "commit"=>"Start a test"}
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (22.2ms)[0m  [1m[32mINSERT INTO "tests" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", ""], ["created_at", "2017-12-26 03:16:15.660610"], ["updated_at", "2017-12-26 03:16:15.660610"]]
+  [1m[35m (10.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/tests/7
+Completed 302 Found in 55ms (ActiveRecord: 32.7ms)
+
+
+Started GET "/tests/7" for 127.0.0.1 at 2017-12-25 22:16:15 -0500
+Processing by TestsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mTest Load (1.0ms)[0m  [1m[34mSELECT  "tests".* FROM "tests" WHERE "tests"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[35m (8.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "question_longs"[0m
+  [1m[36mQuestionLong Load (0.4ms)[0m  [1m[34mSELECT "question_longs".* FROM "question_longs"[0m
+  [1m[36mCACHE QuestionLong Load (0.0ms)[0m  [1m[34mSELECT "question_longs".* FROM "question_longs"[0m
+  Rendering tests/show.html.erb within layouts/application
+  [1m[36mQuestionMove Load (0.4ms)[0m  [1m[34mSELECT "question_moves".* FROM "question_moves"[0m
+  Rendered tests/show.html.erb within layouts/application (13.5ms)
+Completed 200 OK in 440ms (Views: 421.0ms | ActiveRecord: 10.4ms)
+
+
+Started GET "/tests/7?utf8=%E2%9C%93&textbox1=&textbox2=&textbox3=&textbox4=&textbox5=&textbox6=&commit=Check" for 127.0.0.1 at 2017-12-25 22:16:19 -0500
+Processing by TestsController#show as JS
+  Parameters: {"utf8"=>"✓", "textbox1"=>"", "textbox2"=>"", "textbox3"=>"", "textbox4"=>"", "textbox5"=>"", "textbox6"=>"", "commit"=>"Check", "id"=>"7"}
+  [1m[36mTest Load (0.5ms)[0m  [1m[34mSELECT  "tests".* FROM "tests" WHERE "tests"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "question_longs"[0m
+  [1m[36mQuestionLong Load (0.5ms)[0m  [1m[34mSELECT "question_longs".* FROM "question_longs"[0m
+  [1m[36mCACHE QuestionLong Load (0.0ms)[0m  [1m[34mSELECT "question_longs".* FROM "question_longs"[0m
+  Rendering tests/show.js.erb
+  Rendered tests/show.js.erb (9.4ms)
+Completed 200 OK in 55ms (Views: 28.4ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/tests/7" for 127.0.0.1 at 2017-12-25 22:19:30 -0500
+Processing by TestsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mTest Load (33.0ms)[0m  [1m[34mSELECT  "tests".* FROM "tests" WHERE "tests"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[35m (36.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "question_longs"[0m
+  [1m[36mQuestionLong Load (1.4ms)[0m  [1m[34mSELECT "question_longs".* FROM "question_longs"[0m
+  [1m[36mCACHE QuestionLong Load (0.0ms)[0m  [1m[34mSELECT "question_longs".* FROM "question_longs"[0m
+  Rendering tests/show.html.erb within layouts/application
+  [1m[36mQuestionMove Load (0.9ms)[0m  [1m[34mSELECT "question_moves".* FROM "question_moves"[0m
+  Rendered tests/show.html.erb within layouts/application (40.0ms)
+Completed 200 OK in 1186ms (Views: 991.8ms | ActiveRecord: 71.3ms)
+
+
+Started GET "/tests/7?utf8=%E2%9C%93&textbox1=&textbox2=&textbox3=&textbox4=&textbox5=&textbox6=&commit=Check" for 127.0.0.1 at 2017-12-25 22:19:37 -0500
+Processing by TestsController#show as JS
+  Parameters: {"utf8"=>"✓", "textbox1"=>"", "textbox2"=>"", "textbox3"=>"", "textbox4"=>"", "textbox5"=>"", "textbox6"=>"", "commit"=>"Check", "id"=>"7"}
+  [1m[36mTest Load (1.0ms)[0m  [1m[34mSELECT  "tests".* FROM "tests" WHERE "tests"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "question_longs"[0m
+  [1m[36mQuestionLong Load (0.4ms)[0m  [1m[34mSELECT "question_longs".* FROM "question_longs"[0m
+  [1m[36mCACHE QuestionLong Load (0.0ms)[0m  [1m[34mSELECT "question_longs".* FROM "question_longs"[0m
+  Rendering tests/show.js.erb
+  Rendered tests/show.js.erb (11.6ms)
+Completed 200 OK in 64ms (Views: 35.4ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/tests/7?utf8=%E2%9C%93&textbox1=&textbox2=&textbox3=&textbox4=&textbox5=&textbox6=&commit=Check" for 127.0.0.1 at 2017-12-25 22:19:38 -0500
+Processing by TestsController#show as JS
+  Parameters: {"utf8"=>"✓", "textbox1"=>"", "textbox2"=>"", "textbox3"=>"", "textbox4"=>"", "textbox5"=>"", "textbox6"=>"", "commit"=>"Check", "id"=>"7"}
+  [1m[36mTest Load (0.3ms)[0m  [1m[34mSELECT  "tests".* FROM "tests" WHERE "tests"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "question_longs"[0m
+  [1m[36mQuestionLong Load (9.1ms)[0m  [1m[34mSELECT "question_longs".* FROM "question_longs"[0m
+  [1m[36mCACHE QuestionLong Load (0.0ms)[0m  [1m[34mSELECT "question_longs".* FROM "question_longs"[0m
+  Rendering tests/show.js.erb
+  Rendered tests/show.js.erb (5.8ms)
+Completed 200 OK in 51ms (Views: 22.5ms | ActiveRecord: 9.7ms)
+
+
+Started GET "/tests/7" for 127.0.0.1 at 2017-12-25 22:20:04 -0500
+Processing by TestsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mTest Load (3.4ms)[0m  [1m[34mSELECT  "tests".* FROM "tests" WHERE "tests"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "question_longs"[0m
+  [1m[36mQuestionLong Load (0.3ms)[0m  [1m[34mSELECT "question_longs".* FROM "question_longs"[0m
+  [1m[36mCACHE QuestionLong Load (0.1ms)[0m  [1m[34mSELECT "question_longs".* FROM "question_longs"[0m
+  Rendering tests/show.html.erb within layouts/application
+  [1m[36mQuestionMove Load (0.5ms)[0m  [1m[34mSELECT "question_moves".* FROM "question_moves"[0m
+  Rendered tests/show.html.erb within layouts/application (22.5ms)
+Completed 200 OK in 972ms (Views: 927.7ms | ActiveRecord: 4.9ms)
+
+
+Started GET "/tests/7?utf8=%E2%9C%93&textbox1=&textbox2=&textbox3=&textbox4=&textbox5=&textbox6=&commit=Check" for 127.0.0.1 at 2017-12-25 22:20:07 -0500
+Processing by TestsController#show as JS
+  Parameters: {"utf8"=>"✓", "textbox1"=>"", "textbox2"=>"", "textbox3"=>"", "textbox4"=>"", "textbox5"=>"", "textbox6"=>"", "commit"=>"Check", "id"=>"7"}
+  [1m[36mTest Load (0.8ms)[0m  [1m[34mSELECT  "tests".* FROM "tests" WHERE "tests"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "question_longs"[0m
+  [1m[36mQuestionLong Load (0.6ms)[0m  [1m[34mSELECT "question_longs".* FROM "question_longs"[0m
+  [1m[36mCACHE QuestionLong Load (0.0ms)[0m  [1m[34mSELECT "question_longs".* FROM "question_longs"[0m
+  Rendering tests/show.js.erb
+  Rendered tests/show.js.erb (8.2ms)
+Completed 200 OK in 60ms (Views: 26.9ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/tests/7" for 127.0.0.1 at 2017-12-25 22:20:34 -0500
+Processing by TestsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mTest Load (0.4ms)[0m  [1m[34mSELECT  "tests".* FROM "tests" WHERE "tests"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "question_longs"[0m
+  [1m[36mQuestionLong Load (0.7ms)[0m  [1m[34mSELECT "question_longs".* FROM "question_longs"[0m
+  [1m[36mCACHE QuestionLong Load (0.0ms)[0m  [1m[34mSELECT "question_longs".* FROM "question_longs"[0m
+  Rendering tests/show.html.erb within layouts/application
+  [1m[36mQuestionMove Load (0.4ms)[0m  [1m[34mSELECT "question_moves".* FROM "question_moves"[0m
+  Rendered tests/show.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 784ms (Views: 771.7ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/tests/7?utf8=%E2%9C%93&textbox1=&textbox2=&textbox3=&textbox4=&textbox5=&textbox6=&commit=Check" for 127.0.0.1 at 2017-12-25 22:20:38 -0500
+Processing by TestsController#show as JS
+  Parameters: {"utf8"=>"✓", "textbox1"=>"", "textbox2"=>"", "textbox3"=>"", "textbox4"=>"", "textbox5"=>"", "textbox6"=>"", "commit"=>"Check", "id"=>"7"}
+  [1m[36mTest Load (0.3ms)[0m  [1m[34mSELECT  "tests".* FROM "tests" WHERE "tests"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "question_longs"[0m
+  [1m[36mQuestionLong Load (0.5ms)[0m  [1m[34mSELECT "question_longs".* FROM "question_longs"[0m
+  [1m[36mCACHE QuestionLong Load (0.0ms)[0m  [1m[34mSELECT "question_longs".* FROM "question_longs"[0m
+  Rendering tests/show.js.erb
+  Rendered tests/show.js.erb (5.4ms)
+Completed 200 OK in 46ms (Views: 21.1ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/tests/7" for 127.0.0.1 at 2017-12-25 22:22:18 -0500
+Processing by TestsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mTest Load (43.1ms)[0m  [1m[34mSELECT  "tests".* FROM "tests" WHERE "tests"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[35m (31.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "question_longs"[0m
+  [1m[36mQuestionLong Load (4.9ms)[0m  [1m[34mSELECT "question_longs".* FROM "question_longs"[0m
+  [1m[36mCACHE QuestionLong Load (0.1ms)[0m  [1m[34mSELECT "question_longs".* FROM "question_longs"[0m
+  Rendering tests/show.html.erb within layouts/application
+  [1m[36mQuestionMove Load (0.8ms)[0m  [1m[34mSELECT "question_moves".* FROM "question_moves"[0m
+  Rendered tests/show.html.erb within layouts/application (27.4ms)
+Completed 200 OK in 1221ms (Views: 1048.8ms | ActiveRecord: 80.8ms)
+
+
+Started GET "/tests/7?utf8=%E2%9C%93&textbox1=&textbox2=&textbox3=&textbox4=&textbox5=&textbox6=&commit=Check" for 127.0.0.1 at 2017-12-25 22:22:23 -0500
+Processing by TestsController#show as JS
+  Parameters: {"utf8"=>"✓", "textbox1"=>"", "textbox2"=>"", "textbox3"=>"", "textbox4"=>"", "textbox5"=>"", "textbox6"=>"", "commit"=>"Check", "id"=>"7"}
+  [1m[36mTest Load (1.0ms)[0m  [1m[34mSELECT  "tests".* FROM "tests" WHERE "tests"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "question_longs"[0m
+  [1m[36mQuestionLong Load (0.5ms)[0m  [1m[34mSELECT "question_longs".* FROM "question_longs"[0m
+  [1m[36mCACHE QuestionLong Load (0.0ms)[0m  [1m[34mSELECT "question_longs".* FROM "question_longs"[0m
+  Rendering tests/show.js.erb
+  Rendered tests/show.js.erb (5.9ms)
+Completed 200 OK in 108ms (Views: 22.6ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/tests/7" for 127.0.0.1 at 2017-12-25 22:22:46 -0500
+Processing by TestsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mTest Load (13.0ms)[0m  [1m[34mSELECT  "tests".* FROM "tests" WHERE "tests"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[35m (10.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "question_longs"[0m
+  [1m[36mQuestionLong Load (2.1ms)[0m  [1m[34mSELECT "question_longs".* FROM "question_longs"[0m
+  [1m[36mCACHE QuestionLong Load (0.0ms)[0m  [1m[34mSELECT "question_longs".* FROM "question_longs"[0m
+  Rendering tests/show.html.erb within layouts/application
+  [1m[36mQuestionMove Load (1.8ms)[0m  [1m[34mSELECT "question_moves".* FROM "question_moves"[0m
+  Rendered tests/show.html.erb within layouts/application (212.6ms)
+Completed 200 OK in 3364ms (Views: 3256.7ms | ActiveRecord: 26.9ms)
+
+
+Started GET "/tests/7?utf8=%E2%9C%93&textbox1=&textbox2=&textbox3=&textbox4=&textbox5=&textbox6=&commit=Check" for 127.0.0.1 at 2017-12-25 22:22:57 -0500
+Processing by TestsController#show as JS
+  Parameters: {"utf8"=>"✓", "textbox1"=>"", "textbox2"=>"", "textbox3"=>"", "textbox4"=>"", "textbox5"=>"", "textbox6"=>"", "commit"=>"Check", "id"=>"7"}
+  [1m[36mTest Load (7.7ms)[0m  [1m[34mSELECT  "tests".* FROM "tests" WHERE "tests"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "question_longs"[0m
+  [1m[36mQuestionLong Load (0.5ms)[0m  [1m[34mSELECT "question_longs".* FROM "question_longs"[0m
+  [1m[36mCACHE QuestionLong Load (0.0ms)[0m  [1m[34mSELECT "question_longs".* FROM "question_longs"[0m
+  Rendering tests/show.js.erb
+  Rendered tests/show.js.erb (30.0ms)
+Completed 200 OK in 165ms (Views: 73.0ms | ActiveRecord: 9.1ms)
+
+
+Started GET "/tests/7" for 127.0.0.1 at 2017-12-25 22:23:19 -0500
+Processing by TestsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mTest Load (13.3ms)[0m  [1m[34mSELECT  "tests".* FROM "tests" WHERE "tests"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "question_longs"[0m
+  [1m[36mQuestionLong Load (9.0ms)[0m  [1m[34mSELECT "question_longs".* FROM "question_longs"[0m
+  [1m[36mCACHE QuestionLong Load (0.0ms)[0m  [1m[34mSELECT "question_longs".* FROM "question_longs"[0m
+  Rendering tests/show.html.erb within layouts/application
+  [1m[36mQuestionMove Load (0.4ms)[0m  [1m[34mSELECT "question_moves".* FROM "question_moves"[0m
+  Rendered tests/show.html.erb within layouts/application (13.9ms)
+Completed 200 OK in 896ms (Views: 852.7ms | ActiveRecord: 23.5ms)
+
+
+Started GET "/tests/7?utf8=%E2%9C%93&textbox1=&textbox2=&textbox3=&textbox4=&textbox5=&textbox6=&commit=Check" for 127.0.0.1 at 2017-12-25 22:23:23 -0500
+Processing by TestsController#show as JS
+  Parameters: {"utf8"=>"✓", "textbox1"=>"", "textbox2"=>"", "textbox3"=>"", "textbox4"=>"", "textbox5"=>"", "textbox6"=>"", "commit"=>"Check", "id"=>"7"}
+  [1m[36mTest Load (2.2ms)[0m  [1m[34mSELECT  "tests".* FROM "tests" WHERE "tests"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "question_longs"[0m
+  [1m[36mQuestionLong Load (0.5ms)[0m  [1m[34mSELECT "question_longs".* FROM "question_longs"[0m
+  [1m[36mCACHE QuestionLong Load (0.0ms)[0m  [1m[34mSELECT "question_longs".* FROM "question_longs"[0m
+  Rendering tests/show.js.erb
+  Rendered tests/show.js.erb (10.2ms)
+Completed 200 OK in 72ms (Views: 43.9ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/tests/7" for 127.0.0.1 at 2017-12-25 22:23:31 -0500
+Processing by TestsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mTest Load (8.5ms)[0m  [1m[34mSELECT  "tests".* FROM "tests" WHERE "tests"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "question_longs"[0m
+  [1m[36mQuestionLong Load (0.5ms)[0m  [1m[34mSELECT "question_longs".* FROM "question_longs"[0m
+  [1m[36mCACHE QuestionLong Load (0.0ms)[0m  [1m[34mSELECT "question_longs".* FROM "question_longs"[0m
+  Rendering tests/show.html.erb within layouts/application
+  [1m[36mQuestionMove Load (0.6ms)[0m  [1m[34mSELECT "question_moves".* FROM "question_moves"[0m
+  Rendered tests/show.html.erb within layouts/application (28.5ms)
+Completed 200 OK in 1172ms (Views: 1143.1ms | ActiveRecord: 10.7ms)
+
+
+Started GET "/tests/7?utf8=%E2%9C%93&textbox1=&textbox2=&textbox3=&textbox4=&textbox5=&textbox6=&commit=Check" for 127.0.0.1 at 2017-12-25 22:23:42 -0500
+Processing by TestsController#show as JS
+  Parameters: {"utf8"=>"✓", "textbox1"=>"", "textbox2"=>"", "textbox3"=>"", "textbox4"=>"", "textbox5"=>"", "textbox6"=>"", "commit"=>"Check", "id"=>"7"}
+  [1m[36mTest Load (1.1ms)[0m  [1m[34mSELECT  "tests".* FROM "tests" WHERE "tests"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "question_longs"[0m
+  [1m[36mQuestionLong Load (0.3ms)[0m  [1m[34mSELECT "question_longs".* FROM "question_longs"[0m
+  [1m[36mCACHE QuestionLong Load (0.0ms)[0m  [1m[34mSELECT "question_longs".* FROM "question_longs"[0m
+  Rendering tests/show.js.erb
+  Rendered tests/show.js.erb (8.5ms)
+Completed 200 OK in 48ms (Views: 26.4ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/tests/7" for 127.0.0.1 at 2017-12-25 22:23:47 -0500
+Processing by TestsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mTest Load (7.6ms)[0m  [1m[34mSELECT  "tests".* FROM "tests" WHERE "tests"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[35m (8.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "question_longs"[0m
+  [1m[36mQuestionLong Load (4.6ms)[0m  [1m[34mSELECT "question_longs".* FROM "question_longs"[0m
+  [1m[36mCACHE QuestionLong Load (0.0ms)[0m  [1m[34mSELECT "question_longs".* FROM "question_longs"[0m
+  Rendering tests/show.html.erb within layouts/application
+  [1m[36mQuestionMove Load (0.7ms)[0m  [1m[34mSELECT "question_moves".* FROM "question_moves"[0m
+  Rendered tests/show.html.erb within layouts/application (26.2ms)
+Completed 200 OK in 1144ms (Views: 1103.8ms | ActiveRecord: 21.5ms)
+
+
+Started GET "/tests/7?utf8=%E2%9C%93&textbox1=&textbox2=&textbox3=&textbox4=&textbox5=&textbox6=&commit=Check" for 127.0.0.1 at 2017-12-25 22:23:52 -0500
+Processing by TestsController#show as JS
+  Parameters: {"utf8"=>"✓", "textbox1"=>"", "textbox2"=>"", "textbox3"=>"", "textbox4"=>"", "textbox5"=>"", "textbox6"=>"", "commit"=>"Check", "id"=>"7"}
+  [1m[36mTest Load (0.5ms)[0m  [1m[34mSELECT  "tests".* FROM "tests" WHERE "tests"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "question_longs"[0m
+  [1m[36mQuestionLong Load (0.4ms)[0m  [1m[34mSELECT "question_longs".* FROM "question_longs"[0m
+  [1m[36mCACHE QuestionLong Load (0.0ms)[0m  [1m[34mSELECT "question_longs".* FROM "question_longs"[0m
+  Rendering tests/show.js.erb
+  Rendered tests/show.js.erb (3.8ms)
+Completed 200 OK in 47ms (Views: 19.1ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/tests/7" for 127.0.0.1 at 2017-12-25 22:24:00 -0500
+Processing by TestsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mTest Load (6.9ms)[0m  [1m[34mSELECT  "tests".* FROM "tests" WHERE "tests"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "question_longs"[0m
+  [1m[36mQuestionLong Load (6.8ms)[0m  [1m[34mSELECT "question_longs".* FROM "question_longs"[0m
+  [1m[36mCACHE QuestionLong Load (0.0ms)[0m  [1m[34mSELECT "question_longs".* FROM "question_longs"[0m
+  Rendering tests/show.html.erb within layouts/application
+  [1m[36mQuestionMove Load (10.7ms)[0m  [1m[34mSELECT "question_moves".* FROM "question_moves"[0m
+  Rendered tests/show.html.erb within layouts/application (20.9ms)
+Completed 200 OK in 1117ms (Views: 1079.0ms | ActiveRecord: 25.3ms)
+
+
+Started GET "/tests/7?utf8=%E2%9C%93&textbox1=&textbox2=&textbox3=&textbox4=&textbox5=&textbox6=&commit=Check" for 127.0.0.1 at 2017-12-25 22:24:05 -0500
+Processing by TestsController#show as JS
+  Parameters: {"utf8"=>"✓", "textbox1"=>"", "textbox2"=>"", "textbox3"=>"", "textbox4"=>"", "textbox5"=>"", "textbox6"=>"", "commit"=>"Check", "id"=>"7"}
+  [1m[36mTest Load (1.2ms)[0m  [1m[34mSELECT  "tests".* FROM "tests" WHERE "tests"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "question_longs"[0m
+  [1m[36mQuestionLong Load (0.3ms)[0m  [1m[34mSELECT "question_longs".* FROM "question_longs"[0m
+  [1m[36mCACHE QuestionLong Load (0.0ms)[0m  [1m[34mSELECT "question_longs".* FROM "question_longs"[0m
+  Rendering tests/show.js.erb
+  Rendered tests/show.js.erb (17.8ms)
+Completed 200 OK in 78ms (Views: 42.6ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/tests/7" for 127.0.0.1 at 2017-12-25 22:24:20 -0500
+Processing by TestsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mTest Load (1.1ms)[0m  [1m[34mSELECT  "tests".* FROM "tests" WHERE "tests"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "question_longs"[0m
+  [1m[36mQuestionLong Load (0.6ms)[0m  [1m[34mSELECT "question_longs".* FROM "question_longs"[0m
+  [1m[36mCACHE QuestionLong Load (0.0ms)[0m  [1m[34mSELECT "question_longs".* FROM "question_longs"[0m
+  Rendering tests/show.html.erb within layouts/application
+  [1m[36mQuestionMove Load (0.6ms)[0m  [1m[34mSELECT "question_moves".* FROM "question_moves"[0m
+  Rendered tests/show.html.erb within layouts/application (73.0ms)
+Completed 200 OK in 924ms (Views: 899.2ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/tests/7?utf8=%E2%9C%93&textbox1=&textbox2=&textbox3=&textbox4=&textbox5=&textbox6=&commit=Check" for 127.0.0.1 at 2017-12-25 22:24:24 -0500
+Processing by TestsController#show as JS
+  Parameters: {"utf8"=>"✓", "textbox1"=>"", "textbox2"=>"", "textbox3"=>"", "textbox4"=>"", "textbox5"=>"", "textbox6"=>"", "commit"=>"Check", "id"=>"7"}
+  [1m[36mTest Load (0.4ms)[0m  [1m[34mSELECT  "tests".* FROM "tests" WHERE "tests"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "question_longs"[0m
+  [1m[36mQuestionLong Load (0.3ms)[0m  [1m[34mSELECT "question_longs".* FROM "question_longs"[0m
+  [1m[36mCACHE QuestionLong Load (0.0ms)[0m  [1m[34mSELECT "question_longs".* FROM "question_longs"[0m
+  Rendering tests/show.js.erb
+  Rendered tests/show.js.erb (7.2ms)
+Completed 200 OK in 44ms (Views: 24.6ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/tests/7" for 127.0.0.1 at 2017-12-25 22:24:42 -0500
+Processing by TestsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mTest Load (0.2ms)[0m  [1m[34mSELECT  "tests".* FROM "tests" WHERE "tests"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "question_longs"[0m
+  [1m[36mQuestionLong Load (0.5ms)[0m  [1m[34mSELECT "question_longs".* FROM "question_longs"[0m
+  [1m[36mCACHE QuestionLong Load (0.0ms)[0m  [1m[34mSELECT "question_longs".* FROM "question_longs"[0m
+  Rendering tests/show.html.erb within layouts/application
+  [1m[36mQuestionMove Load (0.4ms)[0m  [1m[34mSELECT "question_moves".* FROM "question_moves"[0m
+  Rendered tests/show.html.erb within layouts/application (7.7ms)
+Completed 200 OK in 780ms (Views: 772.4ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/tests/7?utf8=%E2%9C%93&textbox1=&textbox2=&textbox3=&textbox4=&textbox5=&textbox6=&commit=Check" for 127.0.0.1 at 2017-12-25 22:24:45 -0500
+Processing by TestsController#show as JS
+  Parameters: {"utf8"=>"✓", "textbox1"=>"", "textbox2"=>"", "textbox3"=>"", "textbox4"=>"", "textbox5"=>"", "textbox6"=>"", "commit"=>"Check", "id"=>"7"}
+  [1m[36mTest Load (12.6ms)[0m  [1m[34mSELECT  "tests".* FROM "tests" WHERE "tests"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "question_longs"[0m
+  [1m[36mQuestionLong Load (0.4ms)[0m  [1m[34mSELECT "question_longs".* FROM "question_longs"[0m
+  [1m[36mCACHE QuestionLong Load (0.0ms)[0m  [1m[34mSELECT "question_longs".* FROM "question_longs"[0m
+  Rendering tests/show.js.erb
+  Rendered tests/show.js.erb (4.0ms)
+Completed 200 OK in 55ms (Views: 22.8ms | ActiveRecord: 14.0ms)
+
+
+Started POST "/tests" for 127.0.0.1 at 2017-12-25 22:25:01 -0500
+Processing by TestsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"8s07HbVL8nRSiIfwmfp9emcDDrWbBJ4WtV7uRyiJG6oGIiZq90Mot0X93ML4u/azwOSYRF6Wno8Pmly+CbeXPA==", "test"=>{"name"=>""}, "commit"=>"Start a test"}
+  [1m[35m (37.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (131.8ms)[0m  [1m[32mINSERT INTO "tests" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", ""], ["created_at", "2017-12-26 03:25:01.768261"], ["updated_at", "2017-12-26 03:25:01.768261"]]
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/tests/8
+Completed 302 Found in 248ms (ActiveRecord: 170.8ms)
+
+
+Started GET "/tests/8" for 127.0.0.1 at 2017-12-25 22:25:02 -0500
+Processing by TestsController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mTest Load (8.0ms)[0m  [1m[34mSELECT  "tests".* FROM "tests" WHERE "tests"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[35m (6.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "question_longs"[0m
+  [1m[36mQuestionLong Load (0.6ms)[0m  [1m[34mSELECT "question_longs".* FROM "question_longs"[0m
+  [1m[36mCACHE QuestionLong Load (0.0ms)[0m  [1m[34mSELECT "question_longs".* FROM "question_longs"[0m
+  Rendering tests/show.html.erb within layouts/application
+  [1m[36mQuestionMove Load (0.7ms)[0m  [1m[34mSELECT "question_moves".* FROM "question_moves"[0m
+  Rendered tests/show.html.erb within layouts/application (19.0ms)
+Completed 200 OK in 743ms (Views: 707.1ms | ActiveRecord: 16.3ms)
+
+
+Started GET "/tests/8?utf8=%E2%9C%93&textbox1=&textbox2=&textbox3=&textbox4=&textbox5=&textbox6=&commit=Check" for 127.0.0.1 at 2017-12-25 22:25:12 -0500
+Processing by TestsController#show as JS
+  Parameters: {"utf8"=>"✓", "textbox1"=>"", "textbox2"=>"", "textbox3"=>"", "textbox4"=>"", "textbox5"=>"", "textbox6"=>"", "commit"=>"Check", "id"=>"8"}
+  [1m[36mTest Load (0.9ms)[0m  [1m[34mSELECT  "tests".* FROM "tests" WHERE "tests"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "question_longs"[0m
+  [1m[36mQuestionLong Load (0.3ms)[0m  [1m[34mSELECT "question_longs".* FROM "question_longs"[0m
+  [1m[36mCACHE QuestionLong Load (0.0ms)[0m  [1m[34mSELECT "question_longs".* FROM "question_longs"[0m
+  Rendering tests/show.js.erb
+  Rendered tests/show.js.erb (12.8ms)
+Completed 200 OK in 70ms (Views: 32.2ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/tests/8" for 127.0.0.1 at 2017-12-25 22:26:41 -0500
+Processing by TestsController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mTest Load (24.2ms)[0m  [1m[34mSELECT  "tests".* FROM "tests" WHERE "tests"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[35m (26.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "question_longs"[0m
+  [1m[36mQuestionLong Load (2.4ms)[0m  [1m[34mSELECT "question_longs".* FROM "question_longs"[0m
+  [1m[36mCACHE QuestionLong Load (0.0ms)[0m  [1m[34mSELECT "question_longs".* FROM "question_longs"[0m
+  Rendering tests/show.html.erb within layouts/application
+  [1m[36mQuestionMove Load (0.6ms)[0m  [1m[34mSELECT "question_moves".* FROM "question_moves"[0m
+  Rendered tests/show.html.erb within layouts/application (114.2ms)
+Completed 200 OK in 1978ms (Views: 1752.5ms | ActiveRecord: 54.1ms)
+
+
+Started GET "/tests/8?utf8=%E2%9C%93&textbox1=&textbox2=&textbox3=&textbox4=&textbox5=&textbox6=&commit=Check" for 127.0.0.1 at 2017-12-25 22:26:52 -0500
+Processing by TestsController#show as JS
+  Parameters: {"utf8"=>"✓", "textbox1"=>"", "textbox2"=>"", "textbox3"=>"", "textbox4"=>"", "textbox5"=>"", "textbox6"=>"", "commit"=>"Check", "id"=>"8"}
+  [1m[36mTest Load (2.0ms)[0m  [1m[34mSELECT  "tests".* FROM "tests" WHERE "tests"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "question_longs"[0m
+  [1m[36mQuestionLong Load (0.9ms)[0m  [1m[34mSELECT "question_longs".* FROM "question_longs"[0m
+  [1m[36mCACHE QuestionLong Load (0.1ms)[0m  [1m[34mSELECT "question_longs".* FROM "question_longs"[0m
+  Rendering tests/show.js.erb
+  Rendered tests/show.js.erb (25.4ms)
+Completed 200 OK in 117ms (Views: 50.0ms | ActiveRecord: 4.7ms)
+
+
+Started GET "/tests/8" for 127.0.0.1 at 2017-12-25 22:27:25 -0500
+Processing by TestsController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mTest Load (4.8ms)[0m  [1m[34mSELECT  "tests".* FROM "tests" WHERE "tests"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[35m (13.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "question_longs"[0m
+  [1m[36mQuestionLong Load (6.1ms)[0m  [1m[34mSELECT "question_longs".* FROM "question_longs"[0m
+  [1m[36mCACHE QuestionLong Load (0.0ms)[0m  [1m[34mSELECT "question_longs".* FROM "question_longs"[0m
+  Rendering tests/show.html.erb within layouts/application
+  [1m[36mQuestionMove Load (1.0ms)[0m  [1m[34mSELECT "question_moves".* FROM "question_moves"[0m
+  Rendered tests/show.html.erb within layouts/application (29.2ms)
+Completed 200 OK in 1355ms (Views: 1262.9ms | ActiveRecord: 25.7ms)
+
+
+Started GET "/tests/8?utf8=%E2%9C%93&textbox1=&textbox2=&textbox3=&textbox4=&textbox5=&textbox6=&commit=Check" for 127.0.0.1 at 2017-12-25 22:27:31 -0500
+Processing by TestsController#show as JS
+  Parameters: {"utf8"=>"✓", "textbox1"=>"", "textbox2"=>"", "textbox3"=>"", "textbox4"=>"", "textbox5"=>"", "textbox6"=>"", "commit"=>"Check", "id"=>"8"}
+  [1m[36mTest Load (1.4ms)[0m  [1m[34mSELECT  "tests".* FROM "tests" WHERE "tests"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[35m (13.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "question_longs"[0m
+  [1m[36mQuestionLong Load (1.4ms)[0m  [1m[34mSELECT "question_longs".* FROM "question_longs"[0m
+  [1m[36mCACHE QuestionLong Load (0.5ms)[0m  [1m[34mSELECT "question_longs".* FROM "question_longs"[0m
+  Rendering tests/show.js.erb
+  Rendered tests/show.js.erb (10.7ms)
+Completed 200 OK in 94ms (Views: 37.1ms | ActiveRecord: 17.2ms)
+
+
+Started GET "/tests/8" for 127.0.0.1 at 2017-12-25 22:28:46 -0500
+Processing by TestsController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mTest Load (1.2ms)[0m  [1m[34mSELECT  "tests".* FROM "tests" WHERE "tests"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[35m (2.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "question_longs"[0m
+  [1m[36mQuestionLong Load (7.7ms)[0m  [1m[34mSELECT "question_longs".* FROM "question_longs"[0m
+  [1m[36mCACHE QuestionLong Load (0.0ms)[0m  [1m[34mSELECT "question_longs".* FROM "question_longs"[0m
+  Rendering tests/show.html.erb within layouts/application
+  [1m[36mQuestionMove Load (0.6ms)[0m  [1m[34mSELECT "question_moves".* FROM "question_moves"[0m
+  Rendered tests/show.html.erb within layouts/application (51.3ms)
+Completed 200 OK in 1353ms (Views: 1254.8ms | ActiveRecord: 12.1ms)
+
+
+Started GET "/tests/8?utf8=%E2%9C%93&textbox1=&textbox2=&textbox3=&textbox4=&textbox5=&textbox6=&commit=Check" for 127.0.0.1 at 2017-12-25 22:28:57 -0500
+Processing by TestsController#show as JS
+  Parameters: {"utf8"=>"✓", "textbox1"=>"", "textbox2"=>"", "textbox3"=>"", "textbox4"=>"", "textbox5"=>"", "textbox6"=>"", "commit"=>"Check", "id"=>"8"}
+  [1m[36mTest Load (3.1ms)[0m  [1m[34mSELECT  "tests".* FROM "tests" WHERE "tests"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[35m (3.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "question_longs"[0m
+  [1m[36mQuestionLong Load (7.1ms)[0m  [1m[34mSELECT "question_longs".* FROM "question_longs"[0m
+  [1m[36mCACHE QuestionLong Load (0.1ms)[0m  [1m[34mSELECT "question_longs".* FROM "question_longs"[0m
+  Rendering tests/show.js.erb
+  Rendered tests/show.js.erb (41.8ms)
+Completed 200 OK in 167ms (Views: 72.1ms | ActiveRecord: 14.0ms)
+
+
+Started GET "/tests/8?utf8=%E2%9C%93&textbox1=&textbox2=&textbox3=&textbox4=&textbox5=&textbox6=&commit=Check" for 127.0.0.1 at 2017-12-25 22:29:06 -0500
+Processing by TestsController#show as JS
+  Parameters: {"utf8"=>"✓", "textbox1"=>"", "textbox2"=>"", "textbox3"=>"", "textbox4"=>"", "textbox5"=>"", "textbox6"=>"", "commit"=>"Check", "id"=>"8"}
+  [1m[36mTest Load (13.8ms)[0m  [1m[34mSELECT  "tests".* FROM "tests" WHERE "tests"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[35m (2.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "question_longs"[0m
+  [1m[36mQuestionLong Load (6.9ms)[0m  [1m[34mSELECT "question_longs".* FROM "question_longs"[0m
+  [1m[36mCACHE QuestionLong Load (0.1ms)[0m  [1m[34mSELECT "question_longs".* FROM "question_longs"[0m
+  Rendering tests/show.js.erb
+  Rendered tests/show.js.erb (77.0ms)
+Completed 200 OK in 344ms (Views: 155.5ms | ActiveRecord: 23.5ms)
+
+
+Started GET "/tests/8?utf8=%E2%9C%93&textbox1=&textbox2=&textbox3=&textbox4=&textbox5=&textbox6=&commit=Check" for 127.0.0.1 at 2017-12-25 22:29:08 -0500
+Processing by TestsController#show as JS
+  Parameters: {"utf8"=>"✓", "textbox1"=>"", "textbox2"=>"", "textbox3"=>"", "textbox4"=>"", "textbox5"=>"", "textbox6"=>"", "commit"=>"Check", "id"=>"8"}
+  [1m[36mTest Load (7.8ms)[0m  [1m[34mSELECT  "tests".* FROM "tests" WHERE "tests"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[35m (14.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "question_longs"[0m
+  [1m[36mQuestionLong Load (32.3ms)[0m  [1m[34mSELECT "question_longs".* FROM "question_longs"[0m
+  [1m[36mCACHE QuestionLong Load (0.0ms)[0m  [1m[34mSELECT "question_longs".* FROM "question_longs"[0m
+  Rendering tests/show.js.erb
+  Rendered tests/show.js.erb (39.3ms)
+Completed 200 OK in 173ms (Views: 64.0ms | ActiveRecord: 54.4ms)
+
+
+Started GET "/tests/8?utf8=%E2%9C%93&textbox1=&textbox2=&textbox3=&textbox4=&textbox5=%D0%B5%D0%B3%D0%BE&textbox6=%D0%B8&commit=Check" for 127.0.0.1 at 2017-12-25 22:29:18 -0500
+Processing by TestsController#show as JS
+  Parameters: {"utf8"=>"✓", "textbox1"=>"", "textbox2"=>"", "textbox3"=>"", "textbox4"=>"", "textbox5"=>"его", "textbox6"=>"и", "commit"=>"Check", "id"=>"8"}
+  [1m[36mTest Load (2.0ms)[0m  [1m[34mSELECT  "tests".* FROM "tests" WHERE "tests"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[35m (6.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "question_longs"[0m
+  [1m[36mQuestionLong Load (6.2ms)[0m  [1m[34mSELECT "question_longs".* FROM "question_longs"[0m
+  [1m[36mCACHE QuestionLong Load (0.0ms)[0m  [1m[34mSELECT "question_longs".* FROM "question_longs"[0m
+  Rendering tests/show.js.erb
+  Rendered tests/show.js.erb (21.0ms)
+Completed 200 OK in 112ms (Views: 40.8ms | ActiveRecord: 15.1ms)
+
+
+Started GET "/tests/8" for 127.0.0.1 at 2017-12-25 22:33:36 -0500
+Processing by TestsController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mTest Load (33.5ms)[0m  [1m[34mSELECT  "tests".* FROM "tests" WHERE "tests"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[35m (33.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "question_longs"[0m
+  [1m[36mQuestionLong Load (1.0ms)[0m  [1m[34mSELECT "question_longs".* FROM "question_longs"[0m
+  [1m[36mCACHE QuestionLong Load (0.0ms)[0m  [1m[34mSELECT "question_longs".* FROM "question_longs"[0m
+  Rendering tests/show.html.erb within layouts/application
+  [1m[36mQuestionMove Load (4.1ms)[0m  [1m[34mSELECT "question_moves".* FROM "question_moves"[0m
+  Rendered tests/show.html.erb within layouts/application (82.5ms)
+Completed 200 OK in 1503ms (Views: 1282.3ms | ActiveRecord: 72.4ms)
+
+
+Started GET "/tests/3" for 127.0.0.1 at 2017-12-25 22:36:45 -0500
+Processing by TestsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mTest Load (31.7ms)[0m  [1m[34mSELECT  "tests".* FROM "tests" WHERE "tests"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (90.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "question_longs"[0m
+  [1m[36mQuestionLong Load (2.9ms)[0m  [1m[34mSELECT "question_longs".* FROM "question_longs"[0m
+  [1m[36mCACHE QuestionLong Load (0.1ms)[0m  [1m[34mSELECT "question_longs".* FROM "question_longs"[0m
+  Rendering tests/show.html.erb within layouts/application
+  [1m[36mQuestionMove Load (0.5ms)[0m  [1m[34mSELECT "question_moves".* FROM "question_moves"[0m
+  Rendered tests/show.html.erb within layouts/application (51.6ms)
+Completed 200 OK in 1567ms (Views: 1335.6ms | ActiveRecord: 125.9ms)
+
+
+Started GET "/tests/3?utf8=%E2%9C%93&textbox1=&textbox2=&textbox3=&textbox4=&textbox5=&textbox6=&commit=Check" for 127.0.0.1 at 2017-12-25 22:36:49 -0500
+Processing by TestsController#show as JS
+  Parameters: {"utf8"=>"✓", "textbox1"=>"", "textbox2"=>"", "textbox3"=>"", "textbox4"=>"", "textbox5"=>"", "textbox6"=>"", "commit"=>"Check", "id"=>"3"}
+  [1m[36mTest Load (0.9ms)[0m  [1m[34mSELECT  "tests".* FROM "tests" WHERE "tests"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (8.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "question_longs"[0m
+  [1m[36mQuestionLong Load (1.2ms)[0m  [1m[34mSELECT "question_longs".* FROM "question_longs"[0m
+  [1m[36mCACHE QuestionLong Load (0.0ms)[0m  [1m[34mSELECT "question_longs".* FROM "question_longs"[0m
+  Rendering tests/show.js.erb
+  Rendered tests/show.js.erb (8.9ms)
+Completed 200 OK in 80ms (Views: 30.3ms | ActiveRecord: 10.8ms)
+
+
+Started GET "/tests/new" for 127.0.0.1 at 2017-12-25 22:37:00 -0500
+Processing by TestsController#new as HTML
+  Rendering tests/new.html.erb within layouts/application
+  Rendered tests/_form.html.erb (75.6ms)
+  Rendered tests/new.html.erb within layouts/application (102.1ms)
+Completed 200 OK in 629ms (Views: 603.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/tests" for 127.0.0.1 at 2017-12-25 22:37:02 -0500
+Processing by TestsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Cy8IyzZ1Gs8ZiyFSPSr5iWAPU/4pkijb1Hr3kUDYMMMe9xvCIEXRXb2ub+cLWjQStDYlC7wNxpIo7/qoA9y1iQ==", "test"=>{"name"=>""}, "commit"=>"Start a test"}
+  [1m[35m (13.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (46.8ms)[0m  [1m[32mINSERT INTO "tests" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", ""], ["created_at", "2017-12-26 03:37:02.555714"], ["updated_at", "2017-12-26 03:37:02.555714"]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/tests/9
+Completed 302 Found in 83ms (ActiveRecord: 61.9ms)
+
+
+Started GET "/tests/9" for 127.0.0.1 at 2017-12-25 22:37:02 -0500
+Processing by TestsController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mTest Load (0.6ms)[0m  [1m[34mSELECT  "tests".* FROM "tests" WHERE "tests"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[35m (6.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "question_longs"[0m
+  [1m[36mQuestionLong Load (0.5ms)[0m  [1m[34mSELECT "question_longs".* FROM "question_longs"[0m
+  [1m[36mCACHE QuestionLong Load (0.0ms)[0m  [1m[34mSELECT "question_longs".* FROM "question_longs"[0m
+  Rendering tests/show.html.erb within layouts/application
+  [1m[36mQuestionMove Load (0.9ms)[0m  [1m[34mSELECT "question_moves".* FROM "question_moves"[0m
+  Rendered tests/show.html.erb within layouts/application (7.5ms)
+Completed 200 OK in 368ms (Views: 347.8ms | ActiveRecord: 8.9ms)
+
+
+Started GET "/tests/9?utf8=%E2%9C%93&textbox1=&textbox2=&textbox3=&textbox4=&textbox5=&textbox6=&commit=Check" for 127.0.0.1 at 2017-12-25 22:37:04 -0500
+Processing by TestsController#show as JS
+  Parameters: {"utf8"=>"✓", "textbox1"=>"", "textbox2"=>"", "textbox3"=>"", "textbox4"=>"", "textbox5"=>"", "textbox6"=>"", "commit"=>"Check", "id"=>"9"}
+  [1m[36mTest Load (0.3ms)[0m  [1m[34mSELECT  "tests".* FROM "tests" WHERE "tests"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "question_longs"[0m
+  [1m[36mQuestionLong Load (0.4ms)[0m  [1m[34mSELECT "question_longs".* FROM "question_longs"[0m
+  [1m[36mCACHE QuestionLong Load (0.0ms)[0m  [1m[34mSELECT "question_longs".* FROM "question_longs"[0m
+  Rendering tests/show.js.erb
+  Rendered tests/show.js.erb (12.0ms)
+Completed 200 OK in 52ms (Views: 29.6ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/tests/new" for 127.0.0.1 at 2017-12-25 22:37:37 -0500
+Processing by TestsController#new as HTML
+  Rendering tests/new.html.erb within layouts/application
+  Rendered tests/_form.html.erb (18.2ms)
+  Rendered tests/new.html.erb within layouts/application (29.0ms)
+Completed 200 OK in 709ms (Views: 690.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/tests" for 127.0.0.1 at 2017-12-25 22:37:39 -0500
+Processing by TestsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"t0M9wo60EU4aowBAHCzclTGgClR5loZCsm8y/YIrtPyimy7LmITa3L6GTvUqXBEO5Zl8oewJaAtO+j/EwS8xtg==", "test"=>{"name"=>""}, "commit"=>"Start a test"}
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (8.4ms)[0m  [1m[32mINSERT INTO "tests" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", ""], ["created_at", "2017-12-26 03:37:39.688440"], ["updated_at", "2017-12-26 03:37:39.688440"]]
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/tests/10
+Completed 302 Found in 25ms (ActiveRecord: 9.9ms)
+
+
+Started GET "/tests/10" for 127.0.0.1 at 2017-12-25 22:37:39 -0500
+Processing by TestsController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mTest Load (6.8ms)[0m  [1m[34mSELECT  "tests".* FROM "tests" WHERE "tests"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "question_longs"[0m
+  [1m[36mQuestionLong Load (0.3ms)[0m  [1m[34mSELECT "question_longs".* FROM "question_longs"[0m
+  [1m[36mCACHE QuestionLong Load (0.0ms)[0m  [1m[34mSELECT "question_longs".* FROM "question_longs"[0m
+  Rendering tests/show.html.erb within layouts/application
+  [1m[36mQuestionMove Load (0.4ms)[0m  [1m[34mSELECT "question_moves".* FROM "question_moves"[0m
+  Rendered tests/show.html.erb within layouts/application (8.8ms)
+Completed 200 OK in 349ms (Views: 332.6ms | ActiveRecord: 8.3ms)
+
+
+Started GET "/tests/10?utf8=%E2%9C%93&textbox1=&textbox2=&textbox3=&textbox4=&textbox5=&textbox6=&commit=Check" for 127.0.0.1 at 2017-12-25 22:37:43 -0500
+Processing by TestsController#show as JS
+  Parameters: {"utf8"=>"✓", "textbox1"=>"", "textbox2"=>"", "textbox3"=>"", "textbox4"=>"", "textbox5"=>"", "textbox6"=>"", "commit"=>"Check", "id"=>"10"}
+  [1m[36mTest Load (0.4ms)[0m  [1m[34mSELECT  "tests".* FROM "tests" WHERE "tests"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[35m (6.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "question_longs"[0m
+  [1m[36mQuestionLong Load (0.6ms)[0m  [1m[34mSELECT "question_longs".* FROM "question_longs"[0m
+  [1m[36mCACHE QuestionLong Load (0.2ms)[0m  [1m[34mSELECT "question_longs".* FROM "question_longs"[0m
+  Rendering tests/show.js.erb
+  Rendered tests/show.js.erb (4.8ms)
+Completed 200 OK in 50ms (Views: 25.3ms | ActiveRecord: 7.3ms)
+
+
+Started GET "/tests/10" for 127.0.0.1 at 2017-12-25 22:37:59 -0500
+Processing by TestsController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mTest Load (9.0ms)[0m  [1m[34mSELECT  "tests".* FROM "tests" WHERE "tests"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "question_longs"[0m
+  [1m[36mQuestionLong Load (6.6ms)[0m  [1m[34mSELECT "question_longs".* FROM "question_longs"[0m
+  [1m[36mCACHE QuestionLong Load (0.0ms)[0m  [1m[34mSELECT "question_longs".* FROM "question_longs"[0m
+  Rendering tests/show.html.erb within layouts/application
+  [1m[36mQuestionMove Load (0.5ms)[0m  [1m[34mSELECT "question_moves".* FROM "question_moves"[0m
+  Rendered tests/show.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 594ms (Views: 567.7ms | ActiveRecord: 16.5ms)
+
+
+Started GET "/tests/10?utf8=%E2%9C%93&textbox1=&textbox2=&textbox3=&textbox4=&textbox5=&textbox6=&commit=Check" for 127.0.0.1 at 2017-12-25 22:38:02 -0500
+Processing by TestsController#show as JS
+  Parameters: {"utf8"=>"✓", "textbox1"=>"", "textbox2"=>"", "textbox3"=>"", "textbox4"=>"", "textbox5"=>"", "textbox6"=>"", "commit"=>"Check", "id"=>"10"}
+  [1m[36mTest Load (0.4ms)[0m  [1m[34mSELECT  "tests".* FROM "tests" WHERE "tests"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "question_longs"[0m
+  [1m[36mQuestionLong Load (0.6ms)[0m  [1m[34mSELECT "question_longs".* FROM "question_longs"[0m
+  [1m[36mCACHE QuestionLong Load (0.0ms)[0m  [1m[34mSELECT "question_longs".* FROM "question_longs"[0m
+  Rendering tests/show.js.erb
+  Rendered tests/show.js.erb (9.7ms)
+Completed 200 OK in 83ms (Views: 38.5ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/tests/10" for 127.0.0.1 at 2017-12-25 22:38:11 -0500
+Processing by TestsController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mTest Load (0.8ms)[0m  [1m[34mSELECT  "tests".* FROM "tests" WHERE "tests"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "question_longs"[0m
+  [1m[36mQuestionLong Load (6.9ms)[0m  [1m[34mSELECT "question_longs".* FROM "question_longs"[0m
+  [1m[36mCACHE QuestionLong Load (0.2ms)[0m  [1m[34mSELECT "question_longs".* FROM "question_longs"[0m
+  Rendering tests/show.html.erb within layouts/application
+  [1m[36mQuestionMove Load (18.1ms)[0m  [1m[34mSELECT "question_moves".* FROM "question_moves"[0m
+  Rendered tests/show.html.erb within layouts/application (25.6ms)
+Completed 200 OK in 557ms (Views: 521.5ms | ActiveRecord: 26.6ms)
+
+
+Started GET "/tests/10?utf8=%E2%9C%93&textbox1=&textbox2=&textbox3=&textbox4=&textbox5=&textbox6=&commit=Check" for 127.0.0.1 at 2017-12-25 22:38:13 -0500
+Processing by TestsController#show as JS
+  Parameters: {"utf8"=>"✓", "textbox1"=>"", "textbox2"=>"", "textbox3"=>"", "textbox4"=>"", "textbox5"=>"", "textbox6"=>"", "commit"=>"Check", "id"=>"10"}
+  [1m[36mTest Load (0.3ms)[0m  [1m[34mSELECT  "tests".* FROM "tests" WHERE "tests"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[35m (6.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "question_longs"[0m
+  [1m[36mQuestionLong Load (0.4ms)[0m  [1m[34mSELECT "question_longs".* FROM "question_longs"[0m
+  [1m[36mCACHE QuestionLong Load (0.0ms)[0m  [1m[34mSELECT "question_longs".* FROM "question_longs"[0m
+  Rendering tests/show.js.erb
+  Rendered tests/show.js.erb (3.5ms)
+Completed 200 OK in 55ms (Views: 27.5ms | ActiveRecord: 7.5ms)
+
+
+Started GET "/tests/10?utf8=%E2%9C%93&textbox1=&textbox2=&textbox3=&textbox4=&textbox5=%D0%B5%D0%B3%D0%BE&textbox6=%D0%B8&commit=Check" for 127.0.0.1 at 2017-12-25 22:38:22 -0500
+Processing by TestsController#show as JS
+  Parameters: {"utf8"=>"✓", "textbox1"=>"", "textbox2"=>"", "textbox3"=>"", "textbox4"=>"", "textbox5"=>"его", "textbox6"=>"и", "commit"=>"Check", "id"=>"10"}
+  [1m[36mTest Load (0.8ms)[0m  [1m[34mSELECT  "tests".* FROM "tests" WHERE "tests"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "question_longs"[0m
+  [1m[36mQuestionLong Load (3.0ms)[0m  [1m[34mSELECT "question_longs".* FROM "question_longs"[0m
+  [1m[36mCACHE QuestionLong Load (0.0ms)[0m  [1m[34mSELECT "question_longs".* FROM "question_longs"[0m
+  Rendering tests/show.js.erb
+  Rendered tests/show.js.erb (12.0ms)
+Completed 200 OK in 92ms (Views: 38.4ms | ActiveRecord: 4.4ms)
+
+
+Started GET "/tests/10" for 127.0.0.1 at 2017-12-25 22:38:31 -0500
+Processing by TestsController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mTest Load (7.1ms)[0m  [1m[34mSELECT  "tests".* FROM "tests" WHERE "tests"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[35m (17.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "question_longs"[0m
+  [1m[36mQuestionLong Load (0.6ms)[0m  [1m[34mSELECT "question_longs".* FROM "question_longs"[0m
+  [1m[36mCACHE QuestionLong Load (0.1ms)[0m  [1m[34mSELECT "question_longs".* FROM "question_longs"[0m
+  Rendering tests/show.html.erb within layouts/application
+  [1m[36mQuestionMove Load (0.4ms)[0m  [1m[34mSELECT "question_moves".* FROM "question_moves"[0m
+  Rendered tests/show.html.erb within layouts/application (15.3ms)
+Completed 200 OK in 937ms (Views: 893.9ms | ActiveRecord: 25.9ms)
+
+
+Started GET "/tests/10?utf8=%E2%9C%93&textbox1=&textbox2=&textbox3=&textbox4=&textbox5=&textbox6=&commit=Check" for 127.0.0.1 at 2017-12-25 22:38:34 -0500
+Processing by TestsController#show as JS
+  Parameters: {"utf8"=>"✓", "textbox1"=>"", "textbox2"=>"", "textbox3"=>"", "textbox4"=>"", "textbox5"=>"", "textbox6"=>"", "commit"=>"Check", "id"=>"10"}
+  [1m[36mTest Load (0.8ms)[0m  [1m[34mSELECT  "tests".* FROM "tests" WHERE "tests"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "question_longs"[0m
+  [1m[36mQuestionLong Load (0.3ms)[0m  [1m[34mSELECT "question_longs".* FROM "question_longs"[0m
+  [1m[36mCACHE QuestionLong Load (0.1ms)[0m  [1m[34mSELECT "question_longs".* FROM "question_longs"[0m
+  Rendering tests/show.js.erb
+  Rendered tests/show.js.erb (7.2ms)
+Completed 200 OK in 60ms (Views: 31.6ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/tests/10?utf8=%E2%9C%93&textbox1=&textbox2=&textbox3=&textbox4=&textbox5=%D0%B5%D0%B3%D0%BE&textbox6=%D0%B8&commit=Check" for 127.0.0.1 at 2017-12-25 22:38:40 -0500
+Processing by TestsController#show as JS
+  Parameters: {"utf8"=>"✓", "textbox1"=>"", "textbox2"=>"", "textbox3"=>"", "textbox4"=>"", "textbox5"=>"его", "textbox6"=>"и", "commit"=>"Check", "id"=>"10"}
+  [1m[36mTest Load (0.2ms)[0m  [1m[34mSELECT  "tests".* FROM "tests" WHERE "tests"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "question_longs"[0m
+  [1m[36mQuestionLong Load (0.3ms)[0m  [1m[34mSELECT "question_longs".* FROM "question_longs"[0m
+  [1m[36mCACHE QuestionLong Load (0.0ms)[0m  [1m[34mSELECT "question_longs".* FROM "question_longs"[0m
+  Rendering tests/show.js.erb
+  Rendered tests/show.js.erb (12.8ms)
+Completed 200 OK in 62ms (Views: 31.6ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/tests/%D0%BD%D0%B5%D1%88" for 127.0.0.1 at 2017-12-25 22:38:46 -0500
+Processing by TestsController#show as HTML
+  Parameters: {"id"=>"неш"}
+  [1m[36mTest Load (0.4ms)[0m  [1m[34mSELECT  "tests".* FROM "tests" WHERE "tests"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+Completed 404 Not Found in 50ms (ActiveRecord: 0.4ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Test with 'id'=неш):
+  
+app/controllers/tests_controller.rb:69:in `set_test'
+Started GET "/tests/new" for 127.0.0.1 at 2017-12-25 22:38:52 -0500
+Processing by TestsController#new as HTML
+  Rendering tests/new.html.erb within layouts/application
+  Rendered tests/_form.html.erb (80.6ms)
+  Rendered tests/new.html.erb within layouts/application (113.8ms)
+Completed 200 OK in 1035ms (Views: 1003.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/tests" for 127.0.0.1 at 2017-12-25 22:38:55 -0500
+Processing by TestsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"M5+UQUwo/u0gXbJZlGwQja0vJndWp4E3/tPXbuVX6cwmR4dIWhg1f4R4/OyiHN0WeRZQgsM4b34CRtpXplNshg==", "test"=>{"name"=>""}, "commit"=>"Start a test"}
+  [1m[35m (3.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (29.8ms)[0m  [1m[32mINSERT INTO "tests" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", ""], ["created_at", "2017-12-26 03:38:55.074477"], ["updated_at", "2017-12-26 03:38:55.074477"]]
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/tests/11
+Completed 302 Found in 74ms (ActiveRecord: 35.4ms)
+
+
+Started GET "/tests/11" for 127.0.0.1 at 2017-12-25 22:38:55 -0500
+Processing by TestsController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mTest Load (7.5ms)[0m  [1m[34mSELECT  "tests".* FROM "tests" WHERE "tests"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "question_longs"[0m
+  [1m[36mQuestionLong Load (0.5ms)[0m  [1m[34mSELECT "question_longs".* FROM "question_longs"[0m
+  [1m[36mCACHE QuestionLong Load (0.0ms)[0m  [1m[34mSELECT "question_longs".* FROM "question_longs"[0m
+  Rendering tests/show.html.erb within layouts/application
+  [1m[36mQuestionMove Load (0.4ms)[0m  [1m[34mSELECT "question_moves".* FROM "question_moves"[0m
+  Rendered tests/show.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 324ms (Views: 298.3ms | ActiveRecord: 9.4ms)
+
+
+Started GET "/tests/11?utf8=%E2%9C%93&textbox1=&textbox2=&textbox3=&textbox4=&textbox5=&textbox6=&commit=Check" for 127.0.0.1 at 2017-12-25 22:38:56 -0500
+Processing by TestsController#show as JS
+  Parameters: {"utf8"=>"✓", "textbox1"=>"", "textbox2"=>"", "textbox3"=>"", "textbox4"=>"", "textbox5"=>"", "textbox6"=>"", "commit"=>"Check", "id"=>"11"}
+  [1m[36mTest Load (0.6ms)[0m  [1m[34mSELECT  "tests".* FROM "tests" WHERE "tests"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "question_longs"[0m
+  [1m[36mQuestionLong Load (1.0ms)[0m  [1m[34mSELECT "question_longs".* FROM "question_longs"[0m
+  [1m[36mCACHE QuestionLong Load (0.0ms)[0m  [1m[34mSELECT "question_longs".* FROM "question_longs"[0m
+  Rendering tests/show.js.erb
+  Rendered tests/show.js.erb (6.0ms)
+Completed 200 OK in 69ms (Views: 26.0ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-12-25 22:39:23 -0500
+Processing by QuestionLongsController#new as HTML
+  Rendering question_longs/new.html.erb within layouts/application
+  Rendered question_longs/_form.html.erb (113.2ms)
+  Rendered question_longs/new.html.erb within layouts/application (124.2ms)
+Completed 200 OK in 834ms (Views: 746.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/tests/new" for 127.0.0.1 at 2017-12-25 22:39:30 -0500
+Processing by TestsController#new as HTML
+  Rendering tests/new.html.erb within layouts/application
+  Rendered tests/_form.html.erb (7.6ms)
+  Rendered tests/new.html.erb within layouts/application (10.8ms)
+Completed 200 OK in 566ms (Views: 562.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/tests" for 127.0.0.1 at 2017-12-25 22:39:31 -0500
+Processing by TestsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"EVbChoHhTz2k5YsXD32Q02TlgLAdgE+KgyZUDGu7ByXlud/xw+mV/rOQ0CVuPBsawwIWQdgSTxM54ub1SoWLsw==", "test"=>{"name"=>""}, "commit"=>"Start a test"}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (20.5ms)[0m  [1m[32mINSERT INTO "tests" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", ""], ["created_at", "2017-12-26 03:39:31.914283"], ["updated_at", "2017-12-26 03:39:31.914283"]]
+  [1m[35m (6.2ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/tests/12
+Completed 302 Found in 36ms (ActiveRecord: 27.0ms)
+
+
+Started GET "/tests/12" for 127.0.0.1 at 2017-12-25 22:39:31 -0500
+Processing by TestsController#show as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mTest Load (7.2ms)[0m  [1m[34mSELECT  "tests".* FROM "tests" WHERE "tests"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "question_longs"[0m
+  [1m[36mQuestionLong Load (7.8ms)[0m  [1m[34mSELECT "question_longs".* FROM "question_longs"[0m
+  [1m[36mCACHE QuestionLong Load (0.0ms)[0m  [1m[34mSELECT "question_longs".* FROM "question_longs"[0m
+  Rendering tests/show.html.erb within layouts/application
+  [1m[36mQuestionMove Load (0.6ms)[0m  [1m[34mSELECT "question_moves".* FROM "question_moves"[0m
+  Rendered tests/show.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 381ms (Views: 355.4ms | ActiveRecord: 17.0ms)
+
+
+Started GET "/tests/12?utf8=%E2%9C%93&textbox1=&textbox2=&textbox3=&textbox4=&textbox5=&textbox6=&commit=Check" for 127.0.0.1 at 2017-12-25 22:39:34 -0500
+Processing by TestsController#show as JS
+  Parameters: {"utf8"=>"✓", "textbox1"=>"", "textbox2"=>"", "textbox3"=>"", "textbox4"=>"", "textbox5"=>"", "textbox6"=>"", "commit"=>"Check", "id"=>"12"}
+  [1m[36mTest Load (0.3ms)[0m  [1m[34mSELECT  "tests".* FROM "tests" WHERE "tests"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "question_longs"[0m
+  [1m[36mQuestionLong Load (0.3ms)[0m  [1m[34mSELECT "question_longs".* FROM "question_longs"[0m
+  [1m[36mCACHE QuestionLong Load (0.0ms)[0m  [1m[34mSELECT "question_longs".* FROM "question_longs"[0m
+  Rendering tests/show.js.erb
+  Rendered tests/show.js.erb (5.3ms)
+Completed 200 OK in 46ms (Views: 23.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/tests/new" for 127.0.0.1 at 2017-12-25 22:40:17 -0500
+Processing by TestsController#new as HTML
+  Rendering tests/new.html.erb within layouts/application
+  Rendered tests/_form.html.erb (29.8ms)
+  Rendered tests/new.html.erb within layouts/application (56.7ms)
+Completed 200 OK in 1412ms (Views: 1391.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/tests" for 127.0.0.1 at 2017-12-25 22:40:20 -0500
+Processing by TestsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"6pUnEHQ11rcG+CDVrG7SfrZnww4lncjCjPnm/Ha9XWceejpnNj0MdBGNe+fNL1m3EYBV/+APyFs2PVQFV4PR8Q==", "test"=>{"name"=>""}, "commit"=>"Start a test"}
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (26.7ms)[0m  [1m[32mINSERT INTO "tests" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", ""], ["created_at", "2017-12-26 03:40:20.773981"], ["updated_at", "2017-12-26 03:40:20.773981"]]
+  [1m[35m (17.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/tests/13
+Completed 302 Found in 76ms (ActiveRecord: 44.1ms)
+
+
+Started GET "/tests/13" for 127.0.0.1 at 2017-12-25 22:40:22 -0500
+Processing by TestsController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mTest Load (1.5ms)[0m  [1m[34mSELECT  "tests".* FROM "tests" WHERE "tests"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  [1m[35m (7.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "question_longs"[0m
+  [1m[36mQuestionLong Load (1.2ms)[0m  [1m[34mSELECT "question_longs".* FROM "question_longs"[0m
+  [1m[36mCACHE QuestionLong Load (0.1ms)[0m  [1m[34mSELECT "question_longs".* FROM "question_longs"[0m
+  Rendering tests/show.html.erb within layouts/application
+  [1m[36mQuestionMove Load (0.7ms)[0m  [1m[34mSELECT "question_moves".* FROM "question_moves"[0m
+  Rendered tests/show.html.erb within layouts/application (56.2ms)
+Completed 200 OK in 965ms (Views: 912.0ms | ActiveRecord: 11.3ms)
+
+
+Started GET "/tests/13?utf8=%E2%9C%93&textbox1=&textbox2=&textbox3=&textbox4=&textbox5=&textbox6=&commit=Check" for 127.0.0.1 at 2017-12-25 22:40:28 -0500
+Processing by TestsController#show as JS
+  Parameters: {"utf8"=>"✓", "textbox1"=>"", "textbox2"=>"", "textbox3"=>"", "textbox4"=>"", "textbox5"=>"", "textbox6"=>"", "commit"=>"Check", "id"=>"13"}
+  [1m[36mTest Load (0.5ms)[0m  [1m[34mSELECT  "tests".* FROM "tests" WHERE "tests"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "question_longs"[0m
+  [1m[36mQuestionLong Load (0.6ms)[0m  [1m[34mSELECT "question_longs".* FROM "question_longs"[0m
+  [1m[36mCACHE QuestionLong Load (0.0ms)[0m  [1m[34mSELECT "question_longs".* FROM "question_longs"[0m
+  Rendering tests/show.js.erb
+  Rendered tests/show.js.erb (9.9ms)
+Completed 200 OK in 63ms (Views: 30.9ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/tests/new" for 127.0.0.1 at 2017-12-25 22:40:37 -0500
+Processing by TestsController#new as HTML
+  Rendering tests/new.html.erb within layouts/application
+  Rendered tests/_form.html.erb (19.8ms)
+  Rendered tests/new.html.erb within layouts/application (33.5ms)
+Completed 200 OK in 987ms (Views: 966.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/tests" for 127.0.0.1 at 2017-12-25 22:40:40 -0500
+Processing by TestsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ArZOYROsr8y7NOjSguVedrrLZgd6COeKf9yGLAwf+ZD2WVMWUaR1D6xBs+DjpNW/HSzw9r+a5xPFGDTVLSF1Bg==", "test"=>{"name"=>""}, "commit"=>"Start a test"}
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.4ms)[0m  [1m[32mINSERT INTO "tests" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", ""], ["created_at", "2017-12-26 03:40:40.131407"], ["updated_at", "2017-12-26 03:40:40.131407"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/tests/14
+Completed 302 Found in 28ms (ActiveRecord: 2.2ms)
+
+
+Started GET "/tests/14" for 127.0.0.1 at 2017-12-25 22:40:40 -0500
+Processing by TestsController#show as HTML
+  Parameters: {"id"=>"14"}
+  [1m[36mTest Load (7.0ms)[0m  [1m[34mSELECT  "tests".* FROM "tests" WHERE "tests"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  [1m[35m (11.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "question_longs"[0m
+  [1m[36mQuestionLong Load (2.8ms)[0m  [1m[34mSELECT "question_longs".* FROM "question_longs"[0m
+  [1m[36mCACHE QuestionLong Load (0.0ms)[0m  [1m[34mSELECT "question_longs".* FROM "question_longs"[0m
+  Rendering tests/show.html.erb within layouts/application
+  [1m[36mQuestionMove Load (0.7ms)[0m  [1m[34mSELECT "question_moves".* FROM "question_moves"[0m
+  Rendered tests/show.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 434ms (Views: 401.2ms | ActiveRecord: 22.2ms)
+
+
+Started GET "/tests/14?utf8=%E2%9C%93&textbox1=&textbox2=&textbox3=&textbox4=&textbox5=&textbox6=&commit=Check" for 127.0.0.1 at 2017-12-25 22:40:42 -0500
+Processing by TestsController#show as JS
+  Parameters: {"utf8"=>"✓", "textbox1"=>"", "textbox2"=>"", "textbox3"=>"", "textbox4"=>"", "textbox5"=>"", "textbox6"=>"", "commit"=>"Check", "id"=>"14"}
+  [1m[36mTest Load (6.8ms)[0m  [1m[34mSELECT  "tests".* FROM "tests" WHERE "tests"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "question_longs"[0m
+  [1m[36mQuestionLong Load (0.4ms)[0m  [1m[34mSELECT "question_longs".* FROM "question_longs"[0m
+  [1m[36mCACHE QuestionLong Load (0.0ms)[0m  [1m[34mSELECT "question_longs".* FROM "question_longs"[0m
+  Rendering tests/show.js.erb
+  Rendered tests/show.js.erb (3.5ms)
+Completed 200 OK in 47ms (Views: 20.1ms | ActiveRecord: 8.1ms)
+
+
+Started GET "/tests/new" for 127.0.0.1 at 2017-12-25 22:40:55 -0500
+Processing by TestsController#new as HTML
+  Rendering tests/new.html.erb within layouts/application
+  Rendered tests/_form.html.erb (5.2ms)
+  Rendered tests/new.html.erb within layouts/application (8.1ms)
+Completed 200 OK in 358ms (Views: 353.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/tests" for 127.0.0.1 at 2017-12-25 22:40:57 -0500
+Processing by TestsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zxDHs5O/BD+FMgGxCQ6W8x0mCNIHLvU27aXPdOJgVog7/9rE0bfe/JJHWoNoTx06usGeI8K89a9XYX2Nw17aHg==", "test"=>{"name"=>""}, "commit"=>"Start a test"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (12.1ms)[0m  [1m[32mINSERT INTO "tests" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", ""], ["created_at", "2017-12-26 03:40:57.260834"], ["updated_at", "2017-12-26 03:40:57.260834"]]
+  [1m[35m (5.8ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/tests/15
+Completed 302 Found in 24ms (ActiveRecord: 18.1ms)
+
+
+Started GET "/tests/15" for 127.0.0.1 at 2017-12-25 22:40:57 -0500
+Processing by TestsController#show as HTML
+  Parameters: {"id"=>"15"}
+  [1m[36mTest Load (0.4ms)[0m  [1m[34mSELECT  "tests".* FROM "tests" WHERE "tests"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "question_longs"[0m
+  [1m[36mQuestionLong Load (3.4ms)[0m  [1m[34mSELECT "question_longs".* FROM "question_longs"[0m
+  [1m[36mCACHE QuestionLong Load (0.0ms)[0m  [1m[34mSELECT "question_longs".* FROM "question_longs"[0m
+  Rendering tests/show.html.erb within layouts/application
+  [1m[36mQuestionMove Load (0.4ms)[0m  [1m[34mSELECT "question_moves".* FROM "question_moves"[0m
+  Rendered tests/show.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 665ms (Views: 649.8ms | ActiveRecord: 5.1ms)
+
+
+Started GET "/tests/15?utf8=%E2%9C%93&textbox1=&textbox2=&textbox3=&textbox4=&textbox5=&textbox6=&commit=Check" for 127.0.0.1 at 2017-12-25 22:41:00 -0500
+Processing by TestsController#show as JS
+  Parameters: {"utf8"=>"✓", "textbox1"=>"", "textbox2"=>"", "textbox3"=>"", "textbox4"=>"", "textbox5"=>"", "textbox6"=>"", "commit"=>"Check", "id"=>"15"}
+  [1m[36mTest Load (0.3ms)[0m  [1m[34mSELECT  "tests".* FROM "tests" WHERE "tests"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "question_longs"[0m
+  [1m[36mQuestionLong Load (20.8ms)[0m  [1m[34mSELECT "question_longs".* FROM "question_longs"[0m
+  [1m[36mCACHE QuestionLong Load (0.0ms)[0m  [1m[34mSELECT "question_longs".* FROM "question_longs"[0m
+  Rendering tests/show.js.erb
+  Rendered tests/show.js.erb (4.5ms)
+Completed 200 OK in 75ms (Views: 24.8ms | ActiveRecord: 22.3ms)
+
+
+Started GET "/tests/new" for 127.0.0.1 at 2017-12-25 22:41:09 -0500
+Processing by TestsController#new as HTML
+  Rendering tests/new.html.erb within layouts/application
+  Rendered tests/_form.html.erb (62.6ms)
+  Rendered tests/new.html.erb within layouts/application (80.2ms)
+Completed 200 OK in 1715ms (Views: 1701.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/tests" for 127.0.0.1 at 2017-12-25 22:41:13 -0500
+Processing by TestsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"DWeHf3S4F0QArJ3l1Bs7M0VHF0Q3D4qBOnVlqVG4px/5iJoINrDNhxfZxte1WrD64qCBtfKdihiAsddQcIYriQ==", "test"=>{"name"=>""}, "commit"=>"Start a test"}
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (41.4ms)[0m  [1m[32mINSERT INTO "tests" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", ""], ["created_at", "2017-12-26 03:41:13.511836"], ["updated_at", "2017-12-26 03:41:13.511836"]]
+  [1m[35m (16.2ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/tests/16
+Completed 302 Found in 87ms (ActiveRecord: 58.3ms)
+
+
+Started GET "/tests/16" for 127.0.0.1 at 2017-12-25 22:41:13 -0500
+Processing by TestsController#show as HTML
+  Parameters: {"id"=>"16"}
+  [1m[36mTest Load (20.3ms)[0m  [1m[34mSELECT  "tests".* FROM "tests" WHERE "tests"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "question_longs"[0m
+  [1m[36mQuestionLong Load (33.0ms)[0m  [1m[34mSELECT "question_longs".* FROM "question_longs"[0m
+  [1m[36mCACHE QuestionLong Load (0.0ms)[0m  [1m[34mSELECT "question_longs".* FROM "question_longs"[0m
+  Rendering tests/show.html.erb within layouts/application
+  [1m[36mQuestionMove Load (0.6ms)[0m  [1m[34mSELECT "question_moves".* FROM "question_moves"[0m
+  Rendered tests/show.html.erb within layouts/application (9.1ms)
+Completed 200 OK in 918ms (Views: 828.5ms | ActiveRecord: 54.8ms)
+
+
+Started GET "/tests/16?utf8=%E2%9C%93&textbox1=&textbox2=&textbox3=&textbox4=&textbox5=&textbox6=&commit=Check" for 127.0.0.1 at 2017-12-25 22:41:17 -0500
+Processing by TestsController#show as JS
+  Parameters: {"utf8"=>"✓", "textbox1"=>"", "textbox2"=>"", "textbox3"=>"", "textbox4"=>"", "textbox5"=>"", "textbox6"=>"", "commit"=>"Check", "id"=>"16"}
+  [1m[36mTest Load (0.6ms)[0m  [1m[34mSELECT  "tests".* FROM "tests" WHERE "tests"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "question_longs"[0m
+  [1m[36mQuestionLong Load (12.1ms)[0m  [1m[34mSELECT "question_longs".* FROM "question_longs"[0m
+  [1m[36mCACHE QuestionLong Load (0.0ms)[0m  [1m[34mSELECT "question_longs".* FROM "question_longs"[0m
+  Rendering tests/show.js.erb
+  Rendered tests/show.js.erb (25.4ms)
+Completed 200 OK in 107ms (Views: 52.0ms | ActiveRecord: 14.7ms)
+
+
+Started GET "/tests/new" for 127.0.0.1 at 2017-12-25 22:41:34 -0500
+Processing by TestsController#new as HTML
+  Rendering tests/new.html.erb within layouts/application
+  Rendered tests/_form.html.erb (28.5ms)
+  Rendered tests/new.html.erb within layouts/application (52.9ms)
+Completed 200 OK in 2241ms (Views: 2192.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/tests" for 127.0.0.1 at 2017-12-25 22:41:38 -0500
+Processing by TestsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"q3dIXFUYlZPviMuPtfr3rUnHfE1vVraCZZW1JV3A1oNfmFUrFxBPUPj9kL3Uu3xk7iDqvKrEthvfUQfcfP5aFQ==", "test"=>{"name"=>""}, "commit"=>"Start a test"}
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (9.6ms)[0m  [1m[32mINSERT INTO "tests" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", ""], ["created_at", "2017-12-26 03:41:38.807816"], ["updated_at", "2017-12-26 03:41:38.807816"]]
+  [1m[35m (9.6ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/tests/17
+Completed 302 Found in 43ms (ActiveRecord: 20.0ms)
+
+
+Started GET "/tests/17" for 127.0.0.1 at 2017-12-25 22:41:38 -0500
+Processing by TestsController#show as HTML
+  Parameters: {"id"=>"17"}
+  [1m[36mTest Load (1.2ms)[0m  [1m[34mSELECT  "tests".* FROM "tests" WHERE "tests"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  [1m[35m (9.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "question_longs"[0m
+  [1m[36mQuestionLong Load (0.8ms)[0m  [1m[34mSELECT "question_longs".* FROM "question_longs"[0m
+  [1m[36mCACHE QuestionLong Load (0.0ms)[0m  [1m[34mSELECT "question_longs".* FROM "question_longs"[0m
+  Rendering tests/show.html.erb within layouts/application
+  [1m[36mQuestionMove Load (0.6ms)[0m  [1m[34mSELECT "question_moves".* FROM "question_moves"[0m
+  Rendered tests/show.html.erb within layouts/application (9.6ms)
+Completed 200 OK in 1036ms (Views: 1006.0ms | ActiveRecord: 12.5ms)
+
+
+Started GET "/tests/17?utf8=%E2%9C%93&textbox1=&textbox2=&textbox3=&textbox4=&textbox5=&textbox6=&commit=Check" for 127.0.0.1 at 2017-12-25 22:41:42 -0500
+Processing by TestsController#show as JS
+  Parameters: {"utf8"=>"✓", "textbox1"=>"", "textbox2"=>"", "textbox3"=>"", "textbox4"=>"", "textbox5"=>"", "textbox6"=>"", "commit"=>"Check", "id"=>"17"}
+  [1m[36mTest Load (6.7ms)[0m  [1m[34mSELECT  "tests".* FROM "tests" WHERE "tests"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  [1m[35m (16.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "question_longs"[0m
+  [1m[36mQuestionLong Load (0.7ms)[0m  [1m[34mSELECT "question_longs".* FROM "question_longs"[0m
+  [1m[36mCACHE QuestionLong Load (0.1ms)[0m  [1m[34mSELECT "question_longs".* FROM "question_longs"[0m
+  Rendering tests/show.js.erb
+  Rendered tests/show.js.erb (56.1ms)
+Completed 200 OK in 198ms (Views: 120.7ms | ActiveRecord: 23.7ms)
+
+
+Started GET "/tests/new" for 127.0.0.1 at 2017-12-25 22:41:56 -0500
+Processing by TestsController#new as HTML
+  Rendering tests/new.html.erb within layouts/application
+  Rendered tests/_form.html.erb (105.7ms)
+  Rendered tests/new.html.erb within layouts/application (128.8ms)
+Completed 200 OK in 2197ms (Views: 2145.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/tests" for 127.0.0.1 at 2017-12-25 22:42:01 -0500
+Processing by TestsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"es+xGIK7D74+3j4O6gMFJ52qxUzqjTMCkIR1oBcwGpuOIKxvwLPVfSmrZTyLQo7uOk1TvS8fM5sqQMdZNg6WDQ==", "test"=>{"name"=>""}, "commit"=>"Start a test"}
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (15.3ms)[0m  [1m[32mINSERT INTO "tests" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", ""], ["created_at", "2017-12-26 03:42:01.977694"], ["updated_at", "2017-12-26 03:42:01.977694"]]
+  [1m[35m (6.1ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/tests/18
+Completed 302 Found in 54ms (ActiveRecord: 22.3ms)
+
+
+Started GET "/tests/18" for 127.0.0.1 at 2017-12-25 22:42:02 -0500
+Processing by TestsController#show as HTML
+  Parameters: {"id"=>"18"}
+  [1m[36mTest Load (1.1ms)[0m  [1m[34mSELECT  "tests".* FROM "tests" WHERE "tests"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[35m (12.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "question_longs"[0m
+  [1m[36mQuestionLong Load (0.5ms)[0m  [1m[34mSELECT "question_longs".* FROM "question_longs"[0m
+  [1m[36mCACHE QuestionLong Load (0.0ms)[0m  [1m[34mSELECT "question_longs".* FROM "question_longs"[0m
+  Rendering tests/show.html.erb within layouts/application
+  [1m[36mQuestionMove Load (0.6ms)[0m  [1m[34mSELECT "question_moves".* FROM "question_moves"[0m
+  Rendered tests/show.html.erb within layouts/application (19.5ms)
+Completed 200 OK in 1286ms (Views: 1243.6ms | ActiveRecord: 14.6ms)
+
+
+Started GET "/tests/18?utf8=%E2%9C%93&textbox1=&textbox2=&textbox3=&textbox4=&textbox5=&textbox6=&commit=Check" for 127.0.0.1 at 2017-12-25 22:42:07 -0500
+Processing by TestsController#show as JS
+  Parameters: {"utf8"=>"✓", "textbox1"=>"", "textbox2"=>"", "textbox3"=>"", "textbox4"=>"", "textbox5"=>"", "textbox6"=>"", "commit"=>"Check", "id"=>"18"}
+  [1m[36mTest Load (1.7ms)[0m  [1m[34mSELECT  "tests".* FROM "tests" WHERE "tests"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[35m (11.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "question_longs"[0m
+  [1m[36mQuestionLong Load (0.6ms)[0m  [1m[34mSELECT "question_longs".* FROM "question_longs"[0m
+  [1m[36mCACHE QuestionLong Load (0.0ms)[0m  [1m[34mSELECT "question_longs".* FROM "question_longs"[0m
+  Rendering tests/show.js.erb
+  Rendered tests/show.js.erb (106.0ms)
+Completed 200 OK in 415ms (Views: 216.3ms | ActiveRecord: 13.9ms)
+
+
+Started GET "/tests/18?utf8=%E2%9C%93&textbox1=&textbox2=&textbox3=&textbox4=&textbox5=%D0%B5%D0%B3%D0%BE&textbox6=%D0%B8&commit=Check" for 127.0.0.1 at 2017-12-25 22:42:17 -0500
+Processing by TestsController#show as JS
+  Parameters: {"utf8"=>"✓", "textbox1"=>"", "textbox2"=>"", "textbox3"=>"", "textbox4"=>"", "textbox5"=>"его", "textbox6"=>"и", "commit"=>"Check", "id"=>"18"}
+  [1m[36mTest Load (1.5ms)[0m  [1m[34mSELECT  "tests".* FROM "tests" WHERE "tests"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "question_longs"[0m
+  [1m[36mQuestionLong Load (6.0ms)[0m  [1m[34mSELECT "question_longs".* FROM "question_longs"[0m
+  [1m[36mCACHE QuestionLong Load (0.0ms)[0m  [1m[34mSELECT "question_longs".* FROM "question_longs"[0m
+  Rendering tests/show.js.erb
+  Rendered tests/show.js.erb (31.5ms)
+Completed 200 OK in 144ms (Views: 69.4ms | ActiveRecord: 8.3ms)
+
+
+Started GET "/tests/new" for 127.0.0.1 at 2017-12-25 22:42:33 -0500
+Processing by TestsController#new as HTML
+  Rendering tests/new.html.erb within layouts/application
+  Rendered tests/_form.html.erb (35.2ms)
+  Rendered tests/new.html.erb within layouts/application (47.4ms)
+Completed 200 OK in 918ms (Views: 893.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/tests" for 127.0.0.1 at 2017-12-25 22:42:36 -0500
+Processing by TestsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"aj+1C8mxnqvqkDBRBPTxzmMTPwhHfIkA2rsCFo8qm05/56YC34FVOU61fuQyhDxVtypJ/dLjZ0kmLg8vzC4eBA==", "test"=>{"name"=>""}, "commit"=>"Start a test"}
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (15.4ms)[0m  [1m[32mINSERT INTO "tests" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", ""], ["created_at", "2017-12-26 03:42:36.440875"], ["updated_at", "2017-12-26 03:42:36.440875"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/tests/19
+Completed 302 Found in 31ms (ActiveRecord: 16.4ms)
+
+
+Started GET "/tests/19" for 127.0.0.1 at 2017-12-25 22:42:36 -0500
+Processing by TestsController#show as HTML
+  Parameters: {"id"=>"19"}
+  [1m[36mTest Load (0.7ms)[0m  [1m[34mSELECT  "tests".* FROM "tests" WHERE "tests"."id" = $1 LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "question_longs"[0m
+  [1m[36mQuestionLong Load (0.5ms)[0m  [1m[34mSELECT "question_longs".* FROM "question_longs"[0m
+  [1m[36mCACHE QuestionLong Load (0.0ms)[0m  [1m[34mSELECT "question_longs".* FROM "question_longs"[0m
+  Rendering tests/show.html.erb within layouts/application
+  [1m[36mQuestionMove Load (0.6ms)[0m  [1m[34mSELECT "question_moves".* FROM "question_moves"[0m
+  Rendered tests/show.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 339ms (Views: 327.3ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/tests/19?utf8=%E2%9C%93&textbox1=&textbox2=&textbox3=&textbox4=&textbox5=&textbox6=&commit=Check" for 127.0.0.1 at 2017-12-25 22:42:39 -0500
+Processing by TestsController#show as JS
+  Parameters: {"utf8"=>"✓", "textbox1"=>"", "textbox2"=>"", "textbox3"=>"", "textbox4"=>"", "textbox5"=>"", "textbox6"=>"", "commit"=>"Check", "id"=>"19"}
+  [1m[36mTest Load (0.4ms)[0m  [1m[34mSELECT  "tests".* FROM "tests" WHERE "tests"."id" = $1 LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "question_longs"[0m
+  [1m[36mQuestionLong Load (0.5ms)[0m  [1m[34mSELECT "question_longs".* FROM "question_longs"[0m
+  [1m[36mCACHE QuestionLong Load (0.0ms)[0m  [1m[34mSELECT "question_longs".* FROM "question_longs"[0m
+  Rendering tests/show.js.erb
+  Rendered tests/show.js.erb (5.5ms)
+Completed 200 OK in 46ms (Views: 26.6ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/tests/new" for 127.0.0.1 at 2017-12-25 22:42:44 -0500
+Processing by TestsController#new as HTML
+  Rendering tests/new.html.erb within layouts/application
+  Rendered tests/_form.html.erb (5.1ms)
+  Rendered tests/new.html.erb within layouts/application (7.8ms)
+Completed 200 OK in 484ms (Views: 480.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/tests" for 127.0.0.1 at 2017-12-25 22:42:46 -0500
+Processing by TestsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"h+qm2ghkCJrhcJ67+m5BWUEcy8hfGYLN5V5eBIs+CeuSMrXTHlTDCEVV0A7MHozClSW9PcqGbIQZy1M9yDqMoQ==", "test"=>{"name"=>""}, "commit"=>"Start a test"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (13.0ms)[0m  [1m[32mINSERT INTO "tests" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", ""], ["created_at", "2017-12-26 03:42:46.760736"], ["updated_at", "2017-12-26 03:42:46.760736"]]
+  [1m[35m (5.1ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/tests/20
+Completed 302 Found in 23ms (ActiveRecord: 18.2ms)
+
+
+Started GET "/tests/20" for 127.0.0.1 at 2017-12-25 22:42:46 -0500
+Processing by TestsController#show as HTML
+  Parameters: {"id"=>"20"}
+  [1m[36mTest Load (0.4ms)[0m  [1m[34mSELECT  "tests".* FROM "tests" WHERE "tests"."id" = $1 LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "question_longs"[0m
+  [1m[36mQuestionLong Load (17.0ms)[0m  [1m[34mSELECT "question_longs".* FROM "question_longs"[0m
+  [1m[36mCACHE QuestionLong Load (0.0ms)[0m  [1m[34mSELECT "question_longs".* FROM "question_longs"[0m
+  Rendering tests/show.html.erb within layouts/application
+  [1m[36mQuestionMove Load (2.1ms)[0m  [1m[34mSELECT "question_moves".* FROM "question_moves"[0m
+  Rendered tests/show.html.erb within layouts/application (5.8ms)
+Completed 200 OK in 323ms (Views: 296.6ms | ActiveRecord: 20.0ms)
+
+
+Started GET "/tests/20?utf8=%E2%9C%93&textbox1=&textbox2=&textbox3=&textbox4=&textbox5=&textbox6=&commit=Check" for 127.0.0.1 at 2017-12-25 22:42:51 -0500
+Processing by TestsController#show as JS
+  Parameters: {"utf8"=>"✓", "textbox1"=>"", "textbox2"=>"", "textbox3"=>"", "textbox4"=>"", "textbox5"=>"", "textbox6"=>"", "commit"=>"Check", "id"=>"20"}
+  [1m[36mTest Load (0.3ms)[0m  [1m[34mSELECT  "tests".* FROM "tests" WHERE "tests"."id" = $1 LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+  [1m[35m (7.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "question_longs"[0m
+  [1m[36mQuestionLong Load (6.5ms)[0m  [1m[34mSELECT "question_longs".* FROM "question_longs"[0m
+  [1m[36mCACHE QuestionLong Load (0.0ms)[0m  [1m[34mSELECT "question_longs".* FROM "question_longs"[0m
+  Rendering tests/show.js.erb
+  Rendered tests/show.js.erb (10.4ms)
+Completed 200 OK in 61ms (Views: 28.7ms | ActiveRecord: 14.1ms)
+
+
