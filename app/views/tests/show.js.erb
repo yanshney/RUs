@@ -1,67 +1,197 @@
+if($('.nav-tabs .active > a').attr('href')=="#1"){
+  <%if params["commit"]=="Next"%>
+  $("#score").html("The current score is 0/20");
+  <%else%>
+  var className = $('#check').attr('class');
+  $('#check').removeClass(className);
+  className = className+"0";
+  $('#check').addClass(className);
+  if($('#check').attr('class')=="0000"){
+    $( "#check" ).hide();
+  }
 
-$ans1 = '<%=@questions[0].ansRight%>';
-$ans2 = '<%=@questions[0].ansRight2%>';
-$ans3 = '<%=@questions[1].ansRight%>';
-$ans4 = '<%=@questions[1].ansRight2%>';
-$ans5 = '<%=@questions[2].ansRight%>';
-$ans6 = '<%=@questions[2].ansRight2%>';
-console.log($ans2);
-$arr1 = <%=raw @arr1%>;
-$arr2 = <%=raw @arr2%>;
-$arr3 = <%=raw @arr3%>;
-if ($ans1 == $("#textfield1").val()){
+<%if @questions[0].ansRight == params["textbox1"]%>
+if($("#res").html()!='<img alt="rss feed" src="/assets/happy_dog-66d9a6f23cfa9c41179b76f3e5eb3b107a31771152f7751775961a6f6d417ab0.jpg">'){
+  console.log("Sophik");
   $("#res").html('<%= escape_javascript(image_tag("happy_dog.jpg", :alt => "rss feed")) %>');
+  if($("#check").hasClass("00")){
+  curr_score+=1;
 }
-else if($arr1.includes($("#textfield1").val())){
+if($("#check").hasClass("000")){
+curr_score+=0.5;
+}
+if($("#check").hasClass("0000")){
+curr_score+=0.25;
+}
+
+
+  $('#textfield1').attr('readonly', true);
+  $('#textfield1').addClass('input-disabled');
+}
+<% elsif @arr1.include?(params["textbox1"])%>
   $("#res").html("wrong case");
-}
-else{
+
+<%else%>
     $("#res").html("hi");
-}
+<%end%>
 
-if ($ans2 == $("#textfield2").val()){
-  console.log("utik");
+<%if @questions[0].ansRight2 == params["textbox2"]%>
+
+if($("#res2").html()!='<img alt="rss feed" src="/assets/happy_dog-66d9a6f23cfa9c41179b76f3e5eb3b107a31771152f7751775961a6f6d417ab0.jpg">'){
   $("#res2").html('<%= escape_javascript(image_tag("happy_dog.jpg", :alt => "rss feed")) %>');
+  if($("#check").hasClass("00")){
+  curr_score+=1;
+}
+if($("#check").hasClass("000")){
+curr_score+=0.5;
+}
+if($("#check").hasClass("0000")){
+curr_score+=0.25;
+}
+  $('#textfield2').attr('readonly', true);
+  $('#textfield2').addClass('input-disabled');
 }
 
-else{
+<%else%>
     $("#res2").html("hi");
-}
+<%end%>
 
-if ($ans3 == $("#textfield3").val()){
+<%if @questions[1].ansRight == params["textbox3"]%>
+if($("#res3").html()!='<img alt="rss feed" src="/assets/happy_dog-66d9a6f23cfa9c41179b76f3e5eb3b107a31771152f7751775961a6f6d417ab0.jpg">'){
   $("#res3").html('<%= escape_javascript(image_tag("happy_dog.jpg", :alt => "rss feed")) %>');
+  if($("#check").hasClass("00")){
+  curr_score+=1;
 }
-else if($arr2.includes($("#textfield3").val())){
+if($("#check").hasClass("000")){
+curr_score+=0.5;
+}
+if($("#check").hasClass("0000")){
+curr_score+=0.25;
+}
+  $('#textfield3').attr('readonly', true);
+  $('#textfield3').addClass('input-disabled');
+}
+
+
+<% elsif @arr2.include?(params["textbox3"])%>
   $("#res3").html("wrong case");
-}
-else{
+
+<%else%>
     $("#res3").html("hi");
-}
+<%end%>
 
-if ($ans4 == $("#textfield4").val()){
+<%if @questions[1].ansRight2 == params["textbox4"]%>
   console.log("utik");
-  $("#res4").html('<%= escape_javascript(image_tag("happy_dog.jpg", :alt => "rss feed")) %>');
-}
+  if($("#res4").html()!='<img alt="rss feed" src="/assets/happy_dog-66d9a6f23cfa9c41179b76f3e5eb3b107a31771152f7751775961a6f6d417ab0.jpg">'){
+    $("#res4").html('<%= escape_javascript(image_tag("happy_dog.jpg", :alt => "rss feed")) %>');
+    if($("#check").hasClass("00")){
+    curr_score+=1;
+  }
+  if($("#check").hasClass("000")){
+  curr_score+=0.5;
+  }
+  if($("#check").hasClass("0000")){
+  curr_score+=0.25;
+  }
+    $('#textfield4').attr('readonly', true);
+    $('#textfield4').addClass('input-disabled');
+  }
 
-else{
+
+<%else%>
     $("#res4").html("hi");
-}
+<%end%>
 
-if ($ans5 == $("#textfield5").val()){
+<%if @questions[2].ansRight == params["textbox5"]%>
+if($("#res5").html()!='<img alt="rss feed" src="/assets/happy_dog-66d9a6f23cfa9c41179b76f3e5eb3b107a31771152f7751775961a6f6d417ab0.jpg">'){
   $("#res5").html('<%= escape_javascript(image_tag("happy_dog.jpg", :alt => "rss feed")) %>');
+  if($("#check").hasClass("00")){
+  curr_score+=1;
 }
-else if($arr3.includes($("#textfield5").val())){
+if($("#check").hasClass("000")){
+curr_score+=0.5;
+}
+if($("#check").hasClass("0000")){
+curr_score+=0.25;
+}
+  $('#textfield5').attr('readonly', true);
+  $('#textfield5').addClass('input-disabled');
+}
+
+<% elsif @arr2.include?(params["textbox5"])%>
   $("#res5").html("wrong case");
-}
-else{
+
+<%else%>
     $("#res5").html("hi");
-}
+<%end%>
 
-if ($ans6 == $("#textfield6").val()){
-  console.log("utik");
+<%if @questions[2].ansRight2 == params["textbox6"]%>
+if($("#res6").html()!='<img alt="rss feed" src="/assets/happy_dog-66d9a6f23cfa9c41179b76f3e5eb3b107a31771152f7751775961a6f6d417ab0.jpg">'){
   $("#res6").html('<%= escape_javascript(image_tag("happy_dog.jpg", :alt => "rss feed")) %>');
+  if($("#check").hasClass("00")){
+  curr_score+=1;
+}
+if($("#check").hasClass("000")){
+curr_score+=0.5;
+}
+if($("#check").hasClass("0000")){
+curr_score+=0.25;
+}
+  $('#textfield6').attr('readonly', true);
+  $('#textfield6').addClass('input-disabled');
 }
 
-else{
+<%else%>
     $("#res6").html("hi");
+<%end%>
+<%end%>
+$("#score").html("The current score is "+curr_score+"/20");
+}
+if($('.nav-tabs .active > a').attr('href')=="#2"){
+
+}
+if($('.nav-tabs .active > a').attr('href')=="#3"){
+  var className = $('#check2').attr('class');
+  $('#check2').removeClass(className);
+  className = className+"0";
+  $('#check2').addClass(className);
+  if($('#check2').attr('class')=="0000"){
+    $( "#check2" ).hide();
+  }
+$(".row").each(function() {
+  var array = [];
+  var i=0;
+$(this).children().each(function() {
+array[i] = $(this).children();
+i+=1;
+});
+if($(array[1]).attr("class") == $(array[1]).find(":selected").text()&&$(array[2]).attr("class") == $(array[2]).find(":selected").text()){
+  if($(array[3]).html()!='<img alt="rss feed" class="check_dog" src="/assets/happy_dog-66d9a6f23cfa9c41179b76f3e5eb3b107a31771152f7751775961a6f6d417ab0.jpg">'){
+    console.log(array[3]);
+    $(array[3]).html('<%= escape_javascript(image_tag("happy_dog.jpg", :alt => "rss feed", :class => "check_dog")) %>');
+    if($("#check2").hasClass("00")){
+    curr_score+=1;
+  }
+  if($("#check2").hasClass("000")){
+  curr_score+=0.5;
+  }
+  if($("#check2").hasClass("0000")){
+  curr_score+=0.25;
+  }
+  $(array[1]).prop("disabled", true);
+  $(array[2]).prop("disabled", true);
+  }
+}
+  else if($(array[1]).attr("class") != $(array[1]).find(":selected").text()){
+    $(array[3]).html("Check gender");
+  }
+  else if($(array[2]).attr("class") != $(array[2]).find(":selected").text()){
+    $(array[3]).html("Check number");
+  }
+  if($(array[1]).attr("class") != $(array[1]).find(":selected").text()&&$(array[2]).attr("class") != $(array[2]).find(":selected").text()){
+    $(array[3]).html("Incorrect");
+  }
+});
+$("#score").html("The current score is "+curr_score+"/20");
+
 }

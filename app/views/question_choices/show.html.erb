@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Gender:</strong>
+  <%= @question_choice.gender %>
+</p>
+
+<p>
+  <strong>Number:</strong>
+  <%= @question_choice.number %>
+</p>
+
+<p>
+  <strong>Word:</strong>
+  <%= @question_choice.word %>
+</p>
+
+<%= link_to 'Edit', edit_question_choice_path(@question_choice) %> |
+<%= link_to 'Back', question_choices_path %>

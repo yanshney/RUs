@@ -10,7 +10,9 @@ class TestsController < ApplicationController
   # GET /tests/1
   # GET /tests/1.json
   def show
-    !if request.xhr?
+    if params["commit"]=="Next"
+
+      @test.update_attributes(:active_tab=>@test.active_tab+1)
     end
   end
 
@@ -27,7 +29,17 @@ class TestsController < ApplicationController
   # POST /tests.json
   def create
     @test = Test.new(test_params)
+    questions_choice = QuestionChoice.all.sample(2);
+    questions_move = QuestionMove.all.sample(2);
+    questions_choice.each do |q|
+      @test.questions_choice << q.id
+    end
 
+    questions_move.each do |q|
+      @test.questions_move << q.id
+    end
+    @test.curr_score=0
+    @test.active_tab=1
     respond_to do |format|
       if @test.save
         format.html { redirect_to @test, notice: 'Test was successfully created.' }

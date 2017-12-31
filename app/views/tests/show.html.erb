@@ -1,12 +1,12 @@
 <ul id="mytabs" class="nav nav-tabs">
-    <li class="active"><a data-toggle="tab" href="#home">Home</a></li>
-    <li id ="menu_one"><a data-toggle="tab" href="#menu1">Question 1</a></li>
-    <li><a data-toggle="tab" href="#menu2">Question 2</a></li>
-    <li><a data-toggle="tab" href="#menu3">Question 3</a></li>
+    <li class="<%=@test.active_tab==1 ? 'active' : 'disabled'%>" id="1"><a data-toggle="tab" href="#1">Home</a></li>
+    <li class="<%=@test.active_tab==2 ? 'active' : 'disabled'%>" id="2"><a data-toggle="tab" href="#2">Question 1</a></li>
+    <li class="<%=@test.active_tab==3 ? 'active' : 'disabled'%>"id ="3"><a data-toggle="tab" href="#3">Question 2</a></li>
+    <li class="<%=@test.active_tab==4 ? 'active' : 'disabled'%>" id ="4"><a data-toggle="tab" href="#4">Question 3</a></li>
   </ul>
   <div class="container">
   <div class="tab-content">
-    <div id="home" class="tab-pane fade in active">
+    <div id="1a" class="tab-pane fade in <%=@test.active_tab==1 ? 'active' : 'disabled'%>">
       <%= form_tag(@test, :method => "get", id: "checker", remote:true) do %>
       <p>
       <%= @questions[0].partOne %>
@@ -21,9 +21,9 @@
     <br>
       <p>
       <%= @questions[1].partOne %>
-      <%=text_field_tag :textbox3, params[:search1], :id =>"textfield3", :class => "textfield"%>
+      <%=text_field_tag :textbox3, params[:search3], :id =>"textfield3", :class => "textfield"%>
       <%= @questions[1].partTwo %>
-      <%= text_field_tag :textbox4, params[:search2],  :id => "textfield4", :class => "textfield" %>
+      <%= text_field_tag :textbox4, params[:search4],  :id => "textfield4", :class => "textfield" %>
       <%= @questions[1].partThree %>
     </p>
     <br>
@@ -32,9 +32,9 @@
     <br>
     <p>
       <%= @questions[2].partOne %>
-      <%=text_field_tag :textbox5, params[:search1], :id =>"textfield5", :class => "textfield"%>
+      <%=text_field_tag :textbox5, params[:search5], :id =>"textfield5", :class => "textfield"%>
       <%= @questions[2].partTwo %>
-      <%= text_field_tag :textbox6, params[:search2],  :id => "textfield6", :class => "textfield" %>
+      <%= text_field_tag :textbox6, params[:search6],  :id => "textfield6", :class => "textfield" %>
       <%= @questions[2].partThree %>
 
       </p>
@@ -42,8 +42,8 @@
       <br>
       <br>
       <br>
-      <div id="check"><%= submit_tag 'Check' %></div>
-      <button type="button" id="changetabbutton" class="btn btn-success">Next</button>
+      <div id="check" class ="0"><%= submit_tag 'Check' %></div>
+      <div><%= submit_tag "Next", :id => "changetabbutton", :class =>"btn btn-success" %></div>
       <% end %>
       <div id="res" class="ans"> </div>
       <div id="res2" class="ans"> </div>
@@ -53,11 +53,11 @@
       <div id="res6" class="ans"> </div>
       <br>
     </div>
-    <div id="menu1" class="tab-pane fade">
-         <div class="drag <%=@moves[0].gender%>"> <%=@moves[0].word%> </div>
+    <div id="2a" class="tab-pane fade in <%=@test.active_tab==2 ? 'active' : 'disabled'%>">
+         <div class="drag <%=QuestionMove.find(@test.questions_move[0]).gender%>"> <%=QuestionMove.find(@test.questions_move[0]).word%> </div>
          <br>
          <br>
-         <div class="drag <%=@moves[1].gender%>"> <%=@moves[1].word%> </div>
+         <div class="drag <%=QuestionMove.find(@test.questions_move[1]).gender%>"> <%=QuestionMove.find(@test.questions_move[1]).word%> </div>
          <br>
          <br>
          <br>
@@ -69,14 +69,37 @@
 
         <button type="button" id="changetabmove" class="btn btn-success">Next</button>
     </div>
-    <div id="menu2" class="tab-pane fade">
-
+    <div id="3a" class="tab-pane fade in <%=@test.active_tab==3 ? 'active' : 'disabled'%>">
+      <%= form_tag(@test, :method => "get", id: "checker", remote:true) do %>
+       <%@test.questions_choice.each do |q|%>
+       <div class ="row">
+         <div class ="col-sm-2">
+      <%=question=QuestionChoice.find(q).word%>
     </div>
-    <div id="menu3" class="tab-pane fade">
+    <div class ="col-sm-2">
+       <%=select_tag "gender", options_for_select(["masculine", "feminine", "neuter"]), :class =>  QuestionChoice.find(q).gender %>
+     </div>
+     <div class ="col-sm-2">
+       <%=select_tag "number", options_for_select(["singular", "plural"]), :class => QuestionChoice.find(q).number%>
+     </div>
+       <div class ="col-sm-2">
+         <div class="answer"> </div>
+         </div>
+         <br>
+         <br>
+         <br>
+     </div>
+     <%end%>
+     <div id="check2" class="0"><%= submit_tag 'Check' %></div>
+     <button type="button" id="changetabchoice" class="btn btn-success">Next</button>
+     <%end%>
+    </div>
+    <div id="4a" class="tab-pane fade in <%=@test.active_tab==4 ? 'active' : 'disabled'%>">
 
     </div>
   </div>
 </div>
+<p id="score"> The current score is <%=@test.curr_score%>/20 </p>
 
 <%= link_to 'Edit', edit_test_path(@test) %> |
 <%= link_to 'Back', tests_path %>
