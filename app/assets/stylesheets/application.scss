@@ -16,32 +16,40 @@
 img{
   height:60px;
 }
+body{
+  background-image: url("/assets/kremlin.png");
+  background-size:150px;
+}
 .ans{
   position:absolute;
 }
 .textfield{
   position:relative;
   width: 100px;
-margin-left: -7px;
+  margin-left: -7px;
 }
 
 .nav-tabs{
   margin-top: 200px;
+  background-color: white;
+  font-weight: bold;
 }
 p{
   font-size: 25px;
 text-align: center;
 }
-#check{
+#check3 {
   margin-left:1000px;
   margin-top:100px;
 }
+
 .btn-success{
   margin-left: 1100px;
   margin-top: -50px;
 }
 .container{
   margin-top: 50px;
+
 }
 
 #masculine_drop {
@@ -50,6 +58,7 @@ text-align: center;
     border:solid;
     text-align: center;
     margin-left:-50px;
+    background-color: white;
 }
 #feminine_drop {
     width: 250px;
@@ -58,6 +67,7 @@ text-align: center;
     margin-top: -250px;
     margin-left: 275px;
     text-align: center;
+    background-color: white;
 }
 #neuter_drop {
     width: 250px;
@@ -66,6 +76,7 @@ text-align: center;
     margin-top: -250px;
     margin-left: 625px;
     text-align: center;
+    background-color: white;
 }
 #plural_drop {
     width: 250px;
@@ -74,6 +85,7 @@ text-align: center;
     margin-top: -250px;
     margin-left: 975px;
     text-align: center;
+    background-color: white;
 }
 .ui-state-highlight{
   background-color: green !important;
@@ -96,4 +108,10 @@ margin-top:-25px;
 }
 #check2{
   margin-left:1000px;
+}
+.check{
+  margin-left:1000px;
+}
+#red_square{
+  height:1000px;
 }

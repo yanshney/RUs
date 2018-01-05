@@ -1,59 +1,65 @@
 <ul id="mytabs" class="nav nav-tabs">
-    <li class="<%=@test.active_tab==1 ? 'active' : 'disabled'%>" id="1"><a data-toggle="tab" href="#1">Home</a></li>
-    <li class="<%=@test.active_tab==2 ? 'active' : 'disabled'%>" id="2"><a data-toggle="tab" href="#2">Question 1</a></li>
-    <li class="<%=@test.active_tab==3 ? 'active' : 'disabled'%>"id ="3"><a data-toggle="tab" href="#3">Question 2</a></li>
-    <li class="<%=@test.active_tab==4 ? 'active' : 'disabled'%>" id ="4"><a data-toggle="tab" href="#4">Question 3</a></li>
+    <li class="<%=@test.active_tab==1 ? 'active' : 'disabled'%>" id="1"><a data-toggle="tab" href="#1">Question 1</a></li>
+    <li class="<%=@test.active_tab==2 ? 'active' : 'disabled'%>" id="2"><a data-toggle="tab" href="#2">Question 2</a></li>
+    <li class="<%=@test.active_tab==3 ? 'active' : 'disabled'%>"id ="3"><a data-toggle="tab" href="#3">Question 3</a></li>
+    <li class="<%=@test.active_tab==4 ? 'active' : 'disabled'%>" id ="4"><a data-toggle="tab" href="#4">Question 4</a></li>
+    <li class="<%=@test.active_tab==5 ? 'active' : 'disabled'%>" id ="5"><a data-toggle="tab" href="#5">Question 5</a></li>
+    <li class="<%=@test.active_tab==6 ? 'active' : 'disabled'%>" id ="6"><a data-toggle="tab" href="#6">Question 6</a></li>
+    <li class="<%=@test.active_tab==7 ? 'active' : 'disabled'%>" id ="7"><a data-toggle="tab" href="#7">Question 7</a></li>
   </ul>
   <div class="container">
   <div class="tab-content">
-    <div id="1a" class="tab-pane fade in <%=@test.active_tab==1 ? 'active' : 'disabled'%>">
+    <%for i in 3..5 %>
+    <div id="<%=i%>a" class="tab-pane fade in <%=@test.active_tab==i ? 'active' : 'disabled'%>">
       <%= form_tag(@test, :method => "get", id: "checker", remote:true) do %>
       <p>
-      <%= @questions[0].partOne %>
-      <%=text_field_tag :textbox1, params[:search1], :id =>"textfield1", :class => "textfield"%>
-      <%= @questions[0].partTwo %>
-      <%= text_field_tag :textbox2, params[:search2],  :id => "textfield2", :class => "textfield" %>
-      <%= @questions[0].partThree %>
+      <%= @questions[3*(i-3)].partOne %>
+      <%=text_field_tag :textbox1, params[:search1], :id =>"textfield1_"+i.to_s, :class => "textfield"%>
+      <%= @questions[3*(i-3)].partTwo %>
+      <%= text_field_tag :textbox2, params[:search2], :id => "textfield2_"+i.to_s, :class => "textfield" %>
+      <%= @questions[3*(i-3)].partThree %>
     </p>
     <br>
     <br>
     <br>
     <br>
       <p>
-      <%= @questions[1].partOne %>
-      <%=text_field_tag :textbox3, params[:search3], :id =>"textfield3", :class => "textfield"%>
-      <%= @questions[1].partTwo %>
-      <%= text_field_tag :textbox4, params[:search4],  :id => "textfield4", :class => "textfield" %>
-      <%= @questions[1].partThree %>
+      <%= @questions[3*(i-3)+1].partOne %>
+      <%=text_field_tag :textbox3, params[:search3], :id =>"textfield3_"+i.to_s, :class => "textfield"%>
+      <%= @questions[3*(i-3)+1].partTwo %>
+      <%= text_field_tag :textbox4, params[:search4], :id =>"textfield4_"+i.to_s, :class => "textfield" %>
+      <%= @questions[3*(i-3)+1].partThree %>
     </p>
     <br>
     <br>
     <br>
     <br>
     <p>
-      <%= @questions[2].partOne %>
-      <%=text_field_tag :textbox5, params[:search5], :id =>"textfield5", :class => "textfield"%>
-      <%= @questions[2].partTwo %>
-      <%= text_field_tag :textbox6, params[:search6],  :id => "textfield6", :class => "textfield" %>
-      <%= @questions[2].partThree %>
+      <%= @questions[3*(i-3)+2].partOne %>
+      <%=text_field_tag :textbox5, params[:search5], :id =>"textfield5_"+i.to_s,:class => "textfield"%>
+      <%= @questions[3*(i-3)+2].partTwo %>
+      <%= text_field_tag :textbox6, params[:search6], :id =>"textfield6_"+i.to_s,:class => "textfield" %>
+      <%= @questions[3*(i-3)+2].partThree %>
 
       </p>
       <br>
       <br>
       <br>
       <br>
-      <div id="check" class ="0"><%= submit_tag 'Check' %></div>
-      <div><%= submit_tag "Next", :id => "changetabbutton", :class =>"btn btn-success" %></div>
+      <div class ="check 0"><%= submit_tag 'Check'%></div>
+      <div><%= submit_tag "Next", :id =>"changetabbutton"+i.to_s, :class =>"btn btn-success" %></div>
       <% end %>
-      <div id="res" class="ans"> </div>
-      <div id="res2" class="ans"> </div>
-      <div id="res3" class="ans"> </div>
-      <div id="res4" class="ans"> </div>
-      <div id="res5" class="ans"> </div>
-      <div id="res6" class="ans"> </div>
+      <div  id="res_<%=i%>" class="ans"> </div>
+      <div  id="res2_<%=i%>" class="ans"> </div>
+      <div  id="res3_<%=i%>" class="ans"> </div>
+      <div  id="res4_<%=i%>" class="ans"> </div>
+      <div  id="res5_<%=i%>" class="ans"> </div>
+      <div  id="res6_<%=i%>" class="ans"> </div>
       <br>
     </div>
-    <div id="2a" class="tab-pane fade in <%=@test.active_tab==2 ? 'active' : 'disabled'%>">
+    <%end%>
+
+    <div id="1a" class="tab-pane fade in <%=@test.active_tab==1 ? 'active' : 'disabled'%>">
          <div class="drag <%=QuestionMove.find(@test.questions_move[0]).gender%>"> <%=QuestionMove.find(@test.questions_move[0]).word%> </div>
          <br>
          <br>
@@ -69,7 +75,7 @@
 
         <button type="button" id="changetabmove" class="btn btn-success">Next</button>
     </div>
-    <div id="3a" class="tab-pane fade in <%=@test.active_tab==3 ? 'active' : 'disabled'%>">
+    <div id="2a" class="tab-pane fade in <%=@test.active_tab==2 ? 'active' : 'disabled'%>">
       <%= form_tag(@test, :method => "get", id: "checker", remote:true) do %>
        <%@test.questions_choice.each do |q|%>
        <div class ="row">
@@ -94,12 +100,9 @@
      <button type="button" id="changetabchoice" class="btn btn-success">Next</button>
      <%end%>
     </div>
-    <div id="4a" class="tab-pane fade in <%=@test.active_tab==4 ? 'active' : 'disabled'%>">
-
+    <div id="6a" class="tab-pane fade in <%=@test.active_tab==6 ? 'active' : 'disabled'%>">
+     <%=image_tag("redsq.png", height: '1000px', width: '1000px', id:"red_square")%>
     </div>
   </div>
 </div>
 <p id="score"> The current score is <%=@test.curr_score%>/20 </p>
-
-<%= link_to 'Edit', edit_test_path(@test) %> |
-<%= link_to 'Back', tests_path %>

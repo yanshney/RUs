@@ -13,7 +13,9 @@ class TestsController < ApplicationController
     if params["commit"]=="Next"
 
       @test.update_attributes(:active_tab=>@test.active_tab+1)
+      @test.update_attributes(:curr_q=>@test.curr_q+3)
     end
+
   end
 
   # GET /tests/new
@@ -40,6 +42,7 @@ class TestsController < ApplicationController
     end
     @test.curr_score=0
     @test.active_tab=1
+    @test.curr_q=0
     respond_to do |format|
       if @test.save
         format.html { redirect_to @test, notice: 'Test was successfully created.' }
@@ -86,6 +89,12 @@ class TestsController < ApplicationController
       @arr1=@questions[0].ansWrongOne.split(/,/)
       @arr2=@questions[1].ansWrongOne.split(/,/)
       @arr3=@questions[2].ansWrongOne.split(/,/)
+      @arr4=@questions[3].ansWrongOne.split(/,/)
+      @arr5=@questions[4].ansWrongOne.split(/,/)
+      @arr6=@questions[5].ansWrongOne.split(/,/)
+      @arr7=@questions[6].ansWrongOne.split(/,/)
+      @arr8=@questions[7].ansWrongOne.split(/,/)
+      @arr9=@questions[8].ansWrongOne.split(/,/)
       @moves=QuestionMove.all
     end
 

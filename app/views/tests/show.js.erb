@@ -1,156 +1,187 @@
-if($('.nav-tabs .active > a').attr('href')=="#1"){
-  <%if params["commit"]=="Next"%>
-  $("#score").html("The current score is 0/20");
-  <%else%>
-  var className = $('#check').attr('class');
-  $('#check').removeClass(className);
-  className = className+"0";
-  $('#check').addClass(className);
-  if($('#check').attr('class')=="0000"){
-    $( "#check" ).hide();
-  }
 
-<%if @questions[0].ansRight == params["textbox1"]%>
-if($("#res").html()!='<img alt="rss feed" src="/assets/happy_dog-66d9a6f23cfa9c41179b76f3e5eb3b107a31771152f7751775961a6f6d417ab0.jpg">'){
-  console.log("Sophik");
-  $("#res").html('<%= escape_javascript(image_tag("happy_dog.jpg", :alt => "rss feed")) %>');
-  if($("#check").hasClass("00")){
+if($('.nav-tabs .active > a').attr('href')=="#3"||$('.nav-tabs .active > a').attr('href')=="#4"||$('.nav-tabs .active > a').attr('href')=="#5"){
+  <%if params["commit"]=="Next"%>
+  <%else%>
+  str = $('.nav-tabs .active > a').attr('href').substring(1);
+  console.log(str);
+  if(check==0){
+    console.log("hi")
+  $("#res_"+str).position({
+  at: "left+30 top+45",
+  of: "#textfield1_"+str
+});
+
+$("#res2_"+str).position({
+at: "left+30 top+45",
+of: "#textfield2_"+str
+});
+
+$("#res3_"+str).position({
+at: "left+30 top+45",
+of: "#textfield3_"+str
+});
+
+$("#res4_"+str).position({
+at: "left+30 top+45",
+of: "#textfield4_"+str
+});
+
+$("#res5_"+str).position({
+at: "left+30"+" top+45-"+$(window).height(),
+of: "#textfield5_"+str
+});
+
+$("#res6_"+str).position({
+at: "left+30"+" top+45-"+$(window).height(),
+of: "#textfield6_"+str
+});
+check=1;
+}
+
+<%if @questions[@test.curr_q.to_i].ansRight == params["textbox1"]%>
+
+if($("#res_"+str).html()!='<img alt="rss feed" src="/assets/happy_dog-66d9a6f23cfa9c41179b76f3e5eb3b107a31771152f7751775961a6f6d417ab0.jpg">'){
+  $("#res_"+str).html('<%= escape_javascript(image_tag("happy_dog.jpg", :alt => "rss feed")) %>');
+  if($(".check").hasClass("00")){
   curr_score+=1;
 }
-if($("#check").hasClass("000")){
+if($(".check").hasClass("000")){
+
 curr_score+=0.5;
 }
-if($("#check").hasClass("0000")){
+if($(".check").hasClass("0000")){
 curr_score+=0.25;
 }
 
 
-  $('#textfield1').attr('readonly', true);
-  $('#textfield1').addClass('input-disabled');
+  $('#textfield1_'+str).attr('readonly', true);
+  $('#textfield1_'+str).addClass('input-disabled');
 }
 <% elsif @arr1.include?(params["textbox1"])%>
-  $("#res").html("wrong case");
+  $("#res_"+str).html("wrong case");
 
 <%else%>
-    $("#res").html("hi");
+    $("#res_"+str).html("hi");
 <%end%>
 
-<%if @questions[0].ansRight2 == params["textbox2"]%>
+<%if @questions[@test.curr_q.to_i].ansRight2 == params["textbox2"]%>
 
-if($("#res2").html()!='<img alt="rss feed" src="/assets/happy_dog-66d9a6f23cfa9c41179b76f3e5eb3b107a31771152f7751775961a6f6d417ab0.jpg">'){
-  $("#res2").html('<%= escape_javascript(image_tag("happy_dog.jpg", :alt => "rss feed")) %>');
-  if($("#check").hasClass("00")){
+if($("#res2_"+str).html()!='<img alt="rss feed" src="/assets/happy_dog-66d9a6f23cfa9c41179b76f3e5eb3b107a31771152f7751775961a6f6d417ab0.jpg">'){
+  $("#res2_"+str).html('<%= escape_javascript(image_tag("happy_dog.jpg", :alt => "rss feed")) %>');
+  if($(".check").hasClass("00")){
   curr_score+=1;
 }
-if($("#check").hasClass("000")){
+if($(".check").hasClass("000")){
 curr_score+=0.5;
 }
-if($("#check").hasClass("0000")){
+if($(".check").hasClass("0000")){
 curr_score+=0.25;
 }
-  $('#textfield2').attr('readonly', true);
-  $('#textfield2').addClass('input-disabled');
+  $('#textfield2_'+str).attr('readonly', true);
+  $('#textfield2_'+str).addClass('input-disabled');
 }
 
 <%else%>
-    $("#res2").html("hi");
+    $("#res2_"+str).html("hi");
 <%end%>
 
-<%if @questions[1].ansRight == params["textbox3"]%>
-if($("#res3").html()!='<img alt="rss feed" src="/assets/happy_dog-66d9a6f23cfa9c41179b76f3e5eb3b107a31771152f7751775961a6f6d417ab0.jpg">'){
-  $("#res3").html('<%= escape_javascript(image_tag("happy_dog.jpg", :alt => "rss feed")) %>');
-  if($("#check").hasClass("00")){
+<%if @questions[@test.curr_q.to_i+1].ansRight == params["textbox3"]%>
+if($("#res3_"+str).html()!='<img alt="rss feed" src="/assets/happy_dog-66d9a6f23cfa9c41179b76f3e5eb3b107a31771152f7751775961a6f6d417ab0.jpg">'){
+  $("#res3_"+str).html('<%= escape_javascript(image_tag("happy_dog.jpg", :alt => "rss feed")) %>');
+  if($(".check").hasClass("00")){
   curr_score+=1;
 }
-if($("#check").hasClass("000")){
+if($(".check").hasClass("000")){
 curr_score+=0.5;
 }
-if($("#check").hasClass("0000")){
+if($(".check").hasClass("0000")){
 curr_score+=0.25;
 }
-  $('#textfield3').attr('readonly', true);
-  $('#textfield3').addClass('input-disabled');
+  $('#textfield3_'+str).attr('readonly', true);
+  $('#textfield3_'+str).addClass('input-disabled');
 }
 
 
 <% elsif @arr2.include?(params["textbox3"])%>
-  $("#res3").html("wrong case");
+  $("#res3_"+str).html("wrong case");
 
 <%else%>
-    $("#res3").html("hi");
+    $("#res3_"+str).html("hi");
 <%end%>
 
-<%if @questions[1].ansRight2 == params["textbox4"]%>
+<%if @questions[@test.curr_q.to_i+1].ansRight2 == params["textbox4"]%>
   console.log("utik");
-  if($("#res4").html()!='<img alt="rss feed" src="/assets/happy_dog-66d9a6f23cfa9c41179b76f3e5eb3b107a31771152f7751775961a6f6d417ab0.jpg">'){
-    $("#res4").html('<%= escape_javascript(image_tag("happy_dog.jpg", :alt => "rss feed")) %>');
-    if($("#check").hasClass("00")){
+  if($("#res4_"+str).html()!='<img alt="rss feed" src="/assets/happy_dog-66d9a6f23cfa9c41179b76f3e5eb3b107a31771152f7751775961a6f6d417ab0.jpg">'){
+    $("#res4_"+str).html('<%= escape_javascript(image_tag("happy_dog.jpg", :alt => "rss feed")) %>');
+    if($(".check").hasClass("00")){
     curr_score+=1;
   }
-  if($("#check").hasClass("000")){
+  if($(".check").hasClass("000")){
   curr_score+=0.5;
   }
-  if($("#check").hasClass("0000")){
+  if($(".check").hasClass("0000")){
   curr_score+=0.25;
   }
-    $('#textfield4').attr('readonly', true);
-    $('#textfield4').addClass('input-disabled');
+    $('#textfield4_'+str).attr('readonly', true);
+    $('#textfield4_'+str).addClass('input-disabled');
   }
 
 
 <%else%>
-    $("#res4").html("hi");
+    $("#res4_"+str).html("hi");
 <%end%>
 
-<%if @questions[2].ansRight == params["textbox5"]%>
-if($("#res5").html()!='<img alt="rss feed" src="/assets/happy_dog-66d9a6f23cfa9c41179b76f3e5eb3b107a31771152f7751775961a6f6d417ab0.jpg">'){
-  $("#res5").html('<%= escape_javascript(image_tag("happy_dog.jpg", :alt => "rss feed")) %>');
-  if($("#check").hasClass("00")){
+<%if @questions[@test.curr_q.to_i+2].ansRight == params["textbox5"]%>
+if($("#res5_"+str).html()!='<img alt="rss feed" src="/assets/happy_dog-66d9a6f23cfa9c41179b76f3e5eb3b107a31771152f7751775961a6f6d417ab0.jpg">'){
+  $("#res5_"+str).html('<%= escape_javascript(image_tag("happy_dog.jpg", :alt => "rss feed")) %>');
+  if($(".check").hasClass("00")){
   curr_score+=1;
 }
-if($("#check").hasClass("000")){
+if($(".check").hasClass("000")){
 curr_score+=0.5;
 }
-if($("#check").hasClass("0000")){
+if($(".check").hasClass("0000")){
 curr_score+=0.25;
 }
-  $('#textfield5').attr('readonly', true);
-  $('#textfield5').addClass('input-disabled');
+  $('#textfield5_'+str).attr('readonly', true);
+  $('#textfield5_'+str).addClass('input-disabled');
 }
 
 <% elsif @arr2.include?(params["textbox5"])%>
-  $("#res5").html("wrong case");
+  $("#res5_"+str).html("wrong case");
 
 <%else%>
-    $("#res5").html("hi");
+    $("#res5_"+str).html("hi");
 <%end%>
 
-<%if @questions[2].ansRight2 == params["textbox6"]%>
-if($("#res6").html()!='<img alt="rss feed" src="/assets/happy_dog-66d9a6f23cfa9c41179b76f3e5eb3b107a31771152f7751775961a6f6d417ab0.jpg">'){
-  $("#res6").html('<%= escape_javascript(image_tag("happy_dog.jpg", :alt => "rss feed")) %>');
-  if($("#check").hasClass("00")){
+<%if @questions[@test.curr_q.to_i+2].ansRight2 == params["textbox6"]%>
+if($("#res6_"+str).html()!='<img alt="rss feed" src="/assets/happy_dog-66d9a6f23cfa9c41179b76f3e5eb3b107a31771152f7751775961a6f6d417ab0.jpg">'){
+  $("#res6_"+str).html('<%= escape_javascript(image_tag("happy_dog.jpg", :alt => "rss feed")) %>');
+  if($(".check").hasClass("00")){
   curr_score+=1;
 }
-if($("#check").hasClass("000")){
+if($(".check").hasClass("000")){
 curr_score+=0.5;
 }
-if($("#check").hasClass("0000")){
+if($(".check").hasClass("0000")){
 curr_score+=0.25;
 }
-  $('#textfield6').attr('readonly', true);
-  $('#textfield6').addClass('input-disabled');
+  $('#textfield6_'+str).attr('readonly', true);
+  $('#textfield6_'+str).addClass('input-disabled');
 }
 
 <%else%>
-    $("#res6").html("hi");
+    $("#res6_"+str).html("hi");
 <%end%>
 <%end%>
 $("#score").html("The current score is "+curr_score+"/20");
 }
-if($('.nav-tabs .active > a').attr('href')=="#2"){
+
+
+if($('.nav-tabs .active > a').attr('href')=="#1"){
 
 }
-if($('.nav-tabs .active > a').attr('href')=="#3"){
+if($('.nav-tabs .active > a').attr('href')=="#2"){
   var className = $('#check2').attr('class');
   $('#check2').removeClass(className);
   className = className+"0";

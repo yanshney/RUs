@@ -16,40 +16,8 @@
 //= require turbolinks
 //= require_tree .
 var curr_score=0;
-$( document ).on('turbolinks:load', function() {
-
-  $("#res").position({
-  at: "left+30 top+45",
-  of: "#textfield1"
-});
-
-$("#res2").position({
-at: "left+30 top+45",
-of: "#textfield2"
-});
-
-$("#res3").position({
-at: "left+30 top+45",
-of: "#textfield3"
-});
-
-$("#res4").position({
-at: "left+30 top+45",
-of: "#textfield4"
-});
-
-$("#res5").position({
-at: "left+30"+" top+45-"+$(window).height(),
-of: "#textfield5"
-});
-
-$("#res6").position({
-at: "left+30"+" top+45-"+$(window).height(),
-of: "#textfield6"
-});
-});
-
-
+var check=0;
+console.log($("#textfield1").val());
 
 $( document ).on('turbolinks:load', function() {
   $(".drag").draggable({ revert: 'invalid' });
@@ -108,7 +76,72 @@ $( document ).on('turbolinks:load', function() {
 
 });
 });
-$(document).on('click', '#changetabbutton',function(){
+$(document).on('click', '#changetabbutton3',function(){
+  $("#3").addClass("disabled");
+  $("#3a").addClass("disabled");
+  $("#3a").removeClass("active");
+  $('a[href="#3"]').removeAttr("data-toggle");
+  $('a[href="#3"]').removeAttr("href");
+  $("#4").removeClass("disabled");
+  $("#4a").removeClass("disabled");
+  $("#4a").addClass("active");
+  $('#4>a').attr({
+        "data-toogle" : "tab",
+        "href" : "#4"
+    });
+    $('#mytabs a[href="#4"]').tab('show')
+});
+
+$(document).on('click', '#changetabbutton4',function(){
+  $("#4").addClass("disabled");
+  $("#4a").addClass("disabled");
+  $("#4a").removeClass("active");
+  $('a[href="#4"]').removeAttr("data-toggle");
+  $('a[href="#4"]').removeAttr("href");
+  $("#5").removeClass("disabled");
+  $("#5a").removeClass("disabled");
+  $("#5a").addClass("active");
+  $('#5>a').attr({
+        "data-toogle" : "tab",
+        "href" : "#5"
+    });
+    $('#mytabs a[href="#5"]').tab('show')
+});
+$(document).on('click', '#changetabbutton5',function(){
+  $("#5").addClass("disabled");
+  $("#5a").addClass("disabled");
+  $("#5a").removeClass("active");
+  $('a[href="#5"]').removeAttr("data-toggle");
+  $('a[href="#5"]').removeAttr("href");
+  $("#6").removeClass("disabled");
+  $("#6a").removeClass("disabled");
+  $("#6a").addClass("active");
+  $('#6>a').attr({
+        "data-toogle" : "tab",
+        "href" : "#6"
+    });
+    $('#mytabs a[href="#6"]').tab('show');
+});
+
+$(document).on('click', '#changetabbutton6',function(){
+  $("#6").addClass("disabled");
+  $("#6a").addClass("disabled");
+  $("#6a").removeClass("active");
+  $('a[href="#6"]').removeAttr("data-toggle");
+  $('a[href="#6"]').removeAttr("href");
+  $("#7").removeClass("disabled");
+  $("#7a").removeClass("disabled");
+  $("#7a").addClass("active");
+  $('#7>a').attr({
+        "data-toogle" : "tab",
+        "href" : "#7"
+    });
+    $('#mytabs a[href="#7"]').tab('show');
+
+
+});
+
+$(document).on('click', '#changetabmove',function(){
   $("#1").addClass("disabled");
   $("#1a").addClass("disabled");
   $("#1a").removeClass("active");
@@ -124,7 +157,37 @@ $(document).on('click', '#changetabbutton',function(){
     $('#mytabs a[href="#2"]').tab('show')
 });
 
-$(document).on('click', '#changetabmove',function(){
+$(document).on('click', '.btn-success',function(){
+$(".check").removeClass().addClass("check 0");
+$(".check").show();
+check=0;
+$('.textfield').attr('readonly', false);
+$('.textfield').removeClass('input-disabled');
+$('.textfield').val("");
+$('.textfield2').attr('readonly', false);
+$('.textfield2').removeClass('input-disabled');
+$('.textfield2').val("");
+$('.textfield3').attr('readonly', false);
+$('.textfield3').removeClass('input-disabled');
+$('.textfield3').val("");
+$('.textfield4').attr('readonly', false);
+$('.textfield4').removeClass('input-disabled');
+$('.textfield4').val("");
+$('.textfield5').attr('readonly', false);
+$('.textfield5').removeClass('input-disabled');
+$('.textfield5').val("");
+$('.textfield6').attr('readonly', false);
+$('.textfield6').removeClass('input-disabled');
+$('.textfield6').val("");
+$(".res").html("");
+$(".res2").html("");
+$(".res3").html("");
+$(".res4").html("");
+$(".res5").html("");
+$(".res6").html("");
+});
+
+$(document).on('click', '#changetabchoice',function(){
   $("#2").addClass("disabled");
   $("#2a").addClass("disabled");
   $("#2a").removeClass("active");
@@ -140,18 +203,14 @@ $(document).on('click', '#changetabmove',function(){
     $('#mytabs a[href="#3"]').tab('show')
 });
 
-$(document).on('click', '#changetabchoice',function(){
-  $("#3").addClass("disabled");
-  $("#3a").addClass("disabled");
-  $("#3a").removeClass("active");
-  $('a[href="#3"]').removeAttr("data-toggle");
-  $('a[href="#3"]').removeAttr("href");
-  $("#4").removeClass("disabled");
-  $("#4a").removeClass("disabled");
-  $("#4a").addClass("active");
-  $('#4>a').attr({
-        "data-toogle" : "tab",
-        "href" : "#4"
-    });
-    $('#mytabs a[href="#4"]').tab('show')
+$(document).on('click', '.check',function(){
+var className = $(this).attr('class');
+
+$(this).removeClass();
+
+className = className+"0";
+$(this).addClass(className);
+if($(this).hasClass("0000")){
+  $( this ).hide();
+}
 });

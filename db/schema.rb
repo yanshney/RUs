@@ -58,6 +58,7 @@ ActiveRecord::Schema.define(version: 20171228040305) do
     t.string "questions_move", default: [], array: true
     t.integer "active_tab"
     t.integer "curr_score"
+    t.integer "curr_q"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
