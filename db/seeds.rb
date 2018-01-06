@@ -25,3 +25,10 @@ QuestionChoice.create(word:"полено", gender: "neuter", number:"singular");
 QuestionChoice.create(word:"чемодан", gender: "masculine", number:"singular");
 
 User.create(name:"Irina", email:"dubinin@brandeis.edu", password: "password", password_confirmation: "password")
+
+QuestionPlural.create(question: "моя квартира", answer:"мои квартиры")
+QuestionPlural.create(question: "этот парк", answer:"эти парки")
+QuestionPlural.create(question: "твоë платье", answer:"твои платья")
+QuestionPlural.create(question: "наше общежитие", answer:"наши общежития")
+QuestionPlural.create(question: "ваша машина", answer:"ваши машины")
+QuestionPlural.create(question: "эта студентка", answer:"эти студентки")

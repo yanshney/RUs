@@ -45852,3 +45852,526 @@ Processing by QuestionLongsController#index as HTML
 Completed 200 OK in 287ms (Views: 282.4ms | ActiveRecord: 0.9ms)
 
 
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (7.0ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (154.8ms)[0m  [1m[35mDROP DATABASE IF EXISTS "my_database_development"[0m
+  [1m[35m (130.2ms)[0m  [1m[35mDROP DATABASE IF EXISTS "my_database_test"[0m
+  [1m[35m (35.7ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (56.4ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (18.5ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5168794849566389475)[0m
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateQuestionLongs (20171223023202)
+  [1m[35m (6.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (24.8ms)[0m  [1m[35mCREATE TABLE "question_longs" ("id" bigserial primary key, "partOne" character varying, "ansWrongOne" character varying, "ansWrongTwo" character varying, "ansWrongThree" character varying, "ansRight" character varying, "partTwo" character varying, "ansWrongOne2" character varying, "ansWrongTwo2" character varying, "ansWrongThree2" character varying, "ansRight2" character varying, "partThree" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (2.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20171223023202"]]
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateTests (20171224051931)
+  [1m[35m (6.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (20.9ms)[0m  [1m[35mCREATE TABLE "tests" ("id" bigserial primary key, "name" character varying, "questions_choice" character varying[] DEFAULT '{}', "questions_move" character varying[] DEFAULT '{}', "active_tab" integer, "curr_score" integer, "curr_q" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20171224051931"]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreatePages (20171224051946)
+  [1m[35m (6.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (43.1ms)[0m  [1m[35mCREATE TABLE "pages" ("id" bigserial primary key, "name" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20171224051946"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateQuestionMoves (20171225184430)
+  [1m[35m (11.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (15.8ms)[0m  [1m[35mCREATE TABLE "question_moves" ("id" bigserial primary key, "word" character varying, "gender" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20171225184430"]]
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateQuestionChoices (20171228040305)
+  [1m[35m (6.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (20.4ms)[0m  [1m[35mCREATE TABLE "question_choices" ("id" bigserial primary key, "gender" character varying, "number" character varying, "word" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20171228040305"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateUsers (20180105015034)
+  [1m[35m (5.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (16.7ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "name" character varying, "email" character varying, "password_digest" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180105015034"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateQuestionPlurals (20180106043029)
+  [1m[35m (5.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (20.4ms)[0m  [1m[35mCREATE TABLE "question_plurals" ("id" bigserial primary key, "question" character varying, "answer" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180106043029"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (18.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-01-06 04:36:08.216136"], ["updated_at", "2018-01-06 04:36:08.216136"]]
+  [1m[35m (6.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(5168794849566389475)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (7.6ms)[0m  [1m[32mINSERT INTO "question_moves" ("word", "gender", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["word", "утка"], ["gender", "feminine"], ["created_at", "2018-01-06 04:36:18.556253"], ["updated_at", "2018-01-06 04:36:18.556253"]]
+  [1m[35m (6.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "question_moves" ("word", "gender", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["word", "полено"], ["gender", "neuter"], ["created_at", "2018-01-06 04:36:18.573511"], ["updated_at", "2018-01-06 04:36:18.573511"]]
+  [1m[35m (6.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "question_moves" ("word", "gender", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["word", "чемодан"], ["gender", "masculine"], ["created_at", "2018-01-06 04:36:18.582248"], ["updated_at", "2018-01-06 04:36:18.582248"]]
+  [1m[35m (6.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "question_moves" ("word", "gender", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["word", "зонты"], ["gender", "plural"], ["created_at", "2018-01-06 04:36:18.591162"], ["updated_at", "2018-01-06 04:36:18.591162"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "question_longs" ("partOne", "ansWrongOne", "ansRight", "partTwo", "ansRight2", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["partOne", "Я хочу желт"], ["ansWrongOne", "ая, ие"], ["ansRight", "ую"], ["partTwo", "машин"], ["ansRight2", "у"], ["created_at", "2018-01-06 04:36:18.618851"], ["updated_at", "2018-01-06 04:36:18.618851"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "question_longs" ("partOne", "ansWrongOne", "ansRight", "partTwo", "ansRight2", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["partOne", "Я езжу на красн"], ["ansWrongOne", "ая, ым"], ["ansRight", "ой"], ["partTwo", "машин"], ["ansRight2", "е"], ["created_at", "2018-01-06 04:36:18.621910"], ["updated_at", "2018-01-06 04:36:18.621910"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "question_longs" ("partOne", "ansWrongOne", "ansRight", "partTwo", "ansRight2", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["partOne", "Я веду стар"], ["ansWrongOne", "ая, ым"], ["ansRight", "ую"], ["partTwo", "машин"], ["ansRight2", "у"], ["created_at", "2018-01-06 04:36:18.626236"], ["updated_at", "2018-01-06 04:36:18.626236"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "question_longs" ("partOne", "ansWrongOne", "ansRight", "partTwo", "ansRight2", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["partOne", "Я хочу син"], ["ansWrongOne", "ая, ие"], ["ansRight", "юю"], ["partTwo", "машин"], ["ansRight2", "у"], ["created_at", "2018-01-06 04:36:18.629649"], ["updated_at", "2018-01-06 04:36:18.629649"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "question_longs" ("partOne", "ansWrongOne", "ansRight", "partTwo", "ansRight2", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["partOne", "Я езжу на син"], ["ansWrongOne", "ая, ым"], ["ansRight", "ей"], ["partTwo", "машин"], ["ansRight2", "е"], ["created_at", "2018-01-06 04:36:18.632586"], ["updated_at", "2018-01-06 04:36:18.632586"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "question_longs" ("partOne", "ansWrongOne", "ansRight", "partTwo", "ansRight2", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["partOne", "Я веду син"], ["ansWrongOne", "ая, ым"], ["ansRight", "юю"], ["partTwo", "машин"], ["ansRight2", "у"], ["created_at", "2018-01-06 04:36:18.635198"], ["updated_at", "2018-01-06 04:36:18.635198"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "question_longs" ("partOne", "ansWrongOne", "ansRight", "partTwo", "ansRight2", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["partOne", "Я хочу зелен"], ["ansWrongOne", "ая, ие"], ["ansRight", "ую"], ["partTwo", "машин"], ["ansRight2", "у"], ["created_at", "2018-01-06 04:36:18.637588"], ["updated_at", "2018-01-06 04:36:18.637588"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "question_longs" ("partOne", "ansWrongOne", "ansRight", "partTwo", "ansRight2", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["partOne", "Я езжу на зелен"], ["ansWrongOne", "ая, ым"], ["ansRight", "ой"], ["partTwo", "машин"], ["ansRight2", "е"], ["created_at", "2018-01-06 04:36:18.641016"], ["updated_at", "2018-01-06 04:36:18.641016"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "question_longs" ("partOne", "ansWrongOne", "ansRight", "partTwo", "ansRight2", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["partOne", "Я веду зелен"], ["ansWrongOne", "ая, ым"], ["ansRight", "ую"], ["partTwo", "машин"], ["ansRight2", "у"], ["created_at", "2018-01-06 04:36:18.644590"], ["updated_at", "2018-01-06 04:36:18.644590"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "question_choices" ("gender", "number", "word", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["gender", "feminine"], ["number", "singular"], ["word", "утка"], ["created_at", "2018-01-06 04:36:18.662321"], ["updated_at", "2018-01-06 04:36:18.662321"]]
+  [1m[35m (6.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "question_choices" ("gender", "number", "word", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["gender", "neuter"], ["number", "singular"], ["word", "полено"], ["created_at", "2018-01-06 04:36:18.671778"], ["updated_at", "2018-01-06 04:36:18.671778"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "question_choices" ("gender", "number", "word", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["gender", "masculine"], ["number", "singular"], ["word", "чемодан"], ["created_at", "2018-01-06 04:36:18.674384"], ["updated_at", "2018-01-06 04:36:18.674384"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (14.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "dubinin@brandeis.edu"], ["LIMIT", 1]]
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Irina"], ["email", "dubinin@brandeis.edu"], ["password_digest", "$2a$10$MglnUxTDqQybSfTZhW8pmOEkieA9an7FC63Kxs96x7Rh14NcbX9cK"], ["created_at", "2018-01-06 04:36:18.823828"], ["updated_at", "2018-01-06 04:36:18.823828"]]
+  [1m[35m (4.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (36.5ms)[0m  [1m[32mINSERT INTO "question_moves" ("word", "gender", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["word", "утка"], ["gender", "feminine"], ["created_at", "2018-01-06 04:46:21.905145"], ["updated_at", "2018-01-06 04:46:21.905145"]]
+  [1m[35m (15.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "question_moves" ("word", "gender", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["word", "полено"], ["gender", "neuter"], ["created_at", "2018-01-06 04:46:21.961843"], ["updated_at", "2018-01-06 04:46:21.961843"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "question_moves" ("word", "gender", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["word", "чемодан"], ["gender", "masculine"], ["created_at", "2018-01-06 04:46:21.965243"], ["updated_at", "2018-01-06 04:46:21.965243"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "question_moves" ("word", "gender", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["word", "зонты"], ["gender", "plural"], ["created_at", "2018-01-06 04:46:21.967852"], ["updated_at", "2018-01-06 04:46:21.967852"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (5.5ms)[0m  [1m[32mINSERT INTO "question_longs" ("partOne", "ansWrongOne", "ansRight", "partTwo", "ansRight2", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["partOne", "Я хочу желт"], ["ansWrongOne", "ая, ие"], ["ansRight", "ую"], ["partTwo", "машин"], ["ansRight2", "у"], ["created_at", "2018-01-06 04:46:21.993570"], ["updated_at", "2018-01-06 04:46:21.993570"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "question_longs" ("partOne", "ansWrongOne", "ansRight", "partTwo", "ansRight2", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["partOne", "Я езжу на красн"], ["ansWrongOne", "ая, ым"], ["ansRight", "ой"], ["partTwo", "машин"], ["ansRight2", "е"], ["created_at", "2018-01-06 04:46:22.002586"], ["updated_at", "2018-01-06 04:46:22.002586"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "question_longs" ("partOne", "ansWrongOne", "ansRight", "partTwo", "ansRight2", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["partOne", "Я веду стар"], ["ansWrongOne", "ая, ым"], ["ansRight", "ую"], ["partTwo", "машин"], ["ansRight2", "у"], ["created_at", "2018-01-06 04:46:22.005498"], ["updated_at", "2018-01-06 04:46:22.005498"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "question_longs" ("partOne", "ansWrongOne", "ansRight", "partTwo", "ansRight2", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["partOne", "Я хочу син"], ["ansWrongOne", "ая, ие"], ["ansRight", "юю"], ["partTwo", "машин"], ["ansRight2", "у"], ["created_at", "2018-01-06 04:46:22.008308"], ["updated_at", "2018-01-06 04:46:22.008308"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "question_longs" ("partOne", "ansWrongOne", "ansRight", "partTwo", "ansRight2", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["partOne", "Я езжу на син"], ["ansWrongOne", "ая, ым"], ["ansRight", "ей"], ["partTwo", "машин"], ["ansRight2", "е"], ["created_at", "2018-01-06 04:46:22.011545"], ["updated_at", "2018-01-06 04:46:22.011545"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "question_longs" ("partOne", "ansWrongOne", "ansRight", "partTwo", "ansRight2", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["partOne", "Я веду син"], ["ansWrongOne", "ая, ым"], ["ansRight", "юю"], ["partTwo", "машин"], ["ansRight2", "у"], ["created_at", "2018-01-06 04:46:22.014504"], ["updated_at", "2018-01-06 04:46:22.014504"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "question_longs" ("partOne", "ansWrongOne", "ansRight", "partTwo", "ansRight2", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["partOne", "Я хочу зелен"], ["ansWrongOne", "ая, ие"], ["ansRight", "ую"], ["partTwo", "машин"], ["ansRight2", "у"], ["created_at", "2018-01-06 04:46:22.017967"], ["updated_at", "2018-01-06 04:46:22.017967"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "question_longs" ("partOne", "ansWrongOne", "ansRight", "partTwo", "ansRight2", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["partOne", "Я езжу на зелен"], ["ansWrongOne", "ая, ым"], ["ansRight", "ой"], ["partTwo", "машин"], ["ansRight2", "е"], ["created_at", "2018-01-06 04:46:22.020585"], ["updated_at", "2018-01-06 04:46:22.020585"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "question_longs" ("partOne", "ansWrongOne", "ansRight", "partTwo", "ansRight2", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["partOne", "Я веду зелен"], ["ansWrongOne", "ая, ым"], ["ansRight", "ую"], ["partTwo", "машин"], ["ansRight2", "у"], ["created_at", "2018-01-06 04:46:22.023412"], ["updated_at", "2018-01-06 04:46:22.023412"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.3ms)[0m  [1m[32mINSERT INTO "question_choices" ("gender", "number", "word", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["gender", "feminine"], ["number", "singular"], ["word", "утка"], ["created_at", "2018-01-06 04:46:22.043052"], ["updated_at", "2018-01-06 04:46:22.043052"]]
+  [1m[35m (6.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "question_choices" ("gender", "number", "word", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["gender", "neuter"], ["number", "singular"], ["word", "полено"], ["created_at", "2018-01-06 04:46:22.053049"], ["updated_at", "2018-01-06 04:46:22.053049"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "question_choices" ("gender", "number", "word", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["gender", "masculine"], ["number", "singular"], ["word", "чемодан"], ["created_at", "2018-01-06 04:46:22.056060"], ["updated_at", "2018-01-06 04:46:22.056060"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (6.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "dubinin@brandeis.edu"], ["LIMIT", 1]]
+  [1m[35m (5.6ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (10.3ms)[0m  [1m[32mINSERT INTO "question_plurals" ("question", "answer", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["question", "моя квартира"], ["answer", "мои квартиры"], ["created_at", "2018-01-06 04:46:22.215222"], ["updated_at", "2018-01-06 04:46:22.215222"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "question_plurals" ("question", "answer", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["question", "этот парк"], ["answer", "эти парки"], ["created_at", "2018-01-06 04:46:22.228897"], ["updated_at", "2018-01-06 04:46:22.228897"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "question_plurals" ("question", "answer", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["question", "твоë платье"], ["answer", "твои платья"], ["created_at", "2018-01-06 04:46:22.231459"], ["updated_at", "2018-01-06 04:46:22.231459"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "question_plurals" ("question", "answer", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["question", "наше общежитие"], ["answer", "наши общежития"], ["created_at", "2018-01-06 04:46:22.240593"], ["updated_at", "2018-01-06 04:46:22.240593"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "question_plurals" ("question", "answer", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["question", "ваша машина"], ["answer", "ваши машины"], ["created_at", "2018-01-06 04:46:22.242912"], ["updated_at", "2018-01-06 04:46:22.242912"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "question_plurals" ("question", "answer", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["question", "эта студентка"], ["answer", "эти студентки"], ["created_at", "2018-01-06 04:46:22.246078"], ["updated_at", "2018-01-06 04:46:22.246078"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/" for 127.0.0.1 at 2018-01-05 23:46:35 -0500
+  [1m[35m (3.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by TestsController#new as HTML
+  Rendering tests/new.html.erb within layouts/application
+  Rendered tests/_form.html.erb (71.6ms)
+  Rendered tests/new.html.erb within layouts/application (80.5ms)
+  [1m[36mUser Load (6.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 3300ms (Views: 3173.2ms | ActiveRecord: 22.9ms)
+
+
+Started POST "/tests" for 127.0.0.1 at 2018-01-05 23:46:42 -0500
+Processing by TestsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xDkwvgRqFEEXnciOaDrMgl9nIrdHVm4xLtK52z+F3WJzqd8alLvWxcMkPOnd7ZhSLo7212jUEg8ctQPIAXg4jQ==", "test"=>{"name"=>""}, "commit"=>"Start a test"}
+  [1m[36mQuestionChoice Load (0.8ms)[0m  [1m[34mSELECT "question_choices".* FROM "question_choices"[0m
+  [1m[36mQuestionMove Load (0.7ms)[0m  [1m[34mSELECT "question_moves".* FROM "question_moves"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (8.1ms)[0m  [1m[32mINSERT INTO "tests" ("name", "questions_choice", "questions_move", "active_tab", "curr_score", "curr_q", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", ""], ["questions_choice", "{5,6}"], ["questions_move", "{2,5}"], ["active_tab", 1], ["curr_score", 0], ["curr_q", 0], ["created_at", "2018-01-06 04:46:42.329243"], ["updated_at", "2018-01-06 04:46:42.329243"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/tests/1
+Completed 302 Found in 52ms (ActiveRecord: 19.8ms)
+
+
+Started GET "/tests/1" for 127.0.0.1 at 2018-01-05 23:46:42 -0500
+Processing by TestsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTest Load (0.9ms)[0m  [1m[34mSELECT  "tests".* FROM "tests" WHERE "tests"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (19.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "question_longs"[0m
+  [1m[36mQuestionLong Load (0.6ms)[0m  [1m[34mSELECT "question_longs".* FROM "question_longs"[0m
+  [1m[36mCACHE QuestionLong Load (0.0ms)[0m  [1m[34mSELECT "question_longs".* FROM "question_longs"[0m
+  Rendering tests/show.html.erb within layouts/application
+  [1m[36mQuestionMove Load (0.3ms)[0m  [1m[34mSELECT  "question_moves".* FROM "question_moves" WHERE "question_moves"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE QuestionMove Load (0.0ms)[0m  [1m[34mSELECT  "question_moves".* FROM "question_moves" WHERE "question_moves"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mQuestionMove Load (1.4ms)[0m  [1m[34mSELECT  "question_moves".* FROM "question_moves" WHERE "question_moves"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mCACHE QuestionMove Load (0.0ms)[0m  [1m[34mSELECT  "question_moves".* FROM "question_moves" WHERE "question_moves"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mQuestionChoice Load (0.4ms)[0m  [1m[34mSELECT  "question_choices".* FROM "question_choices" WHERE "question_choices"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mCACHE QuestionChoice Load (0.0ms)[0m  [1m[34mSELECT  "question_choices".* FROM "question_choices" WHERE "question_choices"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mCACHE QuestionChoice Load (0.0ms)[0m  [1m[34mSELECT  "question_choices".* FROM "question_choices" WHERE "question_choices"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mQuestionChoice Load (0.5ms)[0m  [1m[34mSELECT  "question_choices".* FROM "question_choices" WHERE "question_choices"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mCACHE QuestionChoice Load (0.0ms)[0m  [1m[34mSELECT  "question_choices".* FROM "question_choices" WHERE "question_choices"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mCACHE QuestionChoice Load (0.0ms)[0m  [1m[34mSELECT  "question_choices".* FROM "question_choices" WHERE "question_choices"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendered tests/show.html.erb within layouts/application (24.9ms)
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 325ms (Views: 261.6ms | ActiveRecord: 28.5ms)
+
+
+Started GET "/tests/1?utf8=%E2%9C%93&gender=neuter&number=singular&gender=masculine&number=singular&commit=Check" for 127.0.0.1 at 2018-01-05 23:46:56 -0500
+Processing by TestsController#show as JS
+  Parameters: {"utf8"=>"✓", "gender"=>"masculine", "number"=>"singular", "commit"=>"Check", "id"=>"1"}
+  [1m[36mTest Load (0.6ms)[0m  [1m[34mSELECT  "tests".* FROM "tests" WHERE "tests"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "question_longs"[0m
+  [1m[36mQuestionLong Load (0.3ms)[0m  [1m[34mSELECT "question_longs".* FROM "question_longs"[0m
+  [1m[36mCACHE QuestionLong Load (0.0ms)[0m  [1m[34mSELECT "question_longs".* FROM "question_longs"[0m
+  Rendering tests/show.js.erb
+  Rendered tests/show.js.erb (3.7ms)
+Completed 200 OK in 47ms (Views: 23.0ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/tests/1?utf8=%E2%9C%93&textbox1=%D1%83%D1%8E&textbox2=%D1%83&textbox3=%D0%BE%D0%B9&textbox4=%D0%B0&textbox5=%D1%83%D1%8E&textbox6=%D1%83&commit=Check" for 127.0.0.1 at 2018-01-05 23:47:12 -0500
+Processing by TestsController#show as JS
+  Parameters: {"utf8"=>"✓", "textbox1"=>"ую", "textbox2"=>"у", "textbox3"=>"ой", "textbox4"=>"а", "textbox5"=>"ую", "textbox6"=>"у", "commit"=>"Check", "id"=>"1"}
+  [1m[36mTest Load (0.5ms)[0m  [1m[34mSELECT  "tests".* FROM "tests" WHERE "tests"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "question_longs"[0m
+  [1m[36mQuestionLong Load (0.3ms)[0m  [1m[34mSELECT "question_longs".* FROM "question_longs"[0m
+  [1m[36mCACHE QuestionLong Load (0.0ms)[0m  [1m[34mSELECT "question_longs".* FROM "question_longs"[0m
+  Rendering tests/show.js.erb
+  Rendered tests/show.js.erb (4.7ms)
+Completed 200 OK in 56ms (Views: 30.9ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/tests/1?utf8=%E2%9C%93&textbox1=%D1%83%D1%8E&textbox2=%D1%83&textbox3=%D0%BE%D0%B9&textbox4=%D1%83&textbox5=%D1%83%D1%8E&textbox6=%D1%83&commit=Check" for 127.0.0.1 at 2018-01-05 23:47:16 -0500
+Processing by TestsController#show as JS
+  Parameters: {"utf8"=>"✓", "textbox1"=>"ую", "textbox2"=>"у", "textbox3"=>"ой", "textbox4"=>"у", "textbox5"=>"ую", "textbox6"=>"у", "commit"=>"Check", "id"=>"1"}
+  [1m[36mTest Load (0.5ms)[0m  [1m[34mSELECT  "tests".* FROM "tests" WHERE "tests"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "question_longs"[0m
+  [1m[36mQuestionLong Load (0.4ms)[0m  [1m[34mSELECT "question_longs".* FROM "question_longs"[0m
+  [1m[36mCACHE QuestionLong Load (0.0ms)[0m  [1m[34mSELECT "question_longs".* FROM "question_longs"[0m
+  Rendering tests/show.js.erb
+  Rendered tests/show.js.erb (5.1ms)
+Completed 200 OK in 50ms (Views: 26.2ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/tests/1?utf8=%E2%9C%93&textbox1=%D1%83%D1%8E&textbox2=%D1%83&textbox3=%D0%BE%D0%B9&textbox4=%D0%B5&textbox5=%D1%83%D1%8E&textbox6=%D1%83&commit=Check" for 127.0.0.1 at 2018-01-05 23:47:20 -0500
+Processing by TestsController#show as JS
+  Parameters: {"utf8"=>"✓", "textbox1"=>"ую", "textbox2"=>"у", "textbox3"=>"ой", "textbox4"=>"е", "textbox5"=>"ую", "textbox6"=>"у", "commit"=>"Check", "id"=>"1"}
+  [1m[36mTest Load (0.5ms)[0m  [1m[34mSELECT  "tests".* FROM "tests" WHERE "tests"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "question_longs"[0m
+  [1m[36mQuestionLong Load (0.4ms)[0m  [1m[34mSELECT "question_longs".* FROM "question_longs"[0m
+  [1m[36mCACHE QuestionLong Load (0.0ms)[0m  [1m[34mSELECT "question_longs".* FROM "question_longs"[0m
+  Rendering tests/show.js.erb
+  Rendered tests/show.js.erb (4.7ms)
+Completed 200 OK in 50ms (Views: 27.6ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/tests/1?utf8=%E2%9C%93&textbox1=&textbox2=&textbox3=&textbox4=&textbox5=&textbox6=&commit=Next" for 127.0.0.1 at 2018-01-05 23:47:22 -0500
+Processing by TestsController#show as JS
+  Parameters: {"utf8"=>"✓", "textbox1"=>"", "textbox2"=>"", "textbox3"=>"", "textbox4"=>"", "textbox5"=>"", "textbox6"=>"", "commit"=>"Next", "id"=>"1"}
+  [1m[36mTest Load (0.4ms)[0m  [1m[34mSELECT  "tests".* FROM "tests" WHERE "tests"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "question_longs"[0m
+  [1m[36mQuestionLong Load (0.4ms)[0m  [1m[34mSELECT "question_longs".* FROM "question_longs"[0m
+  [1m[36mCACHE QuestionLong Load (0.0ms)[0m  [1m[34mSELECT "question_longs".* FROM "question_longs"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (24.8ms)[0m  [1m[33mUPDATE "tests" SET "active_tab" = $1, "updated_at" = $2 WHERE "tests"."id" = $3[0m  [["active_tab", 2], ["updated_at", "2018-01-06 04:47:22.663973"], ["id", 1]]
+  [1m[35m (5.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[33mUPDATE "tests" SET "curr_q" = $1, "updated_at" = $2 WHERE "tests"."id" = $3[0m  [["curr_q", 3], ["updated_at", "2018-01-06 04:47:22.697782"], ["id", 1]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  Rendering tests/show.js.erb
+  Rendered tests/show.js.erb (3.0ms)
+Completed 200 OK in 85ms (Views: 24.9ms | ActiveRecord: 32.7ms)
+
+
+Started GET "/tests/1?utf8=%E2%9C%93&textbox1=%D1%8E%D1%8E&textbox2=%D1%83&textbox3=%D1%8F%D1%8F&textbox4=%D0%B0&textbox5=%D1%8E%D1%8E&textbox6=%D1%83&commit=Check" for 127.0.0.1 at 2018-01-05 23:47:33 -0500
+Processing by TestsController#show as JS
+  Parameters: {"utf8"=>"✓", "textbox1"=>"юю", "textbox2"=>"у", "textbox3"=>"яя", "textbox4"=>"а", "textbox5"=>"юю", "textbox6"=>"у", "commit"=>"Check", "id"=>"1"}
+  [1m[36mTest Load (0.3ms)[0m  [1m[34mSELECT  "tests".* FROM "tests" WHERE "tests"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "question_longs"[0m
+  [1m[36mQuestionLong Load (0.4ms)[0m  [1m[34mSELECT "question_longs".* FROM "question_longs"[0m
+  [1m[36mCACHE QuestionLong Load (0.0ms)[0m  [1m[34mSELECT "question_longs".* FROM "question_longs"[0m
+  Rendering tests/show.js.erb
+  Rendered tests/show.js.erb (4.0ms)
+Completed 200 OK in 48ms (Views: 25.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/tests/1?utf8=%E2%9C%93&textbox1=%D1%8E%D1%8E&textbox2=%D1%83&textbox3=%D1%8E%D1%8E&textbox4=%D0%B0&textbox5=%D1%8E%D1%8E&textbox6=%D1%83&commit=Check" for 127.0.0.1 at 2018-01-05 23:47:40 -0500
+Processing by TestsController#show as JS
+  Parameters: {"utf8"=>"✓", "textbox1"=>"юю", "textbox2"=>"у", "textbox3"=>"юю", "textbox4"=>"а", "textbox5"=>"юю", "textbox6"=>"у", "commit"=>"Check", "id"=>"1"}
+  [1m[36mTest Load (0.4ms)[0m  [1m[34mSELECT  "tests".* FROM "tests" WHERE "tests"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "question_longs"[0m
+  [1m[36mQuestionLong Load (0.6ms)[0m  [1m[34mSELECT "question_longs".* FROM "question_longs"[0m
+  [1m[36mCACHE QuestionLong Load (0.0ms)[0m  [1m[34mSELECT "question_longs".* FROM "question_longs"[0m
+  Rendering tests/show.js.erb
+  Rendered tests/show.js.erb (5.4ms)
+Completed 200 OK in 53ms (Views: 27.9ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/tests/1?utf8=%E2%9C%93&textbox1=%D1%8E%D1%8E&textbox2=%D1%83&textbox3=%D0%B5%D0%B9&textbox4=%D0%B0&textbox5=%D1%8E%D1%8E&textbox6=%D1%83&commit=Check" for 127.0.0.1 at 2018-01-05 23:47:44 -0500
+Processing by TestsController#show as JS
+  Parameters: {"utf8"=>"✓", "textbox1"=>"юю", "textbox2"=>"у", "textbox3"=>"ей", "textbox4"=>"а", "textbox5"=>"юю", "textbox6"=>"у", "commit"=>"Check", "id"=>"1"}
+  [1m[36mTest Load (0.3ms)[0m  [1m[34mSELECT  "tests".* FROM "tests" WHERE "tests"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "question_longs"[0m
+  [1m[36mQuestionLong Load (0.3ms)[0m  [1m[34mSELECT "question_longs".* FROM "question_longs"[0m
+  [1m[36mCACHE QuestionLong Load (0.0ms)[0m  [1m[34mSELECT "question_longs".* FROM "question_longs"[0m
+  Rendering tests/show.js.erb
+  Rendered tests/show.js.erb (4.3ms)
+Completed 200 OK in 50ms (Views: 27.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/tests/1?utf8=%E2%9C%93&textbox1=&textbox2=&textbox3=&textbox4=&textbox5=&textbox6=&commit=Next" for 127.0.0.1 at 2018-01-05 23:47:45 -0500
+Processing by TestsController#show as JS
+  Parameters: {"utf8"=>"✓", "textbox1"=>"", "textbox2"=>"", "textbox3"=>"", "textbox4"=>"", "textbox5"=>"", "textbox6"=>"", "commit"=>"Next", "id"=>"1"}
+  [1m[36mTest Load (0.3ms)[0m  [1m[34mSELECT  "tests".* FROM "tests" WHERE "tests"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "question_longs"[0m
+  [1m[36mQuestionLong Load (0.8ms)[0m  [1m[34mSELECT "question_longs".* FROM "question_longs"[0m
+  [1m[36mCACHE QuestionLong Load (0.0ms)[0m  [1m[34mSELECT "question_longs".* FROM "question_longs"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[33mUPDATE "tests" SET "active_tab" = $1, "updated_at" = $2 WHERE "tests"."id" = $3[0m  [["active_tab", 3], ["updated_at", "2018-01-06 04:47:45.612369"], ["id", 1]]
+  [1m[35m (6.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[33mUPDATE "tests" SET "curr_q" = $1, "updated_at" = $2 WHERE "tests"."id" = $3[0m  [["curr_q", 6], ["updated_at", "2018-01-06 04:47:45.622596"], ["id", 1]]
+  [1m[35m (6.1ms)[0m  [1m[35mCOMMIT[0m
+  Rendering tests/show.js.erb
+  Rendered tests/show.js.erb (2.7ms)
+Completed 200 OK in 65ms (Views: 20.3ms | ActiveRecord: 16.6ms)
+
+
+Started GET "/tests/1?utf8=%E2%9C%93&textbox1=%D1%83%D1%8E&textbox2=%D1%83&textbox3=%D0%BE%D0%B9&textbox4=%D0%B5&textbox5=%D1%83%D1%8E%20&textbox6=%D1%83&commit=Check" for 127.0.0.1 at 2018-01-05 23:47:58 -0500
+Processing by TestsController#show as JS
+  Parameters: {"utf8"=>"✓", "textbox1"=>"ую", "textbox2"=>"у", "textbox3"=>"ой", "textbox4"=>"е", "textbox5"=>"ую ", "textbox6"=>"у", "commit"=>"Check", "id"=>"1"}
+  [1m[36mTest Load (0.4ms)[0m  [1m[34mSELECT  "tests".* FROM "tests" WHERE "tests"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "question_longs"[0m
+  [1m[36mQuestionLong Load (0.5ms)[0m  [1m[34mSELECT "question_longs".* FROM "question_longs"[0m
+  [1m[36mCACHE QuestionLong Load (0.0ms)[0m  [1m[34mSELECT "question_longs".* FROM "question_longs"[0m
+  Rendering tests/show.js.erb
+  Rendered tests/show.js.erb (4.7ms)
+Completed 200 OK in 50ms (Views: 25.9ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/tests/1?utf8=%E2%9C%93&textbox1=%D1%83%D1%8E&textbox2=%D1%83&textbox3=%D0%BE%D0%B9&textbox4=%D0%B5&textbox5=%D1%83%D1%8E&textbox6=%D1%83&commit=Check" for 127.0.0.1 at 2018-01-05 23:48:01 -0500
+Processing by TestsController#show as JS
+  Parameters: {"utf8"=>"✓", "textbox1"=>"ую", "textbox2"=>"у", "textbox3"=>"ой", "textbox4"=>"е", "textbox5"=>"ую", "textbox6"=>"у", "commit"=>"Check", "id"=>"1"}
+  [1m[36mTest Load (0.4ms)[0m  [1m[34mSELECT  "tests".* FROM "tests" WHERE "tests"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "question_longs"[0m
+  [1m[36mQuestionLong Load (0.5ms)[0m  [1m[34mSELECT "question_longs".* FROM "question_longs"[0m
+  [1m[36mCACHE QuestionLong Load (0.1ms)[0m  [1m[34mSELECT "question_longs".* FROM "question_longs"[0m
+  Rendering tests/show.js.erb
+  Rendered tests/show.js.erb (4.8ms)
+Completed 200 OK in 50ms (Views: 26.9ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/tests/1?utf8=%E2%9C%93&textbox1=&textbox2=&textbox3=&textbox4=&textbox5=&textbox6=&commit=Next" for 127.0.0.1 at 2018-01-05 23:48:04 -0500
+Processing by TestsController#show as JS
+  Parameters: {"utf8"=>"✓", "textbox1"=>"", "textbox2"=>"", "textbox3"=>"", "textbox4"=>"", "textbox5"=>"", "textbox6"=>"", "commit"=>"Next", "id"=>"1"}
+  [1m[36mTest Load (0.3ms)[0m  [1m[34mSELECT  "tests".* FROM "tests" WHERE "tests"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "question_longs"[0m
+  [1m[36mQuestionLong Load (0.6ms)[0m  [1m[34mSELECT "question_longs".* FROM "question_longs"[0m
+  [1m[36mCACHE QuestionLong Load (0.0ms)[0m  [1m[34mSELECT "question_longs".* FROM "question_longs"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "tests" SET "active_tab" = $1, "updated_at" = $2 WHERE "tests"."id" = $3[0m  [["active_tab", 4], ["updated_at", "2018-01-06 04:48:04.912414"], ["id", 1]]
+  [1m[35m (6.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.3ms)[0m  [1m[33mUPDATE "tests" SET "curr_q" = $1, "updated_at" = $2 WHERE "tests"."id" = $3[0m  [["curr_q", 9], ["updated_at", "2018-01-06 04:48:04.921729"], ["id", 1]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  Rendering tests/show.js.erb
+  Rendered tests/show.js.erb (3.8ms)
+Completed 200 OK in 131ms (Views: 58.3ms | ActiveRecord: 10.8ms)
+
+
+Started GET "/tests/question_plurals" for 127.0.0.1 at 2018-01-05 23:48:46 -0500
+Processing by TestsController#show as HTML
+  Parameters: {"id"=>"question_plurals"}
+  [1m[36mTest Load (0.3ms)[0m  [1m[34mSELECT  "tests".* FROM "tests" WHERE "tests"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+Completed 404 Not Found in 3ms (ActiveRecord: 0.3ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Test with 'id'=question_plurals):
+  
+app/controllers/tests_controller.rb:84:in `set_test'
+Started GET "/question_plurals" for 127.0.0.1 at 2018-01-05 23:48:51 -0500
+Processing by QuestionPluralsController#index as HTML
+  Rendering question_plurals/index.html.erb within layouts/application
+  [1m[36mQuestionPlural Load (1.0ms)[0m  [1m[34mSELECT "question_plurals".* FROM "question_plurals"[0m
+  Rendered question_plurals/index.html.erb within layouts/application (33.5ms)
+Completed 500 Internal Server Error in 49ms (ActiveRecord: 7.8ms)
+
+
+  
+ActionView::Template::Error (undefined method `singular' for #<QuestionPlural:0x007f9d5cb04388>):
+    14:   <tbody>
+    15:     <% @question_plurals.each do |question_plural| %>
+    16:       <tr>
+    17:         <td><%= question_plural.singular %></td>
+    18:         <td><%= question_plural.plural %></td>
+    19:         <td><%= link_to 'Show', question_plural %></td>
+    20:         <td><%= link_to 'Edit', edit_question_plural_path(question_plural) %></td>
+  
+app/views/question_plurals/index.html.erb:17:in `block in _app_views_question_plurals_index_html_erb__2215224806359566218_70156952187240'
+app/views/question_plurals/index.html.erb:15:in `_app_views_question_plurals_index_html_erb__2215224806359566218_70156952187240'
+Started GET "/question_plurals" for 127.0.0.1 at 2018-01-05 23:49:53 -0500
+Processing by QuestionPluralsController#index as HTML
+  Rendering question_plurals/index.html.erb within layouts/application
+  [1m[36mQuestionPlural Load (0.5ms)[0m  [1m[34mSELECT "question_plurals".* FROM "question_plurals"[0m
+  Rendered question_plurals/index.html.erb within layouts/application (7.1ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 360ms (Views: 354.8ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/question_plurals/new" for 127.0.0.1 at 2018-01-05 23:50:04 -0500
+Processing by QuestionPluralsController#new as HTML
+  Rendering question_plurals/new.html.erb within layouts/application
+  Rendered question_plurals/_form.html.erb (9.2ms)
+  Rendered question_plurals/new.html.erb within layouts/application (15.1ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 268ms (Views: 264.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2018-01-05 23:51:07 -0500
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 394ms (Views: 341.4ms | ActiveRecord: 24.3ms)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2018-01-05 23:51:09 -0500
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"Sxb0JNQbGUtE2LfA3iFzhGArLZvQu2TRuTaR+FCRTiP8hhuARMrbz5BhQ6dr9idUEcL5+/85GO+LUSvrbmyrzA=="}
+Redirected to http://localhost:3000/
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-01-05 23:51:09 -0500
+Processing by TestsController#new as HTML
+  Rendering tests/new.html.erb within layouts/application
+  Rendered tests/_form.html.erb (3.2ms)
+  Rendered tests/new.html.erb within layouts/application (5.7ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 304ms (Views: 267.3ms | ActiveRecord: 12.7ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2018-01-05 23:51:13 -0500
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 3ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-01-05 23:51:13 -0500
+Processing by TestsController#new as HTML
+  Rendering tests/new.html.erb within layouts/application
+  Rendered tests/_form.html.erb (2.3ms)
+  Rendered tests/new.html.erb within layouts/application (4.5ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 234ms (Views: 231.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2018-01-05 23:51:20 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (15.0ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 295ms (Views: 291.3ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2018-01-05 23:51:35 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"AoeuNQl3hwfQ99x9zIw1NRpiCxihO6RRo4L+kd0XQPu1F0GRmaZFgwROKBp5W2Hla4vfeI652G+R5USC4+qlFA==", "session"=>{"email"=>"dubinin@brandeis.edu", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mUser Load (12.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "dubinin@brandeis.edu"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 112ms (ActiveRecord: 12.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-01-05 23:51:35 -0500
+Processing by TestsController#new as HTML
+  Rendering tests/new.html.erb within layouts/application
+  Rendered tests/_form.html.erb (2.8ms)
+  Rendered tests/new.html.erb within layouts/application (5.1ms)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 273ms (Views: 269.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2018-01-05 23:51:40 -0500
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (12.6ms)
+Completed 200 OK in 611ms (Views: 605.3ms | ActiveRecord: 1.2ms)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2018-01-05 23:51:44 -0500
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"4FMcJh0rblEAakBkf8RS8CYzASOKk4ByUMXlELXQ1lpXw/OCjfqs1dTTtAPKEwYgV9rVQ6UR/Exiol8Diy0ztQ=="}
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-01-05 23:51:44 -0500
+Processing by TestsController#new as HTML
+  Rendering tests/new.html.erb within layouts/application
+  Rendered tests/_form.html.erb (4.2ms)
+  Rendered tests/new.html.erb within layouts/application (6.5ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 338ms (Views: 333.2ms | ActiveRecord: 0.4ms)
+
+
