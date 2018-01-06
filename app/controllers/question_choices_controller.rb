@@ -14,7 +14,13 @@ class QuestionChoicesController < ApplicationController
 
   # GET /question_choices/new
   def new
+    byebug
+    if !current_user
+      redirect_to root_url
+
+  else
     @question_choice = QuestionChoice.new
+  end
   end
 
   # GET /question_choices/1/edit

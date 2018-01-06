@@ -23,3 +23,5 @@ QuestionLong.create(partOne:"Я веду зелен", ansWrongOne:"ая, ым", 
 QuestionChoice.create(word:"утка", gender: "feminine", number:"singular");
 QuestionChoice.create(word:"полено", gender: "neuter", number:"singular");
 QuestionChoice.create(word:"чемодан", gender: "masculine", number:"singular");
+
+User.create(name:"Irina", email:"dubinin@brandeis.edu", password: "password", password_confirmation: "password")

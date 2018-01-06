@@ -14,7 +14,11 @@ class QuestionMovesController < ApplicationController
 
   # GET /question_moves/new
   def new
+    if !current_user
+      redirect_to root_url
+    else
     @question_move = QuestionMove.new
+  end
   end
 
   # GET /question_moves/1/edit

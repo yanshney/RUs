@@ -17,6 +17,9 @@ end
 
   # GET /question_longs/new
   def new
+    if !current_user
+      redirect_to root_url
+    end
     @question_long = QuestionLong.new
   end
 
