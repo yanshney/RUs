@@ -52,7 +52,7 @@ text-align: center;
 
 }
 
-#masculine_drop {
+.masculine_drop {
     width: 250px;
     height:250px;
     border:solid;
@@ -60,7 +60,7 @@ text-align: center;
     margin-left:-50px;
     background-color: white;
 }
-#feminine_drop {
+.feminine_drop {
     width: 250px;
     height:250px;
     border:solid;
@@ -69,7 +69,7 @@ text-align: center;
     text-align: center;
     background-color: white;
 }
-#neuter_drop {
+.neuter_drop {
     width: 250px;
     height:250px;
     border:solid;
@@ -78,7 +78,7 @@ text-align: center;
     text-align: center;
     background-color: white;
 }
-#plural_drop {
+.plural_drop {
     width: 250px;
     height:250px;
     border:solid;

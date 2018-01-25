@@ -31,8 +31,8 @@ class TestsController < ApplicationController
   # POST /tests.json
   def create
     @test = Test.new(test_params)
-    questions_choice = QuestionChoice.all.sample(2);
-    questions_move = QuestionMove.all.sample(2);
+    questions_choice = QuestionChoice.all.sample(6)
+    questions_move = QuestionMove.all.sample(6)
     questions_choice.each do |q|
       @test.questions_choice << q.id
     end
@@ -84,7 +84,6 @@ class TestsController < ApplicationController
       @test = Test.find(params[:id])
     end
     def set_questions
-      @question=QuestionLong.all[(params[:id].to_i*7)%QuestionLong.count]
       @questions=QuestionLong.all
       @arr1=@questions[0].ansWrongOne.split(/,/)
       @arr2=@questions[1].ansWrongOne.split(/,/)

@@ -13,5 +13,12 @@
   </body>
   <%if current_user%>
   <%= link_to "Log out", logout_path, method: :delete %>
+  <br>
+  <%= link_to "New drop down question", new_question_choice_path%>
+  <br>
+  <%= link_to "New change the case question", new_question_long_path%>
+  <br>
+  <%= link_to "New change drag and drop question", new_question_move_path%>
+  <br>
   <%end%>
 </html>

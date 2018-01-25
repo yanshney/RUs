@@ -1,5 +1,5 @@
 
-if($('.nav-tabs .active > a').attr('href')=="#3"||$('.nav-tabs .active > a').attr('href')=="#4"||$('.nav-tabs .active > a').attr('href')=="#5"){
+if($('.nav-tabs .active > a').attr('href')=="#7"||$('.nav-tabs .active > a').attr('href')=="#8"||$('.nav-tabs .active > a').attr('href')=="#9"){
   <%if params["commit"]=="Next"%>
   <%else%>
   str = $('.nav-tabs .active > a').attr('href').substring(1);
@@ -181,14 +181,38 @@ $("#score").html("The current score is "+curr_score+"/20");
 if($('.nav-tabs .active > a').attr('href')=="#1"){
 
 }
-if($('.nav-tabs .active > a').attr('href')=="#2"){
-  var className = $('#check2').attr('class');
-  $('#check2').removeClass(className);
+if($('.nav-tabs .active > a').attr('href')=="#4"){
+  $('.answer').show();
+  console.log("hi");
+  var className = $('#check4').attr('class');
+  $('#check4').removeClass(className);
   className = className+"0";
-  $('#check2').addClass(className);
-  if($('#check2').attr('class')=="0000"){
-    $( "#check2" ).hide();
+  $('#check4').addClass(className);
+  if($('#check4').attr('class')=="0000"){
+    $( "#check4" ).hide();
   }
+}
+
+  if($('.nav-tabs .active > a').attr('href')=="#5"){
+    $('.answer').show();
+    var className = $('#check5').attr('class');
+    $('#check5').removeClass(className);
+    className = className+"0";
+    $('#check5').addClass(className);
+    if($('#check5').attr('class')=="0000"){
+      $( "#check5" ).hide();
+    }
+  }
+    if($('.nav-tabs .active > a').attr('href')=="#6"){
+      $('.answer').show();
+      var className = $('#check6').attr('class');
+      $('#check6').removeClass(className);
+      className = className+"0";
+      $('#check6').addClass(className);
+      if($('#check6').attr('class')=="0000"){
+        $( "#check6" ).hide();
+      }
+    }
 $(".row").each(function() {
   var array = [];
   var i=0;
@@ -200,13 +224,13 @@ if($(array[1]).attr("class") == $(array[1]).find(":selected").text()&&$(array[2]
   if($(array[3]).html()!='<img alt="rss feed" class="check_dog" src="/assets/happy_dog-66d9a6f23cfa9c41179b76f3e5eb3b107a31771152f7751775961a6f6d417ab0.jpg">'){
     console.log(array[3]);
     $(array[3]).html('<%= escape_javascript(image_tag("happy_dog.jpg", :alt => "rss feed", :class => "check_dog")) %>');
-    if($("#check2").hasClass("00")){
+    if($("#check4").hasClass("00")||$("#check5").hasClass("00")||$("#check6").hasClass("00")){
     curr_score+=1;
   }
-  if($("#check2").hasClass("000")){
+  if($("#check4").hasClass("000")||$("#check5").hasClass("000")||$("#check6").hasClass("000")){
   curr_score+=0.5;
   }
-  if($("#check2").hasClass("0000")){
+  if($("#check4").hasClass("0000")||$("#check5").hasClass("0000")||$("#check6").hasClass("0000")){
   curr_score+=0.25;
   }
   $(array[1]).prop("disabled", true);
@@ -222,7 +246,5 @@ if($(array[1]).attr("class") == $(array[1]).find(":selected").text()&&$(array[2]
   if($(array[1]).attr("class") != $(array[1]).find(":selected").text()&&$(array[2]).attr("class") != $(array[2]).find(":selected").text()){
     $(array[3]).html("Incorrect");
   }
+  $("#score").html("The current score is "+curr_score+"/20");
 });
-$("#score").html("The current score is "+curr_score+"/20");
-
-}

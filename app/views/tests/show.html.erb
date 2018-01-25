@@ -6,40 +6,43 @@
     <li class="<%=@test.active_tab==5 ? 'active' : 'disabled'%>" id ="5"><a data-toggle="tab" href="#5">Question 5</a></li>
     <li class="<%=@test.active_tab==6 ? 'active' : 'disabled'%>" id ="6"><a data-toggle="tab" href="#6">Question 6</a></li>
     <li class="<%=@test.active_tab==7 ? 'active' : 'disabled'%>" id ="7"><a data-toggle="tab" href="#7">Question 7</a></li>
+    <li class="<%=@test.active_tab==8 ? 'active' : 'disabled'%>" id ="8"><a data-toggle="tab" href="#8">Question 8</a></li>
+    <li class="<%=@test.active_tab==9 ? 'active' : 'disabled'%>" id ="9"><a data-toggle="tab" href="#9">Question 9</a></li>
+    <li class="<%=@test.active_tab==10 ? 'active' : 'disabled'%>" id ="10"><a data-toggle="tab" href="#10">Question 10</a></li>
   </ul>
   <div class="container">
   <div class="tab-content">
-    <%for i in 3..5 %>
+    <%for i in 7..9 %>
     <div id="<%=i%>a" class="tab-pane fade in <%=@test.active_tab==i ? 'active' : 'disabled'%>">
       <%= form_tag(@test, :method => "get", id: "checker", remote:true) do %>
       <p>
-      <%= @questions[3*(i-3)].partOne %>
+      <%= @questions[3*(i-7)].partOne %>
       <%=text_field_tag :textbox1, params[:search1], :id =>"textfield1_"+i.to_s, :class => "textfield"%>
-      <%= @questions[3*(i-3)].partTwo %>
+      <%= @questions[3*(i-7)].partTwo %>
       <%= text_field_tag :textbox2, params[:search2], :id => "textfield2_"+i.to_s, :class => "textfield" %>
-      <%= @questions[3*(i-3)].partThree %>
+      <%= @questions[3*(i-7)].partThree %>
     </p>
     <br>
     <br>
     <br>
     <br>
       <p>
-      <%= @questions[3*(i-3)+1].partOne %>
+      <%= @questions[3*(i-7)+1].partOne %>
       <%=text_field_tag :textbox3, params[:search3], :id =>"textfield3_"+i.to_s, :class => "textfield"%>
-      <%= @questions[3*(i-3)+1].partTwo %>
+      <%= @questions[3*(i-7)+1].partTwo %>
       <%= text_field_tag :textbox4, params[:search4], :id =>"textfield4_"+i.to_s, :class => "textfield" %>
-      <%= @questions[3*(i-3)+1].partThree %>
+      <%= @questions[3*(i-7)+1].partThree %>
     </p>
     <br>
     <br>
     <br>
     <br>
     <p>
-      <%= @questions[3*(i-3)+2].partOne %>
+      <%= @questions[3*(i-7)+2].partOne %>
       <%=text_field_tag :textbox5, params[:search5], :id =>"textfield5_"+i.to_s,:class => "textfield"%>
-      <%= @questions[3*(i-3)+2].partTwo %>
+      <%= @questions[3*(i-7)+2].partTwo %>
       <%= text_field_tag :textbox6, params[:search6], :id =>"textfield6_"+i.to_s,:class => "textfield" %>
-      <%= @questions[3*(i-3)+2].partThree %>
+      <%= @questions[3*(i-7)+2].partThree %>
 
       </p>
       <br>
@@ -58,35 +61,36 @@
       <br>
     </div>
     <%end%>
+    <%for i in 1..3%>
+    <div id="<%=i%>a" class="tab-pane fade in <%=@test.active_tab==i ? 'active' : 'disabled'%>">
+         <div class="drag <%=QuestionMove.find(@test.questions_move[2*(i-1)]).gender%>"> <%=QuestionMove.find(@test.questions_move[2*(i-1)]).word%> </div>
+         <br>
+         <br>
+         <div class="drag <%=QuestionMove.find(@test.questions_move[2*(i-1)+1]).gender%>"> <%=QuestionMove.find(@test.questions_move[2*(i-1)+1]).word%> </div>
+         <br>
+         <br>
+         <br>
+         <br>
+         <div class="masculine_drop"> Masculine </div>
+         <div class="feminine_drop"> Feminine </div>
+         <div class="neuter_drop"> Neuter </div>
+         <div class="plural_drop"> Plural </div>
 
-    <div id="1a" class="tab-pane fade in <%=@test.active_tab==1 ? 'active' : 'disabled'%>">
-         <div class="drag <%=QuestionMove.find(@test.questions_move[0]).gender%>"> <%=QuestionMove.find(@test.questions_move[0]).word%> </div>
-         <br>
-         <br>
-         <div class="drag <%=QuestionMove.find(@test.questions_move[1]).gender%>"> <%=QuestionMove.find(@test.questions_move[1]).word%> </div>
-         <br>
-         <br>
-         <br>
-         <br>
-         <div id="masculine_drop"> Masculine </div>
-         <div id="feminine_drop"> Feminine </div>
-         <div id="neuter_drop"> Neuter </div>
-         <div id="plural_drop"> Plural </div>
-
-        <button type="button" id="changetabmove" class="btn btn-success">Next</button>
+        <button type="button" id="changetabbutton<%=i%>" class="btn btn-success">Next</button>
     </div>
-    <div id="2a" class="tab-pane fade in <%=@test.active_tab==2 ? 'active' : 'disabled'%>">
+    <%end%>
+    <%for i in 4..6%>
+    <div id="<%=i%>a" class="tab-pane fade in <%=@test.active_tab==i ? 'active' : 'disabled'%>">
       <%= form_tag(@test, :method => "get", id: "checker", remote:true) do %>
-       <%@test.questions_choice.each do |q|%>
        <div class ="row">
          <div class ="col-sm-2">
-      <%=question=QuestionChoice.find(q).word%>
+      <%=question=QuestionChoice.find(@test.questions_choice[2*(i-4)]).word%>
     </div>
     <div class ="col-sm-2">
-       <%=select_tag "gender", options_for_select(["masculine", "feminine", "neuter"]), :class =>  QuestionChoice.find(q).gender %>
+       <%=select_tag "gender", options_for_select(["masculine", "feminine", "neuter"]), :class =>  QuestionChoice.find(@test.questions_choice[2*(i-4)]).gender %>
      </div>
      <div class ="col-sm-2">
-       <%=select_tag "number", options_for_select(["singular", "plural"]), :class => QuestionChoice.find(q).number%>
+       <%=select_tag "number", options_for_select(["singular", "plural"]), :class => QuestionChoice.find(@test.questions_choice[2*(i-4)]).number%>
      </div>
        <div class ="col-sm-2">
          <div class="answer"> </div>
@@ -95,12 +99,29 @@
          <br>
          <br>
      </div>
-     <%end%>
-     <div id="check2" class="0"><%= submit_tag 'Check' %></div>
-     <button type="button" id="changetabchoice" class="btn btn-success">Next</button>
-     <%end%>
+      <div class ="row">
+        <div class ="col-sm-2">
+     <%=question=QuestionChoice.find(@test.questions_choice[2*(i-4)+1]).word%>
+   </div>
+   <div class ="col-sm-2">
+      <%=select_tag "gender", options_for_select(["masculine", "feminine", "neuter"]), :class =>  QuestionChoice.find(@test.questions_choice[2*(i-4)+1]).gender %>
     </div>
-    <div id="6a" class="tab-pane fade in <%=@test.active_tab==6 ? 'active' : 'disabled'%>">
+    <div class ="col-sm-2">
+      <%=select_tag "number", options_for_select(["singular", "plural"]), :class => QuestionChoice.find(@test.questions_choice[2*(i-4)+1]).number%>
+    </div>
+      <div class ="col-sm-2">
+        <div class="answer"> </div>
+        </div>
+        <br>
+        <br>
+        <br>
+    </div>
+     <div id="check<%=i%>" class="0"><%= submit_tag 'Check' %></div>
+     <%end%>
+     <button type="button" id="changetabbutton<%=i%>" class="btn btn-success">Next</button>
+     </div>
+     <%end%>
+    <div id="10a" class="tab-pane fade in <%=@test.active_tab==10 ? 'active' : 'disabled'%>">
      <%=image_tag("redsq.png", height: '1000px', width: '1000px', id:"red_square")%>
     </div>
   </div>
